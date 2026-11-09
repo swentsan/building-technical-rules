@@ -8,11 +8,21 @@ function interpretationSourcePages(group,record){
  const start=record?.page||group.page_start,end=record?.endPage||group.page_end,pages=[];
  for(let page=start;page<=end;page++){const image=book.pageMap.get(page);if(!image||!image.is_scan)return[];pages.push(image)}return pages;
 }
+// Topic names are editorial navigation aids tied to the retained source and OCR subject.
+function interpretationTopic(group,record){
+ const data=globalThis.INTERPRETATION_TOPICS,entry=data?.records?.[record.id],book=data?.books?.find(b=>b.id===group.document_id);
+ if(entry&&book?.source_sha256===docs.get(group.document_id)?.sha256&&entry.source_subject===record.subject)return entry.topic;
+ return record.referenceOnly?'相關彙編圖文':'函釋主題待整理';
+}
 function interpretationImageLinkLabel(group,record,index){
- const crop=globalThis.INTERPRETATION_CROPS?.records?.[record.id];if(crop?.kind==='blank')return '彙編留白頁｜PDF 第 '+crop.source_page+' 頁';
+ const crop=globalThis.INTERPRETATION_CROPS?.records?.[record.id];if(crop?.kind==='blank')return '彙編留白頁';
  const pages=interpretationSourcePages(group,record);if(!pages.length)return null;
- const range=pages[0].page+(pages.length>1?'–'+pages.at(-1).page:'');
- return '函釋原圖 '+(index+1)+'｜PDF 第 '+range+' 頁';
+ return '函釋原圖 '+(index+1)+'｜'+interpretationTopic(group,record);
+}
+function describeInterpretationLink(anchor,group,record){
+ const crop=globalThis.INTERPRETATION_CROPS?.records?.[record.id],start=crop?.source_page||record.page,end=crop?.source_end_page||record.endPage||start;
+ anchor.dataset.letter=record.id;anchor.title=docs.get(group.document_id).title+'｜PDF 第 '+start+(end>start?'–'+end:'')+' 頁';
+ anchor.setAttribute('aria-label',anchor.textContent+'；'+anchor.title);return anchor;
 }
 function renderInterpretationSourceImages(group,record){
  const pages=interpretationSourcePages(group,record);if(!pages.length){const crop=globalThis.INTERPRETATION_CROPS?.records?.[record?.id];if(crop?.kind!=='blank')return null;const host=el('section',undefined,'interpretation-source-images');host.append(el('p','本筆為彙編留白頁，未含函釋內容。','source-image-intro'),link('完整原頁',interpretationBookMap.get(group.document_id).pageMap.get(crop.source_page).image),link('完整原頁 PDF',docs.get(group.document_id).source_relative+'#page='+crop.source_page));return host}
@@ -30,9 +40,9 @@ function renderInterpretationSourceImages(group,record){
 }
 function openInterpretationOriginal(d,u,group,record){
  const images=renderInterpretationSourceImages(group,record);if(!images)return false;
- const body=$('detailbody'),doc=docs.get(group.document_id);body.replaceChildren();$('detailtitle').textContent=articleTitle(d,u)+'｜函釋來源原圖';
+ const body=$('detailbody'),doc=docs.get(group.document_id);body.replaceChildren();$('detailtitle').textContent=articleTitle(d,u)+'｜'+interpretationTopic(group,record);
  const section=el('article',undefined,'interpretation-reading interpretation-image-reading');section.dataset.letter=record.id;
- const crop=globalThis.INTERPRETATION_CROPS.records[record.id],start=crop.source_page,end=crop.source_end_page;section.append(el('h3',crop.kind==='reference'?'相關彙編圖文':'解釋令與函釋原圖','interpretation-image-title'),el('p',doc.title+'｜PDF 第 '+start+(end>start?'–'+end:'')+' 頁','meta'));
+ const crop=globalThis.INTERPRETATION_CROPS.records[record.id],start=crop.source_page,end=crop.source_end_page;section.append(el('h3',(crop.kind==='reference'?'相關彙編圖文':'解釋令與函釋原圖')+'｜'+interpretationTopic(group,record),'interpretation-image-title'),el('p',doc.title+'｜PDF 第 '+start+(end>start?'–'+end:'')+' 頁','meta'));
  const actions=el('div',undefined,'actions');actions.append(link('開啟函釋原 PDF',doc.source_relative+'#page='+record.page),button('返回本條與年份連結',()=>openArticle(d,u)),button('列印來源原圖',()=>window.print()));section.append(actions,images);
  body.append(section);if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;return true;
 }
@@ -41,7 +51,7 @@ function renderInterpretationImageGroup(group){
  const doc=docs.get(group.document_id),host=el('article',undefined,'relatedgroup interpretation-image-group');host.dataset.link=group.id;
  host.append(el('b',group.label+'｜函釋來源原圖'),el('p',doc.title+'｜PDF 第 '+group.page_start+(group.page_end>group.page_start?'–'+group.page_end:'')+' 頁','meta'));
  const list=el('div',undefined,'interpretation-link-list'),d=baseDocs.get(group.pcode),u=lawArticles.find(x=>x.d.pcode===group.pcode&&x.u.article_key===group.article_key)?.u;
- interpretationRecords(group).forEach((record,index)=>{if(!d||!u)return;const href='#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,letter:record.id});list.append(resourceAnchor(interpretationImageLinkLabel(group,record,index)||'查看來源原圖',href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link'))});
+ interpretationRecords(group).forEach((record,index)=>{if(!d||!u)return;const href='#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,letter:record.id});list.append(describeInterpretationLink(resourceAnchor(interpretationImageLinkLabel(group,record,index)||interpretationTopic(group,record),href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link'),group,record))});
  host.append(list);return host;
 }
 function openInterpretationImageUnit(id){
@@ -268,9 +278,9 @@ function renderArticleResources(d,u,selectedId){
   for(const group of rel){
    const records=interpretationRecords(group),list=el('div',undefined,'interpretation-link-list');
    records.forEach((record,index)=>{
-    const label=interpretationImageLinkLabel(group,record,index)||((record.referenceOnly?'彙編說明':record.documentLine||'函釋 '+(index+1))+'｜'+record.subject.slice(0,64)+(record.subject.length>64?'…':''));
+    const label=interpretationImageLinkLabel(group,record,index)||interpretationTopic(group,record);
     const href='#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,letter:record.id});
-    const a=resourceAnchor(label,href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link');a.dataset.letter=record.id;
+    const a=resourceAnchor(label,href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link');describeInterpretationLink(a,group,record);
     if(index<6)list.append(a);else{
      let more=list.querySelector('details');if(!more){more=el('details',undefined,'more-interpretations');more.append(el('summary','其餘 '+(records.length-6)+' 件函釋連結'));list.append(more)}more.append(a);
     }
