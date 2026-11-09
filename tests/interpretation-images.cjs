@@ -4,7 +4,8 @@ const root=path.resolve(__dirname,'..'),repo=fs.existsSync(path.join(root,'src/t
 const source=fs.readFileSync(path.join(root,repo?'src/technical_article.js':'tools/technical_article.js'),'utf8');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,repo?'src/interpretation-images.json':'technical/interpretation-images.json'),'utf8'));
 const corpus=JSON.parse(fs.readFileSync(process.argv[2]||path.join(root,repo?'data/technical-corpus.json':'technical/corpus.json'),'utf8'));
-const scope={INTERPRETATION_IMAGES:manifest,docs:new Map(corpus.documents.map(d=>[d.id,d])),units:new Map(corpus.units.map(u=>[u.id,u]))};
+const crops=JSON.parse(fs.readFileSync(path.join(root,repo?'src/interpretation-crops.json':'technical/interpretation-crops.json'),'utf8'));
+const scope={INTERPRETATION_IMAGES:manifest,INTERPRETATION_CROPS:crops,docs:new Map(corpus.documents.map(d=>[d.id,d])),units:new Map(corpus.units.map(u=>[u.id,u]))};
 const recordStart=source.indexOf('function interpretationRecords(group){'),recordEnd=source.indexOf('function resourceAnchor(',recordStart);
 const imageStart=source.indexOf('const interpretationBookMap='),imageEnd=source.indexOf('function renderInterpretationSourceImages',imageStart);
 assert(recordStart>=0&&recordEnd>recordStart&&imageStart>=0&&imageEnd>imageStart);
@@ -17,6 +18,6 @@ for(const book of manifest.books){
 }
 for(const group of corpus.article_links.filter(r=>r.kind==='interpretation')){
  assert.equal(scope.pages(group).length,group.page_end-group.page_start+1);groups++;
- for(const record of scope.records(group)){assert.equal(scope.pages(group,record).length,record.endPage-record.page+1);assert(record.page>=group.page_start&&record.endPage<=group.page_end);records++}
+ for(const record of scope.records(group)){assert.equal(scope.pages(group,record).length,crops.records[record.id].pages.length);assert(crops.records[record.id].kind==='blank'||scope.pages(group,record).length>0);records++}
 }
 assert.equal(pages,manifest.stats.pages);console.log(JSON.stringify({passed:true,source_pages:pages,groups,records}));

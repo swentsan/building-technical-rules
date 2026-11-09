@@ -4,23 +4,25 @@ const interpretationBookMap=new Map((globalThis.INTERPRETATION_IMAGES?.books||[]
 function interpretationSourcePages(group,record){
  const book=interpretationBookMap.get(group.document_id),doc=docs.get(group.document_id);
  if(!book||book.source_sha256!==doc?.sha256)return[];
+ if(record?.id){const crop=globalThis.INTERPRETATION_CROPS?.records?.[record.id],source=globalThis.INTERPRETATION_CROPS?.books?.find(b=>b.id===group.document_id);if(crop&&source?.source_sha256===doc.sha256)return crop.pages.map(page=>({...page,cropped:true,kind:crop.kind}));return[]}
  const start=record?.page||group.page_start,end=record?.endPage||group.page_end,pages=[];
  for(let page=start;page<=end;page++){const image=book.pageMap.get(page);if(!image||!image.is_scan)return[];pages.push(image)}return pages;
 }
 function interpretationImageLinkLabel(group,record,index){
+ const crop=globalThis.INTERPRETATION_CROPS?.records?.[record.id];if(crop?.kind==='blank')return '彙編留白頁｜PDF 第 '+crop.source_page+' 頁';
  const pages=interpretationSourcePages(group,record);if(!pages.length)return null;
  const range=pages[0].page+(pages.length>1?'–'+pages.at(-1).page:'');
  return '函釋原圖 '+(index+1)+'｜PDF 第 '+range+' 頁';
 }
 function renderInterpretationSourceImages(group,record){
- const pages=interpretationSourcePages(group,record);if(!pages.length)return null;
+ const pages=interpretationSourcePages(group,record);if(!pages.length){const crop=globalThis.INTERPRETATION_CROPS?.records?.[record?.id];if(crop?.kind!=='blank')return null;const host=el('section',undefined,'interpretation-source-images');host.append(el('p','本筆為彙編留白頁，未含函釋內容。','source-image-intro'),link('完整原頁',interpretationBookMap.get(group.document_id).pageMap.get(crop.source_page).image),link('完整原頁 PDF',docs.get(group.document_id).source_relative+'#page='+crop.source_page));return host}
  const doc=docs.get(group.document_id),host=el('section',undefined,'interpretation-source-images');host.dataset.document=group.document_id;
- host.append(el('p','以下直接顯示來源頁面原圖；點圖可放大，也可另存圖片。','source-image-intro'));
+ const cropped=pages.some(p=>p.cropped);host.append(el('p',cropped?'以下擷取本則函釋的原圖範圍，續頁依序顯示；可放大、下載，或開啟完整原頁核對。':'以下顯示彙編完整原頁，可點圖放大或另存圖片。','source-image-intro'));
  for(const page of pages){
   const figure=el('figure',undefined,'interpretation-source-page');figure.dataset.pdfPage=page.page;
-  const title=doc.title+'｜PDF 第 '+page.page+' 頁';figure.append(el('figcaption',title));
-  const actions=el('div',undefined,'actions'),save=link('另存原圖',page.image);save.download=page.image.split('/').at(-1);
-  actions.append(button('放大查看',()=>openOfficialFigure(page,title)),link('開啟來源圖片',page.image),save,link('開啟原 PDF 本頁',doc.source_relative+'#page='+page.page));figure.append(actions);
+  const title=doc.title+'｜PDF 第 '+page.page+' 頁'+(page.cropped?'・'+(page.kind==='reference'?'相關彙編範圍':'本則函釋範圍'):'');figure.append(el('figcaption',title));
+  const actions=el('div',undefined,'actions'),save=link(page.cropped?'另存本則圖片':'另存原頁圖片',page.image);save.download=page.image.split('/').at(-1);
+  actions.append(button('放大查看',()=>openOfficialFigure(page,title)),link(page.cropped?'開啟本則圖片':'開啟原頁圖片',page.image),save);if(page.cropped)actions.append(link('完整原頁',page.source_image));actions.append(link('完整原頁 PDF',doc.source_relative+'#page='+page.page));figure.append(actions);
   const buttonImage=button('',()=>openOfficialFigure(page,title),'figure-preview-button'),image=el('img');buttonImage.setAttribute('aria-label','放大 '+title);
   image.src=page.image;image.alt=title;image.width=page.width;image.height=page.height;image.loading=page===pages[0]?'eager':'lazy';image.decoding='async';buttonImage.append(image);figure.append(buttonImage);host.append(figure);
  }
@@ -30,7 +32,7 @@ function openInterpretationOriginal(d,u,group,record){
  const images=renderInterpretationSourceImages(group,record);if(!images)return false;
  const body=$('detailbody'),doc=docs.get(group.document_id);body.replaceChildren();$('detailtitle').textContent=articleTitle(d,u)+'｜函釋來源原圖';
  const section=el('article',undefined,'interpretation-reading interpretation-image-reading');section.dataset.letter=record.id;
- section.append(el('h3','解釋令與函釋原圖','interpretation-image-title'),el('p',doc.title+'｜PDF 第 '+record.page+(record.endPage>record.page?'–'+record.endPage:'')+' 頁','meta'));
+ const crop=globalThis.INTERPRETATION_CROPS.records[record.id],start=crop.source_page,end=crop.source_end_page;section.append(el('h3',crop.kind==='reference'?'相關彙編圖文':'解釋令與函釋原圖','interpretation-image-title'),el('p',doc.title+'｜PDF 第 '+start+(end>start?'–'+end:'')+' 頁','meta'));
  const actions=el('div',undefined,'actions');actions.append(link('開啟函釋原 PDF',doc.source_relative+'#page='+record.page),button('返回本條與年份連結',()=>openArticle(d,u)),button('列印來源原圖',()=>window.print()));section.append(actions,images);
  body.append(section);if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;return true;
 }
@@ -68,6 +70,17 @@ const interpretationImageStyle=el('style');interpretationImageStyle.textContent=
 @media print{.interpretation-source-page .actions,.source-image-intro{display:none!important}.interpretation-source-page{break-inside:avoid;margin:8px 0 16px}.interpretation-source-page>figcaption{font-size:11pt}.interpretation-source-page img{width:100%;max-height:250mm;object-fit:contain}}
 `;
 document.head.append(interpretationImageStyle);
+
+const unifiedTypographyStyle=el('style');unifiedTypographyStyle.id='unifiedTypography';unifiedTypographyStyle.textContent=`
+:root{--font-ui:"Microsoft JhengHei UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif;--text-body:18px;--text-small:16px;--text-label:17px;--text-link:20px;--text-reading:22px;--text-table:19px;--line-ui:1.8;--line-reading:2}
+body{font-family:var(--font-ui);font-size:var(--text-body);line-height:var(--line-ui)}button,input,select,textarea{font-family:var(--font-ui);font-size:var(--text-body);line-height:1.65}h1,h2,h3,h4,h5,h6,.reading,.difftext,.stat b{font-family:var(--font-ui)}h1{font-size:clamp(30px,3vw,42px);line-height:1.45;font-weight:700}h2{font-size:28px;line-height:1.6}h3{font-size:24px;line-height:1.65}h4{font-size:21px;line-height:1.7}.brand{font-size:26px;line-height:1.55}.eyebrow{font-size:14px;line-height:1.6;letter-spacing:1px}.nav{font-size:18px;line-height:1.7}.asidefoot,footer{font-size:var(--text-small);line-height:1.9}.intro{font-size:19px;line-height:1.9}.stat b{font-size:32px;font-weight:700;line-height:1.5;font-variant-numeric:tabular-nums}.small,.meta,.notice,.tag,.offline,.snippet,.sourceinfo,.source-image-search-note{font-size:var(--text-small);line-height:1.9}.filters label,.resource-label,.chip{font-size:var(--text-label);line-height:1.8}.filters select,input[type=search]{font-size:18px}.secondary,.primary,.actions a,.actions button,.booknav a,.booknav button,.pagejump button{font-size:18px;line-height:1.7}.card h3,.card .titlebtn{font-size:22px;line-height:1.7}.dialoghead h2{font-size:22px;line-height:1.65}.dialogbody h3,.interpretation-reading h3{font-size:24px;line-height:1.7}.dialogbody h4{font-size:21px;line-height:1.8}
+.reading,.legal-prose,#articleText.version-reading .reading,#articleText.version-reading .legal-prose,.interpretation-reading,.interpretation-explanation,.relatedgroup .reading,.relatedpreview,#articleLetters .relatedpreview{font-family:var(--font-ui);font-size:var(--text-reading);line-height:var(--line-reading)}.interpretation-explanation,.difftext,.parallel .reading,.parallel .legal-prose,.versionpanel .difftext{font-size:var(--text-reading)!important;line-height:var(--line-reading)!important}.legal-table,.usage-table,#articleText.version-reading .legal-table,#articleText.version-reading .usage-table{font-size:var(--text-table);line-height:1.85}.usage-group span,.usage-category span,#articleText.version-reading .usage-group span,#articleText.version-reading .usage-category span{font-size:18px}
+.article-resource-links .secondary,.articlecard .article-resource-links .secondary,.interpretation-link,.more-interpretations,.relatedgroup summary{font-size:var(--text-link);line-height:1.85}.resource-label{font-weight:700}.versionpanel .notice,.versionpanel .comparecontrols,.versionpanel .comparecontrols select{font-size:18px;line-height:1.9}.interpretation-document,.parallel>div>b{font-size:21px;line-height:1.8}.interpretation-source-note,.version-reading-note,.source-image-intro,.figure-origin-note,.readable-formula figcaption,.official-visual-pages figcaption{font-size:var(--text-small);line-height:1.9}.official-figures>summary,.official-visual-record h4,.interpretation-source-page>figcaption{font-size:21px;line-height:1.8}.interpretation-source-page .actions a,.interpretation-source-page .actions button,.interpretation-image-reading>.actions a,.interpretation-image-reading>.actions button,.official-visual-record .actions a{font-size:18px;line-height:1.7}.figure-viewer-head,.figure-viewer-head button{font-size:18px;line-height:1.7}.close{font-size:28px}.source-crop-label{font-size:16px;line-height:1.8;color:#496c78}
+.articlecard .meta,.articlecard .tag,.articlecard .small,.card .meta,.relatedgroup .meta{font-size:var(--text-small);line-height:1.9}.articlecard .snippet{font-size:18px;line-height:1.9}.articlecard .actions .secondary{font-size:18px;line-height:1.7}.articlecard .article-resource-links .secondary{font-size:var(--text-link)}
+@media(max-width:800px){:root{--text-reading:21px;--text-table:18px;--text-link:19px}.brand{font-size:24px}.nav{font-size:17px}h2{font-size:26px}h3,.dialogbody h3,.interpretation-reading h3{font-size:23px}.card h3,.card .titlebtn,.dialoghead h2{font-size:21px}.intro{font-size:18px}.official-figures>summary,.official-visual-record h4,.interpretation-source-page>figcaption{font-size:20px}.actions a,.actions button,.interpretation-source-page .actions a,.interpretation-source-page .actions button{font-size:18px}.searchrow{flex-wrap:wrap}.searchrow input[type=search]{flex:1 1 200px}.figure-viewer-head strong{min-width:0}.stat b{font-size:29px}}
+@media print{body{font-size:11pt}.reading,.legal-prose,.interpretation-reading,#articleText.version-reading .reading,#articleText.version-reading .legal-prose{font-size:13pt;line-height:1.8}.interpretation-explanation,.difftext,.parallel .reading,.parallel .legal-prose,.versionpanel .difftext{font-size:13pt!important;line-height:1.8!important}.legal-table,.usage-table,#articleText.version-reading .legal-table,#articleText.version-reading .usage-table{font-size:10pt}.meta,.small,.source-crop-label{font-size:10pt}.dialoghead h2{font-size:15pt}.dialogbody h3{font-size:15pt}.interpretation-source-page>figcaption{font-size:11pt}}
+`;
+document.head.append(unifiedTypographyStyle);
 
 // Literal source matches keep formula layout changes tied to the selected text.
 const readableFormulaRules=[];
@@ -667,5 +680,5 @@ async function saveUpdate(){const r=previewUpdate();if(!r)return;if(location.pro
 // Volume searches remain available as a secondary route.
 for(const c of $('volumes').children){const b=[...c.querySelectorAll('button')].find(b=>b.textContent==='查詢本冊');if(b){const d=DB.documents.find(d=>d.title===c.querySelector('h3').textContent);b.onclick=()=>{enter(false);$('kind').value='';$('volume').value=d.id;page=1;render()}}}
 window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
-window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle);enter(true);const hash=new URLSearchParams(location.hash.slice(1));if(hash.get('pcode')&&hash.get('letter'))window.technicalApp.openInterpretation(hash.get('pcode'),hash.get('article'),hash.get('letter'));else if(hash.get('pcode'))window.technicalApp.openArticle(hash.get('pcode'),hash.get('article'),hash.get('version'));else if(hash.get('unit'))openUnit(hash.get('unit'));
+window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle);enter(true);const hash=new URLSearchParams(location.hash.slice(1));if(hash.get('pcode')&&hash.get('letter'))window.technicalApp.openInterpretation(hash.get('pcode'),hash.get('article'),hash.get('letter'));else if(hash.get('pcode'))window.technicalApp.openArticle(hash.get('pcode'),hash.get('article'),hash.get('version'));else if(hash.get('unit'))openUnit(hash.get('unit'));
 })();
