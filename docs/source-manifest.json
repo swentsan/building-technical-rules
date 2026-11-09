@@ -1,0 +1,37 @@
+[
+  {
+    "key": "rules",
+    "title": "建築技術規則.pdf",
+    "pages": 346,
+    "sha256": "4ab7b24198f7bb6bc00098bb8a13b15991441429c0cc3b81a1a8d4548d55e590",
+    "path": "assets/pdfs/rules.pdf"
+  },
+  {
+    "key": "letters_upper",
+    "title": "建築技術規則解釋函彙編上冊.pdf",
+    "pages": 558,
+    "sha256": "55befc2dab6833b250ac9748feb05c4823efc342b334d10ccfdbb959ec705e09",
+    "path": "assets/pdfs/letters_upper.pdf"
+  },
+  {
+    "key": "letters_lower",
+    "title": "建築技術規則解釋函彙編下冊.pdf",
+    "pages": 416,
+    "sha256": "007510e91d9efc570983499915d579fdb12a2e4fa23c8e7f5df34a2a23e8657e",
+    "path": "assets/pdfs/letters_lower.pdf"
+  },
+  {
+    "key": "revisions_design",
+    "title": "歷年修正條文彙編(建築設計施工編).pdf",
+    "pages": 566,
+    "sha256": "ad4aff5d4677596a273dc965fdf2f13edc8db0e89be690a7d7e7805aafe89b23",
+    "path": "assets/pdfs/revisions_design.pdf"
+  },
+  {
+    "key": "revisions_structure",
+    "title": "歷年修正條文彙編(構造編).pdf",
+    "pages": 394,
+    "sha256": "23bb7751aa2c3f6e9fa3cc3baeddf961e91153f72b10feae43c8d1feb7f31e53",
+    "path": "assets/pdfs/revisions_structure.pdf"
+  }
+]
