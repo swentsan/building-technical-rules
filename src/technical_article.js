@@ -1,5 +1,74 @@
 /* Article-first reader layered over the retained source-volume reader. */
 (()=>{
+const interpretationBookMap=new Map((globalThis.INTERPRETATION_IMAGES?.books||[]).map(book=>[book.id,{...book,pageMap:new Map(book.pages.map(page=>[page.page,page]))}]));
+function interpretationSourcePages(group,record){
+ const book=interpretationBookMap.get(group.document_id),doc=docs.get(group.document_id);
+ if(!book||book.source_sha256!==doc?.sha256)return[];
+ const start=record?.page||group.page_start,end=record?.endPage||group.page_end,pages=[];
+ for(let page=start;page<=end;page++){const image=book.pageMap.get(page);if(!image||!image.is_scan)return[];pages.push(image)}return pages;
+}
+function interpretationImageLinkLabel(group,record,index){
+ const pages=interpretationSourcePages(group,record);if(!pages.length)return null;
+ const range=pages[0].page+(pages.length>1?'–'+pages.at(-1).page:'');
+ return '函釋原圖 '+(index+1)+'｜PDF 第 '+range+' 頁';
+}
+function renderInterpretationSourceImages(group,record){
+ const pages=interpretationSourcePages(group,record);if(!pages.length)return null;
+ const doc=docs.get(group.document_id),host=el('section',undefined,'interpretation-source-images');host.dataset.document=group.document_id;
+ host.append(el('p','以下直接顯示來源頁面原圖；點圖可放大，也可另存圖片。','source-image-intro'));
+ for(const page of pages){
+  const figure=el('figure',undefined,'interpretation-source-page');figure.dataset.pdfPage=page.page;
+  const title=doc.title+'｜PDF 第 '+page.page+' 頁';figure.append(el('figcaption',title));
+  const actions=el('div',undefined,'actions'),save=link('另存原圖',page.image);save.download=page.image.split('/').at(-1);
+  actions.append(button('放大查看',()=>openOfficialFigure(page,title)),link('開啟來源圖片',page.image),save,link('開啟原 PDF 本頁',doc.source_relative+'#page='+page.page));figure.append(actions);
+  const buttonImage=button('',()=>openOfficialFigure(page,title),'figure-preview-button'),image=el('img');buttonImage.setAttribute('aria-label','放大 '+title);
+  image.src=page.image;image.alt=title;image.width=page.width;image.height=page.height;image.loading=page===pages[0]?'eager':'lazy';image.decoding='async';buttonImage.append(image);figure.append(buttonImage);host.append(figure);
+ }
+ return host;
+}
+function openInterpretationOriginal(d,u,group,record){
+ const images=renderInterpretationSourceImages(group,record);if(!images)return false;
+ const body=$('detailbody'),doc=docs.get(group.document_id);body.replaceChildren();$('detailtitle').textContent=articleTitle(d,u)+'｜函釋來源原圖';
+ const section=el('article',undefined,'interpretation-reading interpretation-image-reading');section.dataset.letter=record.id;
+ section.append(el('h3','解釋令與函釋原圖','interpretation-image-title'),el('p',doc.title+'｜PDF 第 '+record.page+(record.endPage>record.page?'–'+record.endPage:'')+' 頁','meta'));
+ const actions=el('div',undefined,'actions');actions.append(link('開啟函釋原 PDF',doc.source_relative+'#page='+record.page),button('返回本條與年份連結',()=>openArticle(d,u)),button('列印來源原圖',()=>window.print()));section.append(actions,images);
+ body.append(section);if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;return true;
+}
+function renderInterpretationImageGroup(group){
+ if(!interpretationSourcePages(group).length)return null;
+ const doc=docs.get(group.document_id),host=el('article',undefined,'relatedgroup interpretation-image-group');host.dataset.link=group.id;
+ host.append(el('b',group.label+'｜函釋來源原圖'),el('p',doc.title+'｜PDF 第 '+group.page_start+(group.page_end>group.page_start?'–'+group.page_end:'')+' 頁','meta'));
+ const list=el('div',undefined,'interpretation-link-list'),d=baseDocs.get(group.pcode),u=lawArticles.find(x=>x.d.pcode===group.pcode&&x.u.article_key===group.article_key)?.u;
+ interpretationRecords(group).forEach((record,index)=>{if(!d||!u)return;const href='#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,letter:record.id});list.append(resourceAnchor(interpretationImageLinkLabel(group,record,index)||'查看來源原圖',href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link'))});
+ host.append(list);return host;
+}
+function openInterpretationImageUnit(id){
+ const unit=units.get(id);if(!unit)return false;
+ const doc=docs.get(unit.document_id),book=interpretationBookMap.get(unit.document_id),page=unit.page_start;
+ if(!book||book.source_sha256!==doc?.sha256||!book.pageMap.has(page))return false;
+ const group={document_id:doc.id,page_start:page,page_end:page},record={page,endPage:page},images=renderInterpretationSourceImages(group,record);if(!images)return false;
+ const body=$('detailbody');body.replaceChildren();$('detailtitle').textContent=doc.title+'｜PDF 第 '+page+' 頁原圖';
+ const section=el('article',undefined,'interpretation-reading interpretation-image-reading');section.append(el('h3','彙編來源頁面原圖'),images);
+ const nav=el('div',undefined,'booknav');
+ const go=number=>{const target=[...units.values()].find(u=>u.document_id===doc.id&&u.page_start===number);if(target)openUnit(target.id)};
+ const prev=button('上一頁',()=>go(page-1)),next=button('下一頁',()=>go(page+1)),input=el('input');prev.disabled=page<=1;next.disabled=page>=book.pdf_pages;input.type='number';input.min=1;input.max=book.pdf_pages;input.value=page;input.style.width='90px';input.setAttribute('aria-label','PDF 頁碼');
+ nav.append(prev,input,button('跳頁',()=>{const value=Number(input.value);if(Number.isInteger(value)&&value>=1&&value<=book.pdf_pages)go(value)}),next,link('原 PDF 本頁',doc.source_relative+'#page='+page));section.prepend(nav);body.append(section);if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;return true;
+}
+function enhanceInterpretationSearchCards(){
+ for(const card of document.querySelectorAll('#results .card[data-unit]')){
+  const unit=units.get(card.dataset.unit),book=unit&&interpretationBookMap.get(unit.document_id),doc=unit&&docs.get(unit.document_id);
+  if(!book||book.source_sha256!==doc?.sha256||!book.pageMap.has(unit.page_start))continue;
+  const snippet=card.querySelector('.snippet');if(snippet)snippet.replaceWith(el('p','掃描來源頁面，可直接開啟原圖查看。','source-image-search-note'));
+  const action=card.querySelector('.actions button');if(action)action.textContent='查看來源原圖';
+ }
+}
+const interpretationImageStyle=el('style');interpretationImageStyle.textContent=`
+.interpretation-source-images{max-width:100%;min-width:0}.source-image-intro{font-size:18px;line-height:1.9;margin:16px 0;color:#496c78}.interpretation-source-page{margin:24px 0 36px;max-width:100%;min-width:0}.interpretation-source-page>figcaption{font-size:21px;font-weight:700;line-height:1.8;margin-bottom:10px}.interpretation-source-page .actions{margin-bottom:14px;gap:10px}.interpretation-source-page .actions a,.interpretation-source-page .actions button,.interpretation-image-reading>.actions a,.interpretation-image-reading>.actions button{font-size:17px;padding:7px 12px;line-height:1.8}.interpretation-source-page .figure-preview-button{max-width:1150px;background:white}.interpretation-source-page img{width:100%;height:auto;display:block}.interpretation-image-title{margin-top:0}.interpretation-image-group .interpretation-link-list{margin-top:12px}.source-image-search-note{font-size:17px;color:#496c78;line-height:1.8}
+@media(max-width:800px){.interpretation-source-page>figcaption{font-size:19px}.source-image-intro{font-size:17px}.interpretation-source-page .actions a,.interpretation-source-page .actions button{font-size:16px}}
+@media print{.interpretation-source-page .actions,.source-image-intro{display:none!important}.interpretation-source-page{break-inside:avoid;margin:8px 0 16px}.interpretation-source-page>figcaption{font-size:11pt}.interpretation-source-page img{width:100%;max-height:250mm;object-fit:contain}}
+`;
+document.head.append(interpretationImageStyle);
+
 // Literal source matches keep formula layout changes tied to the selected text.
 const readableFormulaRules=[];
 function formulaRule(source,math,label){readableFormulaRules.push({source,math,label})}
@@ -105,11 +174,11 @@ function interpretationRecords(group){
   const explanation=split>=0?chunk.slice(split).trim():'';
   const prefix=text.slice(Math.max(0,match.index-260),match.index).split('\n').map(l=>l.trim()).filter(l=>/^(?:中華民國)?\d{2,3}\s*[年·．.,]/.test(l)&&/字第\s*\d+\s*號/.test(l)).at(-1)||'';
   const page=pages.filter(p=>p.offset<=match.index).at(-1)?.page||group.page_start;
-  records.push({id:group.id+'_'+index,groupId:group.id,index,subject,explanation,documentLine:prefix,page});
+  const endPage=pages.filter(p=>p.offset<=Math.max(start,end-1)).at(-1)?.page||page;records.push({id:group.id+'_'+index,groupId:group.id,index,subject,explanation,documentLine:prefix,page,endPage:Math.max(page,Math.min(group.page_end,endPage))});
  }
  if(!records.length){
   const paragraphs=text.split('\n').map(l=>l.trim()).filter(Boolean),start=paragraphs.findIndex(l=>/說明|依據|按|依照|查|結論/.test(l));
-  records.push({id:group.id+'_reference',groupId:group.id,index:-1,subject:group.subjects?.join('；')||'本條相關彙編說明',explanation:start>=0?paragraphs.slice(start).join('\n'):text,documentLine:'',page:group.page_start,referenceOnly:true});
+  records.push({id:group.id+'_reference',groupId:group.id,index:-1,subject:group.subjects?.join('；')||'本條相關彙編說明',explanation:start>=0?paragraphs.slice(start).join('\n'):text,documentLine:'',page:group.page_start,endPage:group.page_end,referenceOnly:true});
  }
  interpretationCache.set(group.id,records);return records;
 }
@@ -130,7 +199,7 @@ function renderArticleResources(d,u,selectedId){
   for(const group of rel){
    const records=interpretationRecords(group),list=el('div',undefined,'interpretation-link-list');
    records.forEach((record,index)=>{
-    const label=(record.referenceOnly?'彙編說明':record.documentLine||'函釋 '+(index+1))+'｜'+record.subject.slice(0,64)+(record.subject.length>64?'…':'');
+    const label=interpretationImageLinkLabel(group,record,index)||((record.referenceOnly?'彙編說明':record.documentLine||'函釋 '+(index+1))+'｜'+record.subject.slice(0,64)+(record.subject.length>64?'…':''));
     const href='#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,letter:record.id});
     const a=resourceAnchor(label,href,()=>{openInterpretation(d,u,record.id);history.replaceState(null,'',href)},'interpretation-link');a.dataset.letter=record.id;
     if(index<6)list.append(a);else{
@@ -145,7 +214,7 @@ function renderArticleResources(d,u,selectedId){
 }
 function openInterpretation(d,u,id){
  const group=related(d,u).find(r=>interpretationRecords(r).some(record=>record.id===id));if(!group)return;
- const record=interpretationRecords(group).find(r=>r.id===id),doc=docs.get(group.document_id),body=$('detailbody');
+ const record=interpretationRecords(group).find(r=>r.id===id),doc=docs.get(group.document_id),body=$('detailbody');if(openInterpretationOriginal(d,u,group,record))return;
  $('detailtitle').textContent=articleTitle(d,u)+'｜'+(record.referenceOnly?'彙編說明':'解釋令與函釋說明');body.replaceChildren();
  const section=el('article',undefined,'interpretation-reading');section.dataset.letter=record.id;
  section.append(el('h3',record.subject,'interpretation-subject'));if(record.documentLine)section.append(el('p',record.documentLine,'interpretation-document'));
@@ -536,7 +605,7 @@ function enter(isArticle){articleMode=isArticle;$('updatesview').classList.add('
 showView=function(v){$('updatesview').classList.add('hidden');refnav.classList.remove('active');updatenav.classList.remove('active');if(v==='search')enter(true);else oldShow(v)};
 document.querySelectorAll('[data-view]').forEach(e=>e.onclick=()=>showView(e.dataset.view));
 render=function(){
- $('results').classList.toggle('article-results',articleMode);if(!articleMode)return oldRender();
+ $('results').classList.toggle('article-results',articleMode);if(!articleMode){const result=oldRender();enhanceInterpretationSearchCards();return result;}
  activeTokens=queryTokens();const vol=$('volume').value;
  filtered=lawArticles.filter(x=>(!vol||x.d.id===vol)&&(!linkedOnly.checked||related(x.d,x.u).length)&&activeTokens.every(t=>x.text.includes(t)));
  if($('sort').value==='hits'&&activeTokens.length)filtered.sort((a,b)=>score(b.text)-score(a.text));
@@ -561,8 +630,8 @@ render=function(){
  $('pagination').replaceChildren();if(pages>1){const a=button('上一頁',()=>{page--;render()}),b=button('下一頁',()=>{page++;render()});a.disabled=page===1;b.disabled=page===pages;$('pagination').append(a,el('span',page+' / '+pages),b)}
 };
 linkedOnly.onchange=()=>{page=1;render()};$('clear').onclick=()=>{$('query').value='';$('volume').value='';$('kind').value=articleMode?'official':'';$('sort').value='source';linkedOnly.checked=false;page=1;render()};
-openUnit=function(id){const x=lawArticles.find(x=>x.u.id===id)||(units.has(id)?lawArticles.find(x=>x.d.id===units.get(id).document_id&&x.u.article_key===units.get(id).article_key):null);if(x)return openArticle(x.d,x.u);oldOpen(id);if(lastArticle)$('detailbody').prepend(button('← 返回 '+lastArticle.u.heading+' 與解釋函',()=>openArticle(lastArticle.d,lastArticle.u)))};
-function groupElement(r,compactView=false){const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;if(r.kind==='interpretation'){const links=el('div',undefined,'actions');for(const record of interpretationRecords(r)){const d0=baseDocs.get(r.pcode),u0=lawArticles.find(x=>x.d.pcode===r.pcode&&x.u.article_key===r.article_key)?.u;if(d0&&u0)links.append(button((record.referenceOnly?'彙編說明':record.subject.slice(0,70)),()=>openInterpretation(d0,u0,record.id)))}box.append(links)}box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
+openUnit=function(id){if(openInterpretationImageUnit(id))return;const x=lawArticles.find(x=>x.u.id===id)||(units.has(id)?lawArticles.find(x=>x.d.id===units.get(id).document_id&&x.u.article_key===units.get(id).article_key):null);if(x)return openArticle(x.d,x.u);oldOpen(id);if(lastArticle)$('detailbody').prepend(button('← 返回 '+lastArticle.u.heading+' 與解釋函',()=>openArticle(lastArticle.d,lastArticle.u)))};
+function groupElement(r,compactView=false){if(r.kind==='interpretation'&&!compactView){const originalImages=renderInterpretationImageGroup(r);if(originalImages)return originalImages;}const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;if(r.kind==='interpretation'){const links=el('div',undefined,'actions');for(const record of interpretationRecords(r)){const d0=baseDocs.get(r.pcode),u0=lawArticles.find(x=>x.d.pcode===r.pcode&&x.u.article_key===r.article_key)?.u;if(d0&&u0)links.append(button((record.referenceOnly?'彙編說明':record.subject.slice(0,70)),()=>openInterpretation(d0,u0,record.id)))}box.append(links)}box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
 function openArticle(d,u,selectedVersionId){
  lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.find(v=>v.id===selectedVersionId)||vs.at(-1),rel=related(d,u),selectedIndex=vs.indexOf(v),previous=selectedIndex>0?vs[selectedIndex-1]:null;
  $('detailtitle').textContent=articleTitle(d,u)+(v?'｜'+v.publication_date+' 版':'');body.replaceChildren();
@@ -575,7 +644,7 @@ function openArticle(d,u,selectedVersionId){
  if(previous&&v&&previous.text!==v.text){left.prepend(el('p','本版新增文字以綠底標記；刪除內容及完整差異列於下方年份比對。','version-reading-note'));markVisibleVersionChanges(content,previous,v)}
  appendOfficialFigures(left,d,u,v);
  const letterSummary=el('summary','解釋令、函釋與說明（'+rel.length+' 組來源）'),foldState=el('span','展開','fold-state');letterSummary.append(foldState);right.append(letterSummary);right.ontoggle=()=>{foldState.textContent=right.open?'收合':'展開'};
- if(rel.length){right.append(el('p','下方連結提供各件主旨、原文說明摘錄與彙編 PDF。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前收錄資料未建立本條的解釋令連結。','small'));
+ if(rel.length){right.append(el('p','掃描型函釋直接提供來源原圖，保留頁碼、放大與原 PDF 連結。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前收錄資料未建立本條的解釋令連結。','small'));
  grid.append(left,right);body.append(grid,renderArticleResources(d,u,v?.id));renderVersionsFor(body,d,u,vs,selectedVersionId);
  const refs=related(d,u,'revision_reference');if(refs.length){const sec=foldPanel('歷年修正原文與修正說明（彙編）','revisionReferences');sec.append(el('p','以下保留修正彙編原頁。','small'));for(const r of refs)sec.append(groupElement(r,true));body.append(sec)}
  if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;
@@ -598,5 +667,5 @@ async function saveUpdate(){const r=previewUpdate();if(!r)return;if(location.pro
 // Volume searches remain available as a secondary route.
 for(const c of $('volumes').children){const b=[...c.querySelectorAll('button')].find(b=>b.textContent==='查詢本冊');if(b){const d=DB.documents.find(d=>d.title===c.querySelector('h3').textContent);b.onclick=()=>{enter(false);$('kind').value='';$('volume').value=d.id;page=1;render()}}}
 window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
-window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle);enter(true);const hash=new URLSearchParams(location.hash.slice(1));if(hash.get('pcode')&&hash.get('letter'))window.technicalApp.openInterpretation(hash.get('pcode'),hash.get('article'),hash.get('letter'));else if(hash.get('pcode'))window.technicalApp.openArticle(hash.get('pcode'),hash.get('article'),hash.get('version'));else if(hash.get('unit'))openUnit(hash.get('unit'));
+window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle);enter(true);const hash=new URLSearchParams(location.hash.slice(1));if(hash.get('pcode')&&hash.get('letter'))window.technicalApp.openInterpretation(hash.get('pcode'),hash.get('article'),hash.get('letter'));else if(hash.get('pcode'))window.technicalApp.openArticle(hash.get('pcode'),hash.get('article'),hash.get('version'));else if(hash.get('unit'))openUnit(hash.get('unit'));
 })();
