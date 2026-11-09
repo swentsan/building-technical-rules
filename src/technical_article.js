@@ -231,9 +231,59 @@ const officialFigureStyle=el('style');officialFigureStyle.textContent=`
 `;
 document.head.append(officialFigureStyle);
 
+function historyArticle(pcode,key,versionId){
+ const current=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(current)return current;
+ const vs=versionMap.get(pcode+'|'+key)||[],v=vs.find(x=>x.id===versionId)||vs.at(-1),d=baseDocs.get(pcode);if(!v||!d)return null;
+ return{d,u:{id:v.id,article_key:key,document_id:d.id,heading:v.heading||'第'+key+'條',text:v.text,source_url:v.source_url,is_historical_only:true}};
+}
+function historyEventsFor(pcode,key){return(DB.official_history_events||[]).filter(e=>(!pcode||(e.pcodes||[e.pcode]).includes(pcode))&&(!key||e.article_keys_by_pcode?.[pcode]?.includes(key)||e.all_articles_by_pcode?.includes(pcode)))}
+function openOfficialHistory(pcode,article,returnVersion){
+ const body=$('detailbody');body.replaceChildren();$('detailtitle').textContent=article?'第'+article+'條｜官方法規沿革與條文對照':'官方法規沿革與條文對照';
+ const host=el('section',undefined,'official-history-reading'),intro=el('p','依官方沿革列出公布、施行與修正來源；有歷史全文者可開啟條文及版本比對。最早收錄全文是查閱基準，未據此認定該條首次修正日期。','notice');host.append(intro);
+ const actions=el('div',undefined,'actions');actions.append(link('國土署法規沿革','https://www.nlma.gov.tw/ch/legislation/regsearch/6260'));
+ if(pcode)actions.append(link('全國法規資料庫沿革','https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode='+pcode));
+ if(article)actions.append(button('返回第'+article+'條',()=>{const x=historyArticle(pcode,article,returnVersion);if(x){openArticle(x.d,x.u,returnVersion);history.replaceState(null,'','#'+new URLSearchParams({pcode,article,...(returnVersion?{version:returnVersion}:{})}))}}));host.append(actions);
+ const filters=el('div',undefined,'history-filters'),law=el('select'),query=el('input');law.setAttribute('aria-label','沿革編別');law.append(new Option('四編全部',''));for(const [code,d]of baseDocs)law.append(new Option(d.title,code));law.value=pcode||'';query.type='search';query.placeholder='搜尋年份、令號或修正內容';query.setAttribute('aria-label','搜尋法規沿革');filters.append(law,query);host.append(filters);
+ const count=el('p',undefined,'meta'),list=el('div',undefined,'official-history-list');host.append(count,list);body.append(host);
+ function draw(){
+  const code=law.value,token=query.value.trim(),events=historyEventsFor(code,article&&code===pcode?article:null).filter(e=>!token||(e.publication_date+' '+e.text).includes(token)).sort((a,b)=>b.publication_date.localeCompare(a.publication_date)||a.id.localeCompare(b.id));
+  count.textContent=events.length+' 筆官方沿革';list.replaceChildren();
+  for(const event of events){
+   const card=el('article',undefined,'card official-history-event');card.dataset.event=event.id;card.append(el('h3',event.publication_date+'｜'+(event.kind==='effective_date'?'施行日期公告':'法規沿革')),el('p',event.text,'history-event-text'));
+   const links=el('div',undefined,'actions');for(const [i,url]of [...new Set([event.source_url,...(event.source_urls||[])].filter(Boolean))].entries())links.append(link(i?'其他官方來源 '+i:'官方沿革來源',url));
+   for(const item of event.comparison_links||[])if(!code||!item.pcode||item.pcode===code){links.append(link('官方條文對照表'+(code?'':'｜'+(baseDocs.get(item.pcode)?.title||'')),item.archive_url||item.url));if(item.archive_url)links.append(link('對照表官方原址',item.url))}
+   for(const item of event.explanation_links||[])if(!code||!item.pcode||item.pcode===code){links.append(link('官方修正總說明',item.archive_url||item.url));if(item.archive_url)links.append(link('總說明官方原址',item.url))}
+   for(const item of event.attachment_links||[])links.append(link(item.label||item.text||'官方原始附件',item.url));card.append(links);
+   const versions=(event.article_versions||[]).filter(v=>(!code||v.pcode===code)&&(!article||code!==pcode||v.article_key===article)),versionLinks=el('div',undefined,'history-article-links');
+   for(const item of versions){const x=historyArticle(item.pcode,item.article_key,item.id);if(!x)continue;const href=versionHref(x.d,x.u,{id:item.id});const label=(code?'':x.d.title+'｜')+'第'+item.article_key+'條'+(item.baseline?'・收錄基準':item.amendment_confirmed?'・修正版本':'・封存全文文字差異');versionLinks.append(resourceAnchor(label,href,()=>{openArticle(x.d,x.u,item.id);history.replaceState(null,'',href)}));}
+   if(versions.length){const more=el('details',undefined,'history-article-disclosure');more.append(el('summary','查看本次可取得的條文版本（'+versions.length+' 條）'),versionLinks);more.open=!!article;card.append(more)}
+   else card.append(el('p',event.fulltext_available?'本次全文已收錄；本條文字未形成新的內容版本。':'本筆保留官方沿革與原件連結，尚無可直接對照的歷史全文。','small'));
+   list.append(card);
+  }
+  if(!events.length)list.append(el('p','目前沒有符合條件的沿革紀錄。','empty'));
+ }
+ law.onchange=draw;query.oninput=draw;draw();if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;
+}
+function appendOfficialHistoryResource(host,d,u,versionId){
+ const events=historyEventsFor(d.pcode,u.article_key);if(!events.length)return;
+ const href='#'+new URLSearchParams({history:'1',pcode:d.pcode,article:u.article_key,...(versionId?{version:versionId}:{})});host.append(resourceAnchor('官方沿革與修正對照（'+events.length+' 筆）',href,()=>{openOfficialHistory(d.pcode,u.article_key,versionId);history.replaceState(null,'',href)},'secondary official-history-link'));
+}
+function appendOfficialComparisonLinks(host,version){
+ const provenance=version.official_history_provenance||[],items=[version,...provenance],urls=new Set(),actions=el('div',undefined,'actions official-comparison-links');
+ for(const item of items)for(const [field,label]of [['comparison_url','官方條文對照表'],['explanation_url','官方修正總說明']])if(item[field]&&!urls.has(item[field])){urls.add(item[field]);const archiveField=field.replace('_url','_archive'),archived=items.find(v=>v[field]===item[field]&&v[archiveField])?.[archiveField];actions.append(link(label,archived||item[field]));if(archived)actions.append(link(label+'原址',item[field]))}
+ if(actions.childElementCount)host.append(actions);
+ if(items.some(v=>v.is_history_baseline))host.append(el('p','本版本為最早可取得的歷史全文，作為收錄基準；實際修正範圍請查官方沿革。','small'));
+}
+function installOfficialHistory(){
+ if(!(DB.official_history_events||[]).length)return;
+ const nav=document.querySelector('aside nav')||document.querySelector('aside .nav')?.parentElement;if(nav){const entry=button('官方法規沿革',()=>{const href='#history=1';openOfficialHistory();history.replaceState(null,'',href)},'nav');entry.id='officialHistoryNav';nav.insertBefore(entry,$('updateNav'))}
+ const style=el('style');style.textContent=`.history-filters{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.history-filters input,.history-filters select{font:inherit;padding:10px;max-width:100%}.history-filters input{flex:1;min-width:220px}.official-history-event h3{font-size:23px}.history-event-text{font-size:21px;line-height:1.95;white-space:pre-wrap}.history-article-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.history-article-links a,.official-history-event .actions a,.official-comparison-links a,.official-history-link{font-size:20px;line-height:1.85}.history-article-disclosure{font-size:19px;line-height:1.9}.official-history-reading .small{font-size:17px;line-height:1.9}@media(max-width:800px){.history-event-text{font-size:20px}.history-article-links a,.official-history-event .actions a,.official-comparison-links a,.official-history-link{font-size:19px}.history-filters input{min-width:0;width:100%;flex-basis:100%}}`;document.head.append(style);
+}
+
 const interpretationCache=new Map();
 function openReaderLocation(){
  const query=new URLSearchParams(location.hash.slice(1));
+ if(query.get('history')){openOfficialHistory(query.get('pcode'),query.get('article'),query.get('version'));return}
  if(query.get('diagram3d')){openDiagram3d(query.get('diagram3d'),{law:query.get('pcode'),article:query.get('article'),version:query.get('version')});return}
  if(query.get('library3d')){showDiagram3dLibrary();return}
  if(query.get('pcode')&&query.get('letter'))window.technicalApp.openInterpretation(query.get('pcode'),query.get('article'),query.get('letter'));
@@ -268,9 +318,9 @@ function versionHref(d,u,v){return '#'+new URLSearchParams({pcode:d.pcode,articl
 function renderArticleResources(d,u,selectedId){
  const allVersions=versions(d,u),vs=distinctContentVersions(allVersions),selected=contentVersionFor(allVersions,selectedId);
  const host=el('div',undefined,'article-resource-links'),rel=related(d,u),years=el('div',undefined,'resource-line version-links');
- const label=el('span','年份條文（內容異動版次）','resource-label');label.title='以最早收錄版次為起點，只列文字內容有異動的版次；連續相同文字合併顯示。';years.append(label);
+ const label=el('span','年份條文（內容異動版次）','resource-label');label.title='以最早可取得全文為收錄基準，只列內容有異動的版次；公布與施行日期分別標示。';years.append(label);
  for(let i=0;i<vs.length;i++){
-  const v=vs[i],label=v.publication_date+(i>0?'・有異動':'');
+  const v=vs[i],label=v.publication_date+(v.is_history_baseline?'・收錄基準':i>0?'・有異動':'');
   const a=resourceAnchor(label,versionHref(d,u,v),()=>{openArticle(d,u,v.id);history.replaceState(null,'',versionHref(d,u,v))});a.dataset.version=v.id;
   if(v.id===selected?.id)a.classList.add('selected-version');years.append(a);
  }
@@ -291,7 +341,7 @@ function renderArticleResources(d,u,selectedId){
  }
  const figures=availableOfficialVisuals(d,u,allVersions.find(v=>v.id===selectedId)||allVersions.at(-1));
  if(figures.length){const a=resourceAnchor('官方公式／圖例（'+figures.reduce((n,r)=>n+r.pages.length,0)+' 頁）',versionHref(d,u,allVersions.at(-1)),()=>{openArticle(d,u,selectedId);document.querySelector('#articleFigures')?.scrollIntoView({block:'start'})});host.append(a)}
- appendDiagram3dResource(host,d,u,selectedId);return host;
+ appendOfficialHistoryResource(host,d,u,selectedId);appendDiagram3dResource(host,d,u,selectedId);return host;
 }
 function openInterpretation(d,u,id){
  const group=related(d,u).find(r=>interpretationRecords(r).some(record=>record.id===id));if(!group)return;
@@ -668,17 +718,22 @@ $('stats').replaceChildren();for(const [n,label]of [[DB.counts.official_volumes,
 const oldRender=render,oldOpen=openUnit,oldShow=showView;let articleMode=true,lastArticle=null;
 const lawArticles=index.filter(x=>x.d.module_kind==='official').map(x=>{const vs=versionMap.get(x.d.pcode+'|'+x.u.article_key)||[],v=vs.at(-1);return{...x,u:v?{...x.u,text:v.text,version_id:v.id}:x.u,version:v,text:norm(x.d.title+' '+x.u.heading+' '+(v?.text||x.u.text))}});
 // New articles are included even when no archived official unit existed yet.
-for(const [k,vs]of versionMap){if(lawArticles.some(x=>x.d.pcode+'|'+x.u.article_key===k))continue;const v=vs.at(-1),d=baseDocs.get(v.pcode);if(!d)continue;lawArticles.push({d,u:{id:v.id,article_key:v.article_key,document_id:d.id,heading:v.heading,text:v.text,source_url:v.source_url},version:v,text:norm(d.title+v.heading+v.text)})}
+for(const [k,vs]of versionMap){if(lawArticles.some(x=>x.d.pcode+'|'+x.u.article_key===k))continue;const v=vs.at(-1),d=baseDocs.get(v.pcode);if(!d||vs.every(v=>v.source_kind==='official_history'))continue;lawArticles.push({d,u:{id:v.id,article_key:v.article_key,document_id:d.id,heading:v.heading,text:v.text,source_url:v.source_url},version:v,text:norm(d.title+v.heading+v.text)})}
 lawArticles.sort((a,b)=>a.d.number-b.d.number||articleOrder(a.u.article_key,b.u.article_key));
 function articleOrder(a,b){const x=a.split('-').map(Number),y=b.split('-').map(Number);return x[0]-y[0]||(x[1]||0)-(y[1]||0)}
 function related(d,u,kind='interpretation'){return(linkMap.get(d.pcode+'|'+u.article_key)||[]).filter(r=>r.kind===kind)}
 function versions(d,u){return versionMap.get(d.pcode+'|'+u.article_key)||[]}
 // Keep source editions intact; show the first edition of each consecutive text change.
-function distinctContentVersions(vs){return vs.filter((v,index)=>index===0||v.text!==vs[index-1].text)}
+const versionTextKeys=new WeakMap();
+function versionTextKey(v){
+ if(!versionTextKeys.has(v))versionTextKeys.set(v,v.text.replace(/\s+/g,(space,offset,text)=>/[A-Za-z0-9]/.test(text[offset-1]||'')&&/[A-Za-z0-9]/.test(text[offset+space.length]||'')?' ':''));
+ return versionTextKeys.get(v);
+}
+function distinctContentVersions(vs){let previous;return vs.filter(v=>{const key=versionTextKey(v),changed=key!==previous;previous=key;return changed})}
 function contentVersionFor(vs,id){
  if(!vs.length)return undefined;
  let index=vs.findIndex(v=>v.id===id);if(index<0)index=vs.length-1;
- while(index>0&&vs[index].text===vs[index-1].text)index--;
+ while(index>0&&versionTextKey(vs[index])===versionTextKey(vs[index-1]))index--;
  return vs[index];
 }
 
@@ -724,9 +779,10 @@ openUnit=function(id){if(openInterpretationImageUnit(id))return;const x=lawArtic
 function groupElement(r,compactView=false){if(r.kind==='interpretation'&&!compactView){const originalImages=renderInterpretationImageGroup(r);if(originalImages)return originalImages;}const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;if(r.kind==='interpretation'){const links=el('div',undefined,'actions');for(const record of interpretationRecords(r)){const d0=baseDocs.get(r.pcode),u0=lawArticles.find(x=>x.d.pcode===r.pcode&&x.u.article_key===r.article_key)?.u;if(d0&&u0)links.append(button((record.referenceOnly?'彙編說明':record.subject.slice(0,70)),()=>openInterpretation(d0,u0,record.id)))}box.append(links)}box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
 function openArticle(d,u,selectedVersionId){
  lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.find(v=>v.id===selectedVersionId)||vs.at(-1),rel=related(d,u),selectedIndex=vs.indexOf(v),previous=selectedIndex>0?vs[selectedIndex-1]:null;
- $('detailtitle').textContent=articleTitle(d,u)+(v?'｜'+v.publication_date+' 版':'');body.replaceChildren();
+ $('detailtitle').textContent=articleTitle(d,u)+(v?'｜'+v.publication_date+' 版':'');body.replaceChildren();if(u.is_historical_only)body.append(el('p','歷史條號：現行收錄編別未列此條，以下顯示歷史版本。','notice'));
  body.append(el('p','已收錄公布版次：'+(v?.publication_date||d.header_dates.at(-1))+(v?.effective_date?'｜施行日期：'+v.effective_date:''),'meta'));
- const actions=el('div',undefined,'actions');actions.append(link('該年份官方條文',v?.source_url||sourceUrl(d,u)),button('新增本條異動',()=>{$('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);
+ const actions=el('div',undefined,'actions');actions.append(link('該年份官方條文',v?.source_url||sourceUrl(d,u)),button('新增本條異動',()=>{$('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);if(v?.effective_note){const dates=el('details',undefined,'official-effective-note');dates.append(el('summary','公布與施行說明（官方沿革）'),el('p',v.effective_note,'history-event-text'));body.append(dates)}
+ if(v?.amendment_confirmed===false&&!v.is_history_baseline)body.append(el('p','本版為官方封存全文的文字差異；該次沿革未明列本條為修正範圍，可搭配原文與官方對照表核對。','notice'));
  const warning=v?.source_kind==='user_import'?(v.effective_warning||''):(v?.effective_warning||(v?.document_id===d.id?u.effective_warning:''));if(warning)body.append(el('p',warning,'pending'));
  if(v?.effective_date&&v.effective_date>new Date().toLocaleDateString('sv-SE'))body.append(el('p','本新增版本尚未到所填施行日期；請於下方比較較早版本。','pending'));
  const grid=el('div',undefined,'articlelayout'),left=el('section',undefined,'version-reading'),right=el('details');left.id='articleText';right.id='articleLetters';
@@ -741,9 +797,9 @@ function openArticle(d,u,selectedVersionId){
 }
 
 function diffSegments(a,b){if(a===b)return[['equal',a]];let prefix=0;while(prefix<a.length&&prefix<b.length&&a[prefix]===b[prefix])prefix++;let end=0;while(end<a.length-prefix&&end<b.length-prefix&&a[a.length-1-end]===b[b.length-1-end])end++;const x=Array.from(a.slice(prefix,a.length-end)),y=Array.from(b.slice(prefix,b.length-end)),out=[];if(prefix)out.push(['equal',a.slice(0,prefix)]);if(x.length*y.length<=1500000){const width=y.length+1,dp=new Uint32Array((x.length+1)*width);for(let i=x.length-1;i>=0;i--)for(let j=y.length-1;j>=0;j--)dp[i*width+j]=x[i]===y[j]?1+dp[(i+1)*width+j+1]:Math.max(dp[(i+1)*width+j],dp[i*width+j+1]);let i=0,j=0;while(i<x.length||j<y.length){if(i<x.length&&j<y.length&&x[i]===y[j]){out.push(['equal',x[i]]);i++;j++}else if(i<x.length&&(j===y.length||dp[(i+1)*width+j]>=dp[i*width+j+1]))out.push(['delete',x[i++]]);else out.push(['insert',y[j++]])}}else{if(x.length)out.push(['delete',x.join('')]);if(y.length)out.push(['insert',y.join('')])}if(end)out.push(['equal',a.slice(a.length-end)]);const merged=[];for(const [tag,text]of out){if(merged.at(-1)?.[0]===tag)merged.at(-1)[1]+=text;else merged.push([tag,text])}return merged}
-function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'以下以紅色刪線及綠底標記兩版條文的不同處。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),renderFormattedLegalText(v.text)||el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
+function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;appendOfficialComparisonLinks(host,b);host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'以下以紅色刪線及綠底標記兩版條文的不同處。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),renderFormattedLegalText(v.text)||el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
 function foldPanel(title,id){const sec=el('details',undefined,'versionpanel foldable-panel');sec.id=id;const summary=el('summary',title),state=el('span','展開','fold-state');summary.append(state);sec.append(summary);sec.ontoggle=()=>{state.textContent=sec.open?'收合':'展開'};return sec}
-function renderVersionsFor(body,d,u,vs,selectedId){const allVersions=vs;vs=distinctContentVersions(allVersions);if(selectedId)selectedId=contentVersionFor(allVersions,selectedId)?.id;const sec=foldPanel('條文異動與版本比對','articleVersions');sec.open=!!selectedId&&vs.length>1;if(vs.length<2){if(vs[0]?.note)sec.append(el('p',vs[0].note,'notice'));sec.append(el('p',allVersions.length>1?'已收錄的各版條文內容相同，已合併為一個年份連結。':'本條目前僅收錄一個全文版本。新增版本後即可在此比對。','small'));body.append(sec);return}const controls=el('div',undefined,'comparecontrols'),a=el('select'),b=el('select');a.id='beforeVersion';b.id='afterVersion';a.setAttribute('aria-label','舊版條文');b.setAttribute('aria-label','新版條文');for(const v of vs){const label=v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'（官方封存）');a.append(new Option(label,v.id));b.append(new Option(label,v.id))}const selectedIndex=vs.findIndex(v=>v.id===selectedId);a.value=selectedIndex>=0?vs[Math.max(0,selectedIndex-1)].id:vs.at(-2).id;b.value=selectedIndex===0?vs[1].id:selectedIndex>0?vs[selectedIndex].id:vs.at(-1).id;controls.append(el('span','舊版'),a,el('span','新版'),b);sec.append(controls);const target=el('div');target.id='versionComparison';sec.append(target);function draw(){const before=vs.find(v=>v.id===a.value),after=vs.find(v=>v.id===b.value),stored=(DB.article_diffs||[]).find(x=>x.heading===u.heading&&x.before_date===before.publication_date&&x.after_date===after.publication_date&&x.document_id===d.id);showDiff(target,before,after,stored)}a.onchange=b.onchange=draw;draw();body.append(sec)}
+function renderVersionsFor(body,d,u,vs,selectedId){const allVersions=vs;vs=distinctContentVersions(allVersions);if(selectedId)selectedId=contentVersionFor(allVersions,selectedId)?.id;const sec=foldPanel('條文異動與版本比對','articleVersions');sec.open=!!selectedId&&vs.length>1;if(vs.length<2){if(vs[0])appendOfficialComparisonLinks(sec,vs[0]);if(vs[0]?.note)sec.append(el('p',vs[0].note,'notice'));sec.append(el('p',allVersions.length>1?'已收錄的各版條文內容相同，已合併為一個年份連結。':'本條目前僅收錄一個全文版本。新增版本後即可在此比對。','small'));body.append(sec);return}const controls=el('div',undefined,'comparecontrols'),a=el('select'),b=el('select');a.id='beforeVersion';b.id='afterVersion';a.setAttribute('aria-label','舊版條文');b.setAttribute('aria-label','新版條文');for(const v of vs){const label=v.publication_date+(v.source_kind==='user_import'?'（人工新增）':v.source_kind==='official_history'?'（官方歷史）':'（官方封存）');a.append(new Option(label,v.id));b.append(new Option(label,v.id))}const selectedIndex=vs.findIndex(v=>v.id===selectedId);a.value=selectedIndex>=0?vs[Math.max(0,selectedIndex-1)].id:vs.at(-2).id;b.value=selectedIndex===0?vs[1].id:selectedIndex>0?vs[selectedIndex].id:vs.at(-1).id;controls.append(el('span','舊版'),a,el('span','新版'),b);sec.append(controls);const target=el('div');target.id='versionComparison';sec.append(target);function draw(){const before=vs.find(v=>v.id===a.value),after=vs.find(v=>v.id===b.value),stored=(DB.article_diffs||[]).find(x=>x.heading===u.heading&&x.before_date===before.publication_date&&x.after_date===after.publication_date&&x.document_id===d.id);showDiff(target,before,after,stored)}a.onchange=b.onchange=draw;draw();body.append(sec)}
 function field(label,id,type='text',wide=false){const l=el('label',label,wide?'wide':undefined),input=el(type==='textarea'?'textarea':type==='select'?'select':'input');input.id=id;if(input.tagName==='INPUT')input.type=type;l.append(input);return l}
 updateSection.append(el('h2','新增條文版本與異動說明'),el('p','選擇編別與條號，填入新版全文、公布與施行日期、來源及異動說明。先預覽新舊差異，再儲存至共用資料庫。','intro'));
 const form=el('form',undefined,'updateform');form.id='versionForm';for(const args of [['編別','updateLaw','select'],['條號（例如 79 或 79-1）','updateArticle'],['公布日期','updateDate','date'],['施行日期（另定時可留空）','updateEffective','date'],['官方來源網址','updateSource','url',true],['新版條文全文','updateText','textarea',true],['異動說明／修正依據／施行註記','updateNote','textarea',true]])form.append(field(...args));$('updatesview').append(form);$('updateText').classList.add('fulltext');for(const [code,d]of baseDocs)$('updateLaw').append(new Option(d.title,code));const buttons=el('div',undefined,'actions wide');buttons.append(button('載入目前條文',loadCurrent),button('預覽差異',previewUpdate),button('寫入共用資料庫',saveUpdate,'primary'),button('匯出條文更新檔',exportUpdate));form.append(buttons);const status=el('p',location.protocol==='file:'?'目前為離線查詢模式。可預覽與匯出更新檔；要寫入共用資料庫，請開啟資料夾內「啟動建築技術規則維護.cmd」。':'可預覽異動後寫入本資料夾的共用資料庫。','artifactstatus wide');status.id='updateStatus';form.append(status);const preview=el('section',undefined,'updatepreview');preview.id='updatePreview';updateSection.append(preview);form.onsubmit=e=>e.preventDefault();
@@ -756,6 +812,6 @@ const importFile=el('input');importFile.type='file';importFile.accept='.json';im
 async function saveUpdate(){const r=previewUpdate();if(!r)return;if(location.protocol==='file:'){status.textContent='預覽已完成。請以資料夾內「啟動建築技術規則維護.cmd」開啟後寫入共用資料庫；亦可匯出更新檔留存。';return}status.textContent='正在寫入共用資料庫並更新查詢頁面…';try{const response=await fetch('/api/technical/updates',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({records:[r]})}),result=await response.json();if(!response.ok)throw Error(result.error||'儲存失敗');status.textContent='已寫入共用資料庫。正在重新載入條文與版本比對…';location.hash=new URLSearchParams({pcode:r.pcode,article:r.article_key});location.reload()}catch(e){status.textContent=e.message}}
 // Volume searches remain available as a secondary route.
 for(const c of $('volumes').children){const b=[...c.querySelectorAll('button')].find(b=>b.textContent==='查詢本冊');if(b){const d=DB.documents.find(d=>d.title===c.querySelector('h3').textContent);b.onclick=()=>{enter(false);$('kind').value='';$('volume').value=d.id;page=1;render()}}}
-window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>distinctContentVersions(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
-installDiagram3dIntegration();window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle,diagram3dStyle);enter(true);openReaderLocation();
+window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=historyArticle(pcode,key,versionId);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>distinctContentVersions(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
+installOfficialHistory();window.technicalApp.openOfficialHistory=openOfficialHistory;installDiagram3dIntegration();window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle,diagram3dStyle);enter(true);openReaderLocation();
 })();
