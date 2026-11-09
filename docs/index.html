@@ -39,6 +39,213 @@ $('searchform').onsubmit=e=>{e.preventDefault();page=1;render()};let debounce;$(
 const params=new URLSearchParams(location.hash.slice(1));if(params.get('unit'))openUnit(params.get('unit'));
 </script><script>/* Article-first reader layered over the retained source-volume reader. */
 (()=>{
+// Source text uses double-width CJK/box glyphs and single-width Latin padding.
+function legalGlyphWidth(char){return char.codePointAt(0)>255?2:1}
+const legalConnections={
+  '─':'LR','│':'UD','┌':'RD','┐':'LD','└':'RU','┘':'LU',
+  '├':'RUD','┤':'LUD','┬':'LRD','┴':'LRU','┼':'LRUD'
+};
+function legalSourceLine(line){
+  const chars=[];let x=0;
+  for(const char of line.trimStart().trimEnd()){chars.push({x,char});x+=legalGlyphWidth(char)}
+  return{chars,byX:new Map(chars.map(c=>[c.x,c.char])),width:x};
+}
+function legalHorizontalWall(line,left,right){
+  if(!legalConnections[line.byX.get(left)]?.includes('R')||!legalConnections[line.byX.get(right)]?.includes('L'))return false;
+  for(let x=left+2;x<right;x+=2){const flags=legalConnections[line.byX.get(x)];if(!flags?.includes('L')||!flags.includes('R'))return false}
+  return true;
+}
+function legalCellText(fragments){
+  const lines=fragments.map(x=>x.trim());while(lines.length&&!lines[0])lines.shift();while(lines.length&&!lines.at(-1))lines.pop();
+  let text='',pendingBreak=false;
+  for(const line of lines){
+    if(!line){if(text)pendingBreak=true;continue}
+    const paragraph=/^(?:[一二三四五六七八九十百]+[、．.]|[（(][一二三四五六七八九十\d]+[）)]|\d+[.、．]|[男女]子[：:]|[A-IＡ-Ｉ]\s*類)/.test(line);
+    if(text&&(pendingBreak||paragraph))text+='\n';
+    // Keep all source characters; whitespace is layout, not an inferred number/unit.
+    text+=line;pendingBreak=false;
+  }
+  return text;
+}
+function parseLegalBoxTable(raw){
+  const source=raw.split(/\r?\n/).filter(line=>line.trim()).map(legalSourceLine);
+  if(source.length<3||source[0].chars[0]?.char!=='┌'||source.at(-1).chars[0]?.char!=='└')return null;
+  const boundaries='│┌┐└┘├┤┬┴┼';
+  const xs=[...new Set(source.flatMap(line=>line.chars.filter(t=>boundaries.includes(t.char)).map(t=>t.x)))].sort((a,b)=>a-b);
+  if(xs[0]!==0||xs.length<3||xs.length>80)return null;
+  const width=xs.at(-1);
+  if(source.some(line=>line.chars.at(-1)?.x!==width))return null;
+  const hwall=(y,col)=>legalHorizontalWall(source[y],xs[col],xs[col+1]);
+  const ys=source.map((line,y)=>xs.slice(0,-1).some((_,c)=>hwall(y,c))?y:-1).filter(y=>y>=0);
+  if(ys[0]!==0||ys.at(-1)!==source.length-1)return null;
+  const rows=ys.length-1,cols=xs.length-1;
+  if(rows<2||rows*cols>30000)return null;
+  const parent=Array.from({length:rows*cols},(_,i)=>i);
+  function find(i){while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i]}return i}
+  function join(a,b){parent[find(b)]=find(a)}
+  function vwall(x,top,bottom){
+    if(!legalConnections[source[top].byX.get(x)]?.includes('D')||!legalConnections[source[bottom].byX.get(x)]?.includes('U'))return false;
+    for(let y=top+1;y<bottom;y++){const flags=legalConnections[source[y].byX.get(x)];if(!flags?.includes('U')||!flags.includes('D'))return false}
+    return true;
+  }
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const index=r*cols+c;
+    if(c+1<cols&&!vwall(xs[c+1],ys[r],ys[r+1]))join(index,index+1);
+    if(r+1<rows&&!hwall(ys[r+1],c))join(index,index+cols);
+  }
+  const components=new Map();
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+    const key=find(r*cols+c);if(!components.has(key))components.set(key,[]);components.get(key).push([r,c]);
+  }
+  const cells=[];let textCharacterCount=0;
+  for(const atoms of components.values()){
+    const top=Math.min(...atoms.map(a=>a[0])),bottom=Math.max(...atoms.map(a=>a[0]))+1,left=Math.min(...atoms.map(a=>a[1])),right=Math.max(...atoms.map(a=>a[1]))+1;
+    if(atoms.length!==(bottom-top)*(right-left))return null;
+    const fragments=[];
+    for(let y=ys[top]+1;y<ys[bottom];y++){
+      const tokens=source[y].chars.filter(t=>t.x>=xs[left]+2&&t.x<xs[right]);
+      // A rectangle cannot contain an unaccounted internal border.
+      if(tokens.some(t=>boundaries.includes(t.char)))return null;
+      const text=tokens.map(t=>t.char).join('');fragments.push(text);textCharacterCount+=text.replace(/\s/g,'').length;
+    }
+    cells.push({row:top,col:left,rowSpan:bottom-top,colSpan:right-left,text:legalCellText(fragments),fragments});
+  }
+  // Independently account for every source character, including dash ranges in cells.
+  let expectedCharacters=0;
+  for(let y=0;y<source.length;y++)for(const token of source[y].chars){
+    if(/\s/.test(token.char)||boundaries.includes(token.char))continue;
+    if(token.char==='─'&&xs.slice(0,-1).some((x,c)=>x<=token.x&&token.x<xs[c+1]&&hwall(y,c)))continue;
+    expectedCharacters++;
+  }
+  if(expectedCharacters!==textCharacterCount)return null;
+  let headerRows=ys.findIndex((y,i)=>i>0&&i<ys.length-1&&xs.slice(0,-1).every((_,c)=>hwall(y,c)));
+  if(headerRows<1||headerRows>4)headerRows=1;
+  if(headerRows===1&&cells.some(cell=>cell.row===1&&cell.col===0&&/^(類別|項目|種類)$/.test(cell.text.replace(/\s/g,''))))headerRows=2;
+  if(cells.some(cell=>cell.row<headerRows&&cell.row+cell.rowSpan>headerRows))headerRows=0;
+  cells.sort((a,b)=>a.row-b.row||a.col-b.col);
+  return{rows,cols,xs,ys,headerRows,cells,raw,textCharacterCount,expectedCharacters};
+}
+function splitLegalText(text){
+  const lines=text.split(/\r?\n/),parts=[];let prose=[];
+  function flush(){if(prose.length){parts.push({type:'text',text:prose.join('\n')});prose=[]}}
+  for(let i=0;i<lines.length;i++){
+    if(!lines[i].trimStart().startsWith('┌')){prose.push(lines[i]);continue}
+    let end=i+1;while(end<lines.length&&!lines[end].trimStart().startsWith('└'))end++;
+    if(end===lines.length){prose.push(lines[i]);continue}
+    flush();const raw=lines.slice(i,end+1).join('\n'),table=parseLegalBoxTable(raw);
+    parts.push(table?{type:'table',table}:{type:'fixed',text:raw});i=end;
+  }
+  flush();return parts;
+}
+
+const legalLayoutCache=new Map();
+function legalCachedParts(text){
+  if(legalLayoutCache.has(text))return legalLayoutCache.get(text);
+  const parts=splitLegalText(text);legalLayoutCache.set(text,parts);
+  if(legalLayoutCache.size>128)legalLayoutCache.delete(legalLayoutCache.keys().next().value);
+  return parts;
+}
+function legalPositionedText(fragments,label){
+  const lines=[...fragments];while(lines.length&&!lines[0].trim())lines.shift();while(lines.length&&!lines.at(-1).trim())lines.pop();
+  const leading=Math.min(...lines.filter(l=>l.trim()).map(l=>l.match(/^ */)[0].length));
+  const prepared=lines.map(l=>l.slice(leading).trimEnd()),unit=8.5,lineHeight=23,pad=8;
+  const width=Math.max(...prepared.map(l=>Array.from(l).reduce((n,c)=>n+legalGlyphWidth(c),0)),1)*unit+pad*2,height=prepared.length*lineHeight+pad*2;
+  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('width',width);svg.setAttribute('height',height);svg.setAttribute('role','img');svg.setAttribute('aria-label',label);svg.classList.add('legal-positioned');
+  const desc=document.createElementNS(ns,'desc');desc.textContent=prepared.join('\n');svg.append(desc);
+  prepared.forEach((line,row)=>{
+    let x=pad;
+    for(const char of line){
+      const glyph=legalGlyphWidth(char)*unit,centerY=pad+row*lineHeight+lineHeight/2,flags=legalConnections[char];
+      if(flags){
+        const centerX=x+glyph/2,path=document.createElementNS(ns,'path');let d='';
+        if(flags.includes('L'))d+=`M${centerX},${centerY}H${x}`;
+        if(flags.includes('R'))d+=`M${centerX},${centerY}H${x+glyph}`;
+        if(flags.includes('U'))d+=`M${centerX},${centerY}V${centerY-lineHeight/2}`;
+        if(flags.includes('D'))d+=`M${centerX},${centerY}V${centerY+lineHeight/2}`;
+        path.setAttribute('d',d);path.setAttribute('fill','none');path.setAttribute('stroke','currentColor');path.setAttribute('stroke-width','1.1');svg.append(path);
+      }else if(!/\s/.test(char)){
+        const t=document.createElementNS(ns,'text');t.textContent=char;t.setAttribute('x',x);t.setAttribute('y',centerY+5.5);t.setAttribute('font-size','17');t.setAttribute('font-family','Microsoft JhengHei, Noto Sans TC, sans-serif');t.setAttribute('textLength',glyph);t.setAttribute('lengthAdjust','spacingAndGlyphs');svg.append(t);
+      }
+      x+=glyph;
+    }
+  });return svg;
+}
+function legalCellHasPositionedMath(cell){return cell.fragments.some(line=>/^\s*\d+\s*$/.test(line))&&cell.fragments.some(line=>/[A-Za-z]/.test(line))}
+function renderLegalBoxTable(model,tokens,label){
+  const wrap=el('div',undefined,'legal-table-grid');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',label);
+  const table=el('table',undefined,'legal-table');table.setAttribute('aria-label',label);
+  const widths=model.xs.slice(1).map((x,i)=>x-model.xs[i]),total=model.xs.at(-1),colgroup=el('colgroup');
+  for(const width of widths){const col=el('col');col.style.width=(width/total*100)+'%';colgroup.append(col)}table.append(colgroup);
+  const minWidth=Math.max(700,...model.cells.filter(c=>c.colSpan<model.cols).map(c=>48*total/(model.xs[c.col+c.colSpan]-model.xs[c.col])));
+  table.style.setProperty('--legal-table-width',Math.ceil(minWidth)+'px');
+  const rows=Array.from({length:model.rows},()=>el('tr')),thead=model.headerRows?el('thead'):null,tbody=el('tbody');
+  for(let r=0;r<rows.length;r++)(thead&&r<model.headerRows?thead:tbody).append(rows[r]);
+  for(const cell of model.cells){
+    const heading=model.headerRows?cell.row<model.headerRows:cell.row===0&&cell.rowSpan===1;
+    const rowHeading=!heading&&cell.col===0&&cell.colSpan<model.cols;
+    const td=el(heading||rowHeading?'th':'td',undefined,heading?'legal-column-heading':rowHeading?'legal-row-heading':undefined);
+    if(heading)td.scope=cell.colSpan>1?'colgroup':'col';else if(rowHeading)td.scope=cell.rowSpan>1?'rowgroup':'row';
+    td.rowSpan=cell.rowSpan;td.colSpan=cell.colSpan;td.dataset.sourceRow=cell.row;td.dataset.sourceCol=cell.col;
+    if(legalCellHasPositionedMath(cell)){td.classList.add('legal-formula-cell');td.append(legalPositionedText(cell.fragments,'依原文位置呈現的表內公式'))}
+    else td.append(tokens.length?highlight(cell.text,tokens):document.createTextNode(cell.text));
+    rows[cell.row].append(td);
+  }
+  if(thead)table.append(thead);table.append(tbody);wrap.append(table);return wrap;
+}
+function appendLegalProse(host,text,tokens){
+  const lines=text.split('\n');let prose=[];
+  function flush(){const value=prose.join('\n');if(value.trim()){const pre=el('pre',undefined,'reading legal-prose');pre.append(tokens.length?highlight(value,tokens):document.createTextNode(value));host.append(pre)}prose=[]}
+  for(let i=0;i<lines.length;i++){
+    if(!/[│┼]/.test(lines[i])){prose.push(lines[i]);continue}
+    flush();let end=i;
+    while(end+1<lines.length&&lines[end+1].trim()&&!/[\u4e00-\u9fff]{2,}/.test(lines[end+1]))end++;
+    const diagram=el('div',undefined,'legal-fixed-layout');diagram.tabIndex=0;diagram.setAttribute('role','region');diagram.setAttribute('aria-label','條文原始示意圖');diagram.append(legalPositionedText(lines.slice(i,end+1),'條文原始示意圖'));host.append(diagram);i=end;
+  }flush();
+}
+function renderFormattedLegalText(text,tokens=[]){
+  const usage=renderUsageClassification(text,tokens);if(usage)return usage;
+  if(!/[┌│┼]/.test(text))return null;
+  const parts=legalCachedParts(text),host=el('div',undefined,'legal-formatted-text'),tableCount=parts.filter(p=>p.type==='table').length;
+  if(!tableCount&&!parts.some(p=>p.type==='fixed')&&!/[│┼]/.test(text))return null;
+  let tableIndex=0;
+  if(tableCount)host.append(el('p','表格可左右滑動，查看完整欄位。','legal-table-hint'));
+  for(const part of parts){
+    if(part.type==='table'){
+      tableIndex++;const figure=el('figure',undefined,'legal-table-figure');
+      if(tableCount>1)figure.append(el('figcaption','表 '+tableIndex,'legal-table-caption'));
+      figure.append(renderLegalBoxTable(part.table,tokens,'條文表格 '+tableIndex));host.append(figure);
+    }else if(part.type==='fixed'){
+      const fixed=el('div',undefined,'legal-fixed-layout');fixed.tabIndex=0;fixed.append(legalPositionedText(part.text.split('\n'),'原文框線表格'));host.append(fixed);
+    }else appendLegalProse(host,part.text,tokens);
+  }
+  const raw=el('details',undefined,'legal-original');raw.append(el('summary','檢視原始條文文字'),el('pre',text,'reading'));host.append(raw);return host;
+}
+const legalTableStyle=el('style');legalTableStyle.textContent=`
+.legal-formatted-text{width:100%;min-width:0;max-width:100%;margin:8px 0 20px;white-space:normal;color:#163746}
+.legal-table-figure{margin:20px 0;min-width:0;max-width:100%}
+.legal-table-caption{font-size:14px;font-weight:700;margin:0 0 8px;color:#07546d}
+.legal-table-grid{max-width:100%;width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.legal-table-grid:focus-visible,.legal-fixed-layout:focus-visible{outline:3px solid #b49a47;outline-offset:3px}
+.legal-table{table-layout:fixed;border-collapse:collapse;width:100%;min-width:var(--legal-table-width,620px);font-size:17px;line-height:1.9;background:#fff}
+.legal-table th,.legal-table td{border:1px solid #b7c8ce;padding:12px 13px;text-align:left;vertical-align:middle;white-space:pre-line;overflow-wrap:anywhere;font-weight:400}
+.legal-table .legal-column-heading{background:#07546d;color:#fff;border-color:#47798a;font-weight:700}
+.legal-table .legal-row-heading{background:#eaf2f5;color:#07546d;font-weight:500}
+.legal-table td[colspan]{background:#f5f8f9}
+.legal-table-hint{font-size:13px;color:#596e77;margin:12px 0 0}
+.legal-original{font-size:13px;color:#596e77;margin-top:14px;max-width:100%}
+.legal-original summary{cursor:pointer}
+.legal-original pre.reading{overflow:auto;white-space:pre;font:13px/1.7 monospace!important;max-width:100%}
+.legal-fixed-layout{max-width:100%;overflow-x:auto;color:#163746;margin:14px 0}
+.legal-positioned{display:block;max-width:100%;height:auto;color:inherit}
+.legal-fixed-layout>.legal-positioned{max-width:none}
+.legal-formula-cell{padding:6px!important;white-space:normal!important}
+.legal-prose{max-width:100%;overflow-wrap:anywhere}
+.articlecard .legal-prose{font-size:21px;font-weight:500;line-height:1.95;letter-spacing:.02em;color:#173b35}
+@media(max-width:850px){.legal-table{font-size:16px}.legal-table th,.legal-table td{padding:11px 12px}.articlecard .legal-prose{font-size:20px}}
+@media print{.legal-original,.legal-table-hint{display:none!important}.legal-table-grid,.legal-fixed-layout{overflow:visible}.legal-table{min-width:0!important;font-size:9.5pt;line-height:1.7}.legal-table th,.legal-table td{padding:6px 7px}.legal-table thead{display:table-header-group}.legal-table tr{break-inside:avoid}.legal-positioned{max-width:100%!important}.legal-table *{print-color-adjust:exact;-webkit-print-color-adjust:exact}.articlecard .legal-prose{font-size:12pt}.legal-table-figure{margin:14px 0}}
+`;
+document.head.append(legalTableStyle);
+
 // Rebuild the source article's text table; never substitute another law/version.
 function parseUsageClassification(text){
   if(!text.includes('建築物用途分類之類別、組別定義')||!text.includes('┌'))return null;
@@ -186,7 +393,7 @@ render=function(){
   const c=el('article',undefined,'card articlecard');c.dataset.unit=u.id;const rel=related(d,u),vs=versions(d,u);
   const head=el('div',undefined,'articlehead'),h=el('h3');h.append(button(u.heading,()=>openArticle(d,u),'titlebtn'));
   head.append(h,el('span',d.title.replace('建築技術規則',''),'tag official'));c.append(head);
-  const table=d.pcode==='D0070114'&&u.article_key==='3-3'?renderUsageClassification(u.text,$('query').value.trim().split(/\s+/).filter(Boolean)):null;
+  const table=renderFormattedLegalText(u.text,$('query').value.trim().split(/\s+/).filter(Boolean));
   if(table)c.append(table);else{
     const p=el('p',undefined,'snippet clause-preview'),preview=u.text.length>900?u.text.slice(0,900).trimEnd()+'…':u.text;
     p.append(highlight(preview,$('query').value.trim().split(/\s+/)));c.append(p);
@@ -203,9 +410,9 @@ render=function(){
 linkedOnly.onchange=()=>{page=1;render()};$('clear').onclick=()=>{$('query').value='';$('volume').value='';$('kind').value=articleMode?'official':'';$('sort').value='source';linkedOnly.checked=false;page=1;render()};
 openUnit=function(id){const x=lawArticles.find(x=>x.u.id===id)||(units.has(id)?lawArticles.find(x=>x.d.id===units.get(id).document_id&&x.u.article_key===units.get(id).article_key):null);if(x)return openArticle(x.d,x.u);oldOpen(id);if(lastArticle)$('detailbody').prepend(button('← 返回 '+lastArticle.u.heading+' 與解釋函',()=>openArticle(lastArticle.d,lastArticle.u)))};
 function groupElement(r,compactView=false){const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
-function openArticle(d,u){lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.at(-1),rel=related(d,u);$('detailtitle').textContent=articleTitle(d,u);body.replaceChildren();body.append(el('p','已收錄公布版次：'+(v?.publication_date||d.header_dates.at(-1))+(v?.effective_date?'｜施行日期：'+v.effective_date:''),'meta'));const actions=el('div',undefined,'actions');actions.append(link('官方條文來源',v?.source_url||sourceUrl(d,u)),button('建立本條更新草稿',()=>{ $('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);const warning=v?.source_kind==='user_import'?(v.effective_warning||''):(v?.effective_warning||u.effective_warning);if(warning)body.append(el('p',warning,'pending'));if(v?.effective_date&&v.effective_date>new Date().toLocaleDateString('sv-SE'))body.append(el('p','本新增版本尚未到所填施行日期；請於下方比較較早版本。','pending'));const grid=el('div',undefined,'articlelayout'),left=el('section'),right=el('details');left.id='articleText';right.id='articleLetters';left.append(el('h3','條文全文'),(d.pcode==='D0070114'&&u.article_key==='3-3'?renderUsageClassification(v?.text||u.text):null)||el('pre',v?.text||u.text,'reading'));const letterSummary=el('summary','相關解釋函與彙編資料（'+rel.length+'組）'),foldState=el('span','展開','fold-state');letterSummary.append(foldState);right.append(letterSummary);right.ontoggle=()=>{foldState.textContent=right.open?'收合':'展開'};if(rel.length){right.append(el('p','按彙編的編別與條號分類同步帶出。文字為 OCR，引用前請核對原 PDF 及該函是否仍適用。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前尚未建立本條的解釋函對應。可使用「解釋函與原冊搜尋」補查；未收錄不代表沒有函釋。','small'));grid.append(left,right);body.append(grid);renderVersionsFor(body,d,u,vs);const refs=related(d,u,'revision_reference');if(refs.length){const sec=foldPanel('歷年修正原文與修正說明（彙編）','revisionReferences');sec.append(el('p','以下為修正彙編原頁，與下方人工新增說明及官方全文差異分開保存。','small'));for(const r of refs)sec.append(groupElement(r,true));body.append(sec)}if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0}
+function openArticle(d,u){lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.at(-1),rel=related(d,u);$('detailtitle').textContent=articleTitle(d,u);body.replaceChildren();body.append(el('p','已收錄公布版次：'+(v?.publication_date||d.header_dates.at(-1))+(v?.effective_date?'｜施行日期：'+v.effective_date:''),'meta'));const actions=el('div',undefined,'actions');actions.append(link('官方條文來源',v?.source_url||sourceUrl(d,u)),button('建立本條更新草稿',()=>{ $('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);const warning=v?.source_kind==='user_import'?(v.effective_warning||''):(v?.effective_warning||u.effective_warning);if(warning)body.append(el('p',warning,'pending'));if(v?.effective_date&&v.effective_date>new Date().toLocaleDateString('sv-SE'))body.append(el('p','本新增版本尚未到所填施行日期；請於下方比較較早版本。','pending'));const grid=el('div',undefined,'articlelayout'),left=el('section'),right=el('details');left.id='articleText';right.id='articleLetters';left.append(el('h3','條文全文'),renderFormattedLegalText(v?.text||u.text)||el('pre',v?.text||u.text,'reading'));const letterSummary=el('summary','相關解釋函與彙編資料（'+rel.length+'組）'),foldState=el('span','展開','fold-state');letterSummary.append(foldState);right.append(letterSummary);right.ontoggle=()=>{foldState.textContent=right.open?'收合':'展開'};if(rel.length){right.append(el('p','按彙編的編別與條號分類同步帶出。文字為 OCR，引用前請核對原 PDF 及該函是否仍適用。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前尚未建立本條的解釋函對應。可使用「解釋函與原冊搜尋」補查；未收錄不代表沒有函釋。','small'));grid.append(left,right);body.append(grid);renderVersionsFor(body,d,u,vs);const refs=related(d,u,'revision_reference');if(refs.length){const sec=foldPanel('歷年修正原文與修正說明（彙編）','revisionReferences');sec.append(el('p','以下為修正彙編原頁，與下方人工新增說明及官方全文差異分開保存。','small'));for(const r of refs)sec.append(groupElement(r,true));body.append(sec)}if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0}
 function diffSegments(a,b){if(a===b)return[['equal',a]];let prefix=0;while(prefix<a.length&&prefix<b.length&&a[prefix]===b[prefix])prefix++;let end=0;while(end<a.length-prefix&&end<b.length-prefix&&a[a.length-1-end]===b[b.length-1-end])end++;const x=Array.from(a.slice(prefix,a.length-end)),y=Array.from(b.slice(prefix,b.length-end)),out=[];if(prefix)out.push(['equal',a.slice(0,prefix)]);if(x.length*y.length<=1500000){const width=y.length+1,dp=new Uint32Array((x.length+1)*width);for(let i=x.length-1;i>=0;i--)for(let j=y.length-1;j>=0;j--)dp[i*width+j]=x[i]===y[j]?1+dp[(i+1)*width+j+1]:Math.max(dp[(i+1)*width+j],dp[i*width+j+1]);let i=0,j=0;while(i<x.length||j<y.length){if(i<x.length&&j<y.length&&x[i]===y[j]){out.push(['equal',x[i]]);i++;j++}else if(i<x.length&&(j===y.length||dp[(i+1)*width+j]>=dp[i*width+j+1]))out.push(['delete',x[i++]]);else out.push(['insert',y[j++]])}}else{if(x.length)out.push(['delete',x.join('')]);if(y.length)out.push(['insert',y.join('')])}if(end)out.push(['equal',a.slice(a.length-end)]);const merged=[];for(const [tag,text]of out){if(merged.at(-1)?.[0]===tag)merged.at(-1)[1]+=text;else merged.push([tag,text])}return merged}
-function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'此版本尚未填寫人工異動說明；可新增修正依據與適用時點說明。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),renderUsageClassification(v.text)||el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
+function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'此版本尚未填寫人工異動說明；可新增修正依據與適用時點說明。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),renderFormattedLegalText(v.text)||el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
 function foldPanel(title,id){const sec=el('details',undefined,'versionpanel foldable-panel');sec.id=id;const summary=el('summary',title),state=el('span','展開','fold-state');summary.append(state);sec.append(summary);sec.ontoggle=()=>{state.textContent=sec.open?'收合':'展開'};return sec}
 function renderVersionsFor(body,d,u,vs){const sec=foldPanel('條文異動與版本比對','articleVersions');if(vs.length<2){if(vs[0]?.note)sec.append(el('p',vs[0].note,'notice'));sec.append(el('p','本條目前僅收錄一個全文版本。新增版本後即可在此比對。','small'));body.append(sec);return}const controls=el('div',undefined,'comparecontrols'),a=el('select'),b=el('select');a.id='beforeVersion';b.id='afterVersion';a.setAttribute('aria-label','舊版條文');b.setAttribute('aria-label','新版條文');for(const v of vs){const label=v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'（官方封存）');a.append(new Option(label,v.id));b.append(new Option(label,v.id))}a.value=vs.at(-2).id;b.value=vs.at(-1).id;controls.append(el('span','舊版'),a,el('span','新版'),b);sec.append(controls);const target=el('div');target.id='versionComparison';sec.append(target);function draw(){const before=vs.find(v=>v.id===a.value),after=vs.find(v=>v.id===b.value),stored=(DB.article_diffs||[]).find(x=>x.heading===u.heading&&x.before_date===before.publication_date&&x.after_date===after.publication_date&&x.document_id===d.id);showDiff(target,before,after,stored)}a.onchange=b.onchange=draw;draw();body.append(sec)}
 function field(label,id,type='text',wide=false){const l=el('label',label,wide?'wide':undefined),input=el(type==='textarea'?'textarea':type==='select'?'select':'input');input.id=id;if(input.tagName==='INPUT')input.type=type;l.append(input);return l}
