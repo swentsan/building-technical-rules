@@ -39,6 +39,86 @@ $('searchform').onsubmit=e=>{e.preventDefault();page=1;render()};let debounce;$(
 const params=new URLSearchParams(location.hash.slice(1));if(params.get('unit'))openUnit(params.get('unit'));
 </script><script>/* Article-first reader layered over the retained source-volume reader. */
 (()=>{
+// Rebuild the source article's text table; never substitute another law/version.
+function parseUsageClassification(text){
+  if(!text.includes('建築物用途分類之類別、組別定義')||!text.includes('┌'))return null;
+  const categories=[];let category=null,group=null;
+  const clean=value=>value.replace(/[\s\u2500-\u257f]/g,'');
+  for(const line of text.split(/\r?\n/)){
+    if(!line.startsWith('│'))continue;
+    const cells=line.replace(/[├┤┼]/g,'│').split('│').slice(1,-1).map(clean);
+    if(cells.length!==5)continue;
+    const code=cells[0].normalize('NFKC');
+    if(/^[A-I]$/.test(code)){
+      category={code,name:'',definition:'',groups:[]};categories.push(category);group=null;
+    }
+    if(!category)continue;
+    category.name+=cells[1];category.definition+=cells[2];
+    const groupCode=cells[3].normalize('NFKC');
+    if(/^[A-I](?:-[1-5])?$/.test(groupCode)){
+      group={code:groupCode,name:'',definition:''};category.groups.push(group);
+    }else if(group){group.name+=cells[3]}
+    if(group)group.definition+=cells[4];
+  }
+  const expected='A-1,A-2,B-1,B-2,B-3,B-4,C-1,C-2,D-1,D-2,D-3,D-4,D-5,E,F-1,F-2,F-3,F-4,G-1,G-2,G-3,H-1,H-2,I';
+  if(categories.map(c=>c.code).join('')!=='ABCDEFGHI'||categories.flatMap(c=>c.groups.map(g=>g.code)).join(',')!==expected)return null;
+  if(categories.some(c=>!c.name||!c.definition||c.groups.some(g=>!g.name||!g.definition)))return null;
+  return{intro:text.slice(0,text.indexOf('┌')).trim(),categories};
+}
+function renderUsageClassification(text,tokens=[]){
+  const parsed=parseUsageClassification(text);if(!parsed)return null;
+  const host=el('div',undefined,'usage-classification');
+  const fill=(node,value)=>{node.append(tokens.length?highlight(value,tokens):document.createTextNode(value));return node};
+  host.append(fill(el('p',undefined,'usage-intro'),parsed.intro));
+  const hint=el('p','小螢幕可左右滑動表格，查看完整定義。','usage-scroll-hint');host.append(hint);
+  const wrap=el('div',undefined,'usage-grid');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','建築物用途分類完整表，九大類二十四組');
+  const table=el('table',undefined,'usage-table');table.setAttribute('aria-label','建築物用途分類，A 至 I 類');
+  const cols=el('colgroup');for(const width of ['13%','29%','16%','42%']){const col=el('col');col.style.width=width;cols.append(col)}table.append(cols);
+  const thead=el('thead'),header=el('tr');for(const label of ['類別','類別定義','組別','組別定義']){const cell=el('th',label);cell.scope='col';header.append(cell)}thead.append(header);table.append(thead);
+  for(const category of parsed.categories){
+    const tbody=el('tbody');tbody.dataset.category=category.code;
+    category.groups.forEach((group,index)=>{
+      const row=el('tr');row.dataset.group=group.code;
+      if(index===0){
+        const label=el('th',undefined,'usage-category');label.scope='rowgroup';label.rowSpan=category.groups.length;
+        label.append(fill(el('strong'),category.code+' 類'),fill(el('span'),category.name));
+        const definition=fill(el('td',undefined,'usage-category-definition'),category.definition.replace('需–特別照顧','需特別照顧'));definition.rowSpan=category.groups.length;
+        row.append(label,definition);
+      }
+      const groupLabel=el('th',undefined,'usage-group');groupLabel.scope='row';groupLabel.append(fill(el('strong'),group.code),fill(el('span'),group.name));
+      row.append(groupLabel,fill(el('td'),group.definition));tbody.append(row);
+    });table.append(tbody);
+  }
+  wrap.append(table);host.append(wrap);
+  host.append(el('p','A 至 I 共 9 大類、24 個組別。','usage-count'));
+  const raw=el('details',undefined,'usage-original');raw.append(el('summary','檢視原始條文文字'),el('pre',text,'reading'));host.append(raw);
+  return host;
+}
+const usageStyle=el('style');usageStyle.textContent=`
+.usage-classification{width:100%;max-width:100%;min-width:0;margin:8px 0 20px;color:#163746;font-weight:400;letter-spacing:normal;white-space:normal}
+.usage-intro{font-size:21px;line-height:1.95;margin:8px 0 20px;overflow-wrap:break-word}
+.usage-grid{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.usage-grid:focus-visible{outline:3px solid #b49a47;outline-offset:3px}
+.usage-table{width:100%;min-width:780px;border-collapse:collapse;table-layout:fixed;font-size:17px;line-height:1.85;background:#fff}
+.usage-table th,.usage-table td{border:1px solid #b7c8ce;padding:16px 18px;text-align:left;vertical-align:middle;overflow-wrap:break-word;white-space:normal;font-weight:400}
+.usage-table thead th{background:#07546d;border-color:#47798a;color:#fff;font-weight:700;padding:12px 18px}
+.usage-table tbody+tbody>tr:first-child>*{border-top:2px solid #6d96a5}
+.usage-table .usage-category{background:#eaf2f5;text-align:center}
+.usage-table .usage-category strong,.usage-table .usage-group strong{display:block;font-size:21px;color:#07546d;font-weight:700;line-height:1.6}
+.usage-table .usage-category span,.usage-table .usage-group span{display:block;font-size:16px;line-height:1.7}
+.usage-table .usage-category span{font-weight:700}
+.usage-table .usage-category-definition{background:#f5f8f9}
+.usage-table .usage-group{background:#fafcfc}
+.usage-scroll-hint{display:none;font-size:13px;color:#596e77;margin:0 0 10px}
+.usage-count{font-size:13px;color:#596e77;margin:12px 0 8px}
+.usage-original{font-size:13px;color:#596e77;margin-top:12px;max-width:100%}
+.usage-original summary{cursor:pointer}
+.usage-original pre.reading{overflow:auto;white-space:pre;font:13px/1.7 monospace!important;max-width:100%}
+@media(max-width:850px){.usage-intro{font-size:20px}.usage-scroll-hint{display:block}.usage-table{font-size:16px}.usage-table th,.usage-table td{padding:13px 15px}}
+@media print{.usage-original,.usage-scroll-hint{display:none!important}.usage-grid{overflow:visible}.usage-table{min-width:0;font-size:10pt;line-height:1.7}.usage-table th,.usage-table td{padding:8px 9px}.usage-table .usage-category strong,.usage-table .usage-group strong{font-size:12pt}.usage-table .usage-category span,.usage-table .usage-group span{font-size:10pt}.usage-table thead{display:table-header-group}.usage-table tbody{break-inside:avoid}.usage-intro{font-size:12pt}.usage-table *{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+`;
+document.head.append(usageStyle);
+
 const css=document.createElement('style');css.textContent=`
 .articlelayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;margin-top:20px}.articlelayout>section{min-width:0}.articlelayout h3{border-bottom:2px solid #b9c8a5;padding-bottom:10px}.relatedgroup{padding:14px;background:#f0f3e7;border:1px solid var(--line);border-radius:6px;margin:12px 0}.relatedgroup summary{font-weight:bold;cursor:pointer}.relatedgroup .reading{font-size:13px;line-height:1.9}.relatedgroup details{margin:10px 0}.relatedpreview{font-size:13px;white-space:pre-wrap;line-height:1.9}.relcount{font-size:11px;padding:3px 8px;border-radius:4px;background:#e4edda;margin:4px 5px 10px 0}.versionpanel{border-top:2px solid #b9c8a5;margin-top:26px;padding-top:15px}.comparecontrols{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.comparecontrols select{padding:7px;max-width:100%}.parallel{display:grid;grid-template-columns:1fr 1fr;gap:16px}.parallel>div{padding:14px;background:#f4f4ec;border:1px solid var(--line);min-width:0}.difftext{white-space:pre-wrap;font-size:14px;line-height:2;padding:15px;border:1px solid var(--line)}ins{background:#dcefd5;color:#235522;text-decoration:none;border-bottom:2px solid #649d56}del{background:#f6deda;color:#8d322b;text-decoration:line-through}.updateform{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:20px;border:1px solid var(--line);background:#fffdf7;border-radius:7px}.updateform label{display:flex;flex-direction:column;gap:6px;font-size:13px}.updateform input,.updateform select,.updateform textarea{font:inherit;padding:9px;border:1px solid var(--line);border-radius:4px;min-width:0;width:100%;background:white}.updateform .wide{grid-column:1/-1}.updateform textarea{min-height:120px}.updateform .fulltext{min-height:260px}.articlemeta{display:flex;gap:5px;flex-wrap:wrap}.pending{background:#f4e0ce;padding:8px 12px;color:#81462c;font-size:13px}.updatepreview{margin:20px 0}.artifactstatus{font-size:13px;color:var(--muted)}.articlelayout .actions{margin:12px 0}@media(max-width:800px){.articlelayout,.parallel,.updateform{grid-template-columns:1fr}.updateform .wide{grid-column:auto}.articlelayout{gap:15px}}@media print{.comparecontrols,.updateform{display:none}.articlelayout,.parallel{display:block}.relatedgroup{break-inside:avoid}}`;
 document.head.append(css);
@@ -106,8 +186,11 @@ render=function(){
   const c=el('article',undefined,'card articlecard');c.dataset.unit=u.id;const rel=related(d,u),vs=versions(d,u);
   const head=el('div',undefined,'articlehead'),h=el('h3');h.append(button(u.heading,()=>openArticle(d,u),'titlebtn'));
   head.append(h,el('span',d.title.replace('建築技術規則',''),'tag official'));c.append(head);
-  const p=el('p',undefined,'snippet clause-preview'),preview=u.text.length>900?u.text.slice(0,900).trimEnd()+'…':u.text;
-  p.append(highlight(preview,$('query').value.trim().split(/\s+/)));c.append(p);
+  const table=d.pcode==='D0070114'&&u.article_key==='3-3'?renderUsageClassification(u.text,$('query').value.trim().split(/\s+/).filter(Boolean)):null;
+  if(table)c.append(table);else{
+    const p=el('p',undefined,'snippet clause-preview'),preview=u.text.length>900?u.text.slice(0,900).trimEnd()+'…':u.text;
+    p.append(highlight(preview,$('query').value.trim().split(/\s+/)));c.append(p);
+  }
   const footer=el('div',undefined,'articlefooter'),badges=el('div',undefined,'articlemeta');
   if(rel.length)badges.append(el('span','相關解釋函彙編 '+rel.length+' 組','relcount'));
   if(vs.length>1)badges.append(el('span',vs.length+' 版可比較','relcount'));
@@ -120,9 +203,9 @@ render=function(){
 linkedOnly.onchange=()=>{page=1;render()};$('clear').onclick=()=>{$('query').value='';$('volume').value='';$('kind').value=articleMode?'official':'';$('sort').value='source';linkedOnly.checked=false;page=1;render()};
 openUnit=function(id){const x=lawArticles.find(x=>x.u.id===id)||(units.has(id)?lawArticles.find(x=>x.d.id===units.get(id).document_id&&x.u.article_key===units.get(id).article_key):null);if(x)return openArticle(x.d,x.u);oldOpen(id);if(lastArticle)$('detailbody').prepend(button('← 返回 '+lastArticle.u.heading+' 與解釋函',()=>openArticle(lastArticle.d,lastArticle.u)))};
 function groupElement(r,compactView=false){const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
-function openArticle(d,u){lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.at(-1),rel=related(d,u);$('detailtitle').textContent=articleTitle(d,u);body.replaceChildren();body.append(el('p','已收錄公布版次：'+(v?.publication_date||d.header_dates.at(-1))+(v?.effective_date?'｜施行日期：'+v.effective_date:''),'meta'));const actions=el('div',undefined,'actions');actions.append(link('官方條文來源',v?.source_url||sourceUrl(d,u)),button('建立本條更新草稿',()=>{ $('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);const warning=v?.source_kind==='user_import'?(v.effective_warning||''):(v?.effective_warning||u.effective_warning);if(warning)body.append(el('p',warning,'pending'));if(v?.effective_date&&v.effective_date>new Date().toLocaleDateString('sv-SE'))body.append(el('p','本新增版本尚未到所填施行日期；請於下方比較較早版本。','pending'));const grid=el('div',undefined,'articlelayout'),left=el('section'),right=el('details');left.id='articleText';right.id='articleLetters';left.append(el('h3','條文全文'),el('pre',v?.text||u.text,'reading'));const letterSummary=el('summary','相關解釋函與彙編資料（'+rel.length+'組）'),foldState=el('span','展開','fold-state');letterSummary.append(foldState);right.append(letterSummary);right.ontoggle=()=>{foldState.textContent=right.open?'收合':'展開'};if(rel.length){right.append(el('p','按彙編的編別與條號分類同步帶出。文字為 OCR，引用前請核對原 PDF 及該函是否仍適用。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前尚未建立本條的解釋函對應。可使用「解釋函與原冊搜尋」補查；未收錄不代表沒有函釋。','small'));grid.append(left,right);body.append(grid);renderVersionsFor(body,d,u,vs);const refs=related(d,u,'revision_reference');if(refs.length){const sec=foldPanel('歷年修正原文與修正說明（彙編）','revisionReferences');sec.append(el('p','以下為修正彙編原頁，與下方人工新增說明及官方全文差異分開保存。','small'));for(const r of refs)sec.append(groupElement(r,true));body.append(sec)}if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0}
+function openArticle(d,u){lastArticle={d,u};const body=$('detailbody'),vs=versions(d,u),v=vs.at(-1),rel=related(d,u);$('detailtitle').textContent=articleTitle(d,u);body.replaceChildren();body.append(el('p','已收錄公布版次：'+(v?.publication_date||d.header_dates.at(-1))+(v?.effective_date?'｜施行日期：'+v.effective_date:''),'meta'));const actions=el('div',undefined,'actions');actions.append(link('官方條文來源',v?.source_url||sourceUrl(d,u)),button('建立本條更新草稿',()=>{ $('detail').close();editVersion(d,u)}),button('列印本條及關聯資料',()=>window.print()));body.append(actions);const warning=v?.source_kind==='user_import'?(v.effective_warning||''):(v?.effective_warning||u.effective_warning);if(warning)body.append(el('p',warning,'pending'));if(v?.effective_date&&v.effective_date>new Date().toLocaleDateString('sv-SE'))body.append(el('p','本新增版本尚未到所填施行日期；請於下方比較較早版本。','pending'));const grid=el('div',undefined,'articlelayout'),left=el('section'),right=el('details');left.id='articleText';right.id='articleLetters';left.append(el('h3','條文全文'),(d.pcode==='D0070114'&&u.article_key==='3-3'?renderUsageClassification(v?.text||u.text):null)||el('pre',v?.text||u.text,'reading'));const letterSummary=el('summary','相關解釋函與彙編資料（'+rel.length+'組）'),foldState=el('span','展開','fold-state');letterSummary.append(foldState);right.append(letterSummary);right.ontoggle=()=>{foldState.textContent=right.open?'收合':'展開'};if(rel.length){right.append(el('p','按彙編的編別與條號分類同步帶出。文字為 OCR，引用前請核對原 PDF 及該函是否仍適用。','small'));for(const r of rel)right.append(groupElement(r))}else right.append(el('p','目前尚未建立本條的解釋函對應。可使用「解釋函與原冊搜尋」補查；未收錄不代表沒有函釋。','small'));grid.append(left,right);body.append(grid);renderVersionsFor(body,d,u,vs);const refs=related(d,u,'revision_reference');if(refs.length){const sec=foldPanel('歷年修正原文與修正說明（彙編）','revisionReferences');sec.append(el('p','以下為修正彙編原頁，與下方人工新增說明及官方全文差異分開保存。','small'));for(const r of refs)sec.append(groupElement(r,true));body.append(sec)}if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0}
 function diffSegments(a,b){if(a===b)return[['equal',a]];let prefix=0;while(prefix<a.length&&prefix<b.length&&a[prefix]===b[prefix])prefix++;let end=0;while(end<a.length-prefix&&end<b.length-prefix&&a[a.length-1-end]===b[b.length-1-end])end++;const x=Array.from(a.slice(prefix,a.length-end)),y=Array.from(b.slice(prefix,b.length-end)),out=[];if(prefix)out.push(['equal',a.slice(0,prefix)]);if(x.length*y.length<=1500000){const width=y.length+1,dp=new Uint32Array((x.length+1)*width);for(let i=x.length-1;i>=0;i--)for(let j=y.length-1;j>=0;j--)dp[i*width+j]=x[i]===y[j]?1+dp[(i+1)*width+j+1]:Math.max(dp[(i+1)*width+j],dp[i*width+j+1]);let i=0,j=0;while(i<x.length||j<y.length){if(i<x.length&&j<y.length&&x[i]===y[j]){out.push(['equal',x[i]]);i++;j++}else if(i<x.length&&(j===y.length||dp[(i+1)*width+j]>=dp[i*width+j+1]))out.push(['delete',x[i++]]);else out.push(['insert',y[j++]])}}else{if(x.length)out.push(['delete',x.join('')]);if(y.length)out.push(['insert',y.join('')])}if(end)out.push(['equal',a.slice(a.length-end)]);const merged=[];for(const [tag,text]of out){if(merged.at(-1)?.[0]===tag)merged.at(-1)[1]+=text;else merged.push([tag,text])}return merged}
-function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'此版本尚未填寫人工異動說明；可新增修正依據與適用時點說明。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
+function showDiff(host,a,b,stored){host.replaceChildren();const note=b.note||stored?.editor_note;host.append(el('h3','異動說明'),el('p',note||(a.text===b.text?'所選兩版條文文字相同。':'此版本尚未填寫人工異動說明；可新增修正依據與適用時點說明。'),'notice'));if(b.effective_date)host.append(el('p','填列施行日期：'+b.effective_date,'meta'));if(stored?.summary?.length){const ul=el('ul');for(const s of stored.summary)ul.append(el('li',s));const det=el('details');det.append(el('summary','文字差異摘錄'),ul);host.append(det)}host.append(el('p','紅色刪線：舊版文字；綠底：新版文字。文字差異不直接代表法律適用結論。','small'));const seg=stored&&stored.before_text===a.text&&stored.after_text===b.text?stored.segments:diffSegments(a.text,b.text),diff=el('div',undefined,'difftext');for(const [tag,text]of seg)diff.append(tag==='equal'?document.createTextNode(text):el(tag==='insert'?'ins':'del',text));host.append(diff);const parallel=el('details');parallel.append(el('summary','展開新舊全文並列'));const grid=el('div',undefined,'parallel');for(const v of [a,b]){const col=el('div');col.append(el('b',v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'')),renderUsageClassification(v.text)||el('pre',v.text,'reading'),link('版本來源',v.source_url));grid.append(col)}parallel.append(grid);host.append(parallel)}
 function foldPanel(title,id){const sec=el('details',undefined,'versionpanel foldable-panel');sec.id=id;const summary=el('summary',title),state=el('span','展開','fold-state');summary.append(state);sec.append(summary);sec.ontoggle=()=>{state.textContent=sec.open?'收合':'展開'};return sec}
 function renderVersionsFor(body,d,u,vs){const sec=foldPanel('條文異動與版本比對','articleVersions');if(vs.length<2){if(vs[0]?.note)sec.append(el('p',vs[0].note,'notice'));sec.append(el('p','本條目前僅收錄一個全文版本。新增版本後即可在此比對。','small'));body.append(sec);return}const controls=el('div',undefined,'comparecontrols'),a=el('select'),b=el('select');a.id='beforeVersion';b.id='afterVersion';a.setAttribute('aria-label','舊版條文');b.setAttribute('aria-label','新版條文');for(const v of vs){const label=v.publication_date+(v.source_kind==='user_import'?'（人工新增）':'（官方封存）');a.append(new Option(label,v.id));b.append(new Option(label,v.id))}a.value=vs.at(-2).id;b.value=vs.at(-1).id;controls.append(el('span','舊版'),a,el('span','新版'),b);sec.append(controls);const target=el('div');target.id='versionComparison';sec.append(target);function draw(){const before=vs.find(v=>v.id===a.value),after=vs.find(v=>v.id===b.value),stored=(DB.article_diffs||[]).find(x=>x.heading===u.heading&&x.before_date===before.publication_date&&x.after_date===after.publication_date&&x.document_id===d.id);showDiff(target,before,after,stored)}a.onchange=b.onchange=draw;draw();body.append(sec)}
 function field(label,id,type='text',wide=false){const l=el('label',label,wide?'wide':undefined),input=el(type==='textarea'?'textarea':type==='select'?'select':'input');input.id=id;if(input.tagName==='INPUT')input.type=type;l.append(input);return l}
