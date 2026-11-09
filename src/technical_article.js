@@ -82,6 +82,60 @@ body{font-family:var(--font-ui);font-size:var(--text-body);line-height:var(--lin
 `;
 document.head.append(unifiedTypographyStyle);
 
+const diagram3dData=globalThis.DIAGRAMS_3D||{books:[],article_index:{}};
+const diagram3dBooks=new Map(diagram3dData.books.map(b=>[b.id,b]));
+const diagram3dPages=new Map(diagram3dData.books.flatMap(b=>b.pages.map(p=>[p.id,{...p,book:b}])));
+const diagram3dEdition=diagram3dData.edition?.label||'3D圖解原書';
+function diagram3dForArticle(d,u){return(diagram3dData.article_index[d.pcode+'|'+u.article_key]||[]).map(id=>diagram3dPages.get(id)).filter(Boolean)}
+function diagram3dPreferred(pages){return pages.find(p=>p.evidence.some(e=>e.kind==='figure_label'))||pages.find(p=>p.evidence.length&&p.evidence.every(e=>e.kind==='continuation')&&p.search_text.length<1000)||pages[0]}
+function diagram3dHref(id,context={}){const query=new URLSearchParams();if(context.law){query.set('pcode',context.law);query.set('article',context.article);if(context.version)query.set('version',context.version)}query.set('diagram3d',id);return '#'+query}
+function appendDiagram3dResource(host,d,u,version){
+ const pages=diagram3dForArticle(d,u);if(!pages.length)return;
+ const line=el('div',undefined,'resource-line diagram3d-links');line.append(el('span','3D圖解與原書說明','resource-label'));
+ const context={law:d.pcode,article:u.article_key,version},first=diagram3dPreferred(pages),href=diagram3dHref(first.id,context);
+ line.append(resourceAnchor('查看對應圖解（'+pages.length+' 頁）',href,()=>{openDiagram3d(first.id,context);history.replaceState(null,'',href)},'secondary diagram3d-link'),el('span',diagram3dEdition,'diagram3d-edition'));host.append(line);
+}
+function diagram3dArticleLink(law,key){const d=baseDocs.get(law),u=lawArticles.find(x=>x.d.pcode===law&&x.u.article_key===key)?.u;if(!d||!u)return null;const href='#'+new URLSearchParams({pcode:law,article:key});return resourceAnchor(d.title.replace('建築技術規則','')+' 第'+key+'條',href,()=>{openArticle(d,u);history.replaceState(null,'',href)},'secondary')}
+function openDiagram3d(id,context={}){
+ const p=diagram3dPages.get(id);if(!p){toast('尚未收錄此圖解頁面');return}const b=p.book,body=$('detailbody');body.replaceChildren();$('detailtitle').textContent='3D圖解｜'+(context.article?'第'+context.article+'條':b.title)+'｜PDF 第 '+p.page+' 頁';
+ const section=el('article',undefined,'diagram3d-reading');section.dataset.diagram=id;
+ section.append(el('h3','3D圖解與原書說明'),el('p',diagram3dEdition+'｜謝仰泰著・詹氏書局','meta'),el('p','原書為出版時版本，請配合所選年份條文閱讀。','diagram3d-version-note'));
+ const actions=el('div',undefined,'actions');if(context.law){const d=baseDocs.get(context.law),u=lawArticles.find(x=>x.d.pcode===context.law&&x.u.article_key===context.article)?.u;if(d&&u)actions.append(button('返回第'+context.article+'條',()=>{openArticle(d,u,context.version);history.replaceState(null,'','#'+new URLSearchParams({pcode:context.law,article:context.article,...(context.version?{version:context.version}:{})}))}))}
+ actions.append(button('瀏覽3D圖解目錄',()=>{$('detail').close();showDiagram3dLibrary();history.replaceState(null,'','#library3d=1')}),link('開啟本章原 PDF 本頁',b.file+'#page='+p.page));section.append(actions);
+ let sequence=context.law?(diagram3dData.article_index[context.law+'|'+context.article]||[]):b.pages.map(x=>x.id);if(!sequence.includes(id))sequence=b.pages.map(x=>x.id);const at=sequence.indexOf(id),nav=el('div',undefined,'booknav diagram3d-pager'),select=el('select');select.setAttribute('aria-label','選擇3D圖解頁面');
+ for(const item of sequence){const q=diagram3dPages.get(item);select.append(new Option(q.book.key.toUpperCase()+'｜PDF '+q.page+(q.printed_page?'・原書 '+q.printed_page+' 頁':''),item))}select.value=id;
+ const go=target=>{const href=diagram3dHref(target,context);openDiagram3d(target,context);history.replaceState(null,'',href)},prev=button('上一張圖解',()=>go(sequence[at-1])),next=button('下一張圖解',()=>go(sequence[at+1]));prev.disabled=at<=0;next.disabled=at>=sequence.length-1;select.onchange=()=>go(select.value);nav.append(prev,select,next,el('span',(at+1)+' / '+sequence.length,'meta'));section.append(nav);
+ const related=el('div',undefined,'diagram3d-related');related.append(el('strong','本頁對應條文'));const chips=el('div',undefined,'actions');for(const key of p.articles){const a=diagram3dArticleLink(b.law,key);if(a)chips.append(a)}if(!p.articles.length)chips.append(el('span','封面、章首頁或目錄','meta'));related.append(chips);
+ const figure=el('figure',undefined,'diagram3d-figure'),title=b.title+'｜PDF 第 '+p.page+' 頁'+(p.printed_page?'｜原書第 '+p.printed_page+' 頁':'');figure.append(el('figcaption','PDF 第 '+p.page+' 頁'+(p.printed_page?'｜原書第 '+p.printed_page+' 頁':'')));
+ const tools=el('div',undefined,'actions'),save=link('另存圖解圖片',p.image);save.download=b.key+'-PDF-'+p.page+'.webp';tools.append(button('放大查看',()=>openOfficialFigure(p,title)),link('開啟原頁圖片',p.image),save);figure.append(tools);
+ const zoom=button('',()=>openOfficialFigure(p,title),'figure-preview-button'),image=el('img');zoom.setAttribute('aria-label','放大 '+title);image.src=p.image;image.alt=title;image.width=p.width;image.height=p.height;image.decoding='async';zoom.append(image);figure.append(zoom);section.append(figure,el('p','來源：'+b.title,'meta'),related);body.append(section);if(!$('detail').open)$('detail').showModal();$('detail').scrollTop=0;
+}
+let diagram3dLibrary,diagram3dNav;const diagram3dSearchState={query:'',law:'',page:1};
+function renderDiagram3dLibrary(){
+ if(!diagram3dLibrary)return;const results=$('diagram3dResults'),pagination=$('diagram3dPagination'),state=diagram3dSearchState,query=state.query.trim(),simple=query.replace(/\s+/g,''),number=simple.match(/^(?:第)?(\d+(?:-\d+)?)(?:條)?$/);results.replaceChildren();pagination.replaceChildren();
+ if(!query){const books=diagram3dData.books.filter(b=>!state.law||b.law===state.law);$('diagram3dCount').textContent=books.length+' 份章節 PDF・'+books.reduce((n,b)=>n+b.pages.length,0)+' 頁';for(const b of books){const card=el('article',undefined,'card diagram3d-card'),p=b.pages.find(p=>p.articles.length)||b.pages[0],preview=button('',()=>{openDiagram3d(p.id);history.replaceState(null,'',diagram3dHref(p.id))},'diagram3d-thumb');preview.setAttribute('aria-label','閱覽 '+b.title);const image=el('img');image.src=p.image;image.alt=b.title;image.width=p.width;image.height=p.height;image.loading='lazy';preview.append(image);card.append(preview,el('h3',b.title),el('p',b.pages.length+' 頁｜對應 '+new Set(b.pages.flatMap(p=>p.articles)).size+' 條條文','meta'));const actions=el('div',undefined,'actions');actions.append(button('逐頁閱覽',()=>{openDiagram3d(b.pages[0].id);history.replaceState(null,'',diagram3dHref(b.pages[0].id))}),link('完整章節 PDF',b.file));card.append(actions);results.append(card)}return}
+ const tokens=query.toLowerCase().split(/[\s，,、]+/).filter(Boolean),all=[...diagram3dPages.values()].filter(p=>(!state.law||p.book.law===state.law)&&(number?p.articles.includes(number[1]):tokens.every(t=>(p.search_text.replace(/\s+/g,'').toLowerCase()+p.book.title.replace(/\s+/g,'')).includes(t))));const total=Math.max(1,Math.ceil(all.length/20));state.page=Math.max(1,Math.min(state.page,total));$('diagram3dCount').textContent=all.length+' 頁符合・按原書頁面顯示';
+ for(const p of all.slice((state.page-1)*20,state.page*20)){const card=el('article',undefined,'card');card.append(el('h3',p.book.title),el('p','PDF 第 '+p.page+' 頁'+(p.printed_page?'｜原書 '+p.printed_page+' 頁':''),'meta'));const associations=el('div',undefined,'actions');for(const key of p.articles){const a=diagram3dArticleLink(p.book.law,key);if(a)associations.append(a)}card.append(associations);const actions=el('div',undefined,'actions');actions.append(button('查看圖解原頁',()=>{openDiagram3d(p.id);history.replaceState(null,'',diagram3dHref(p.id))}),link('原 PDF 本頁',p.book.file+'#page='+p.page));card.append(actions);results.append(card)}
+ if(!all.length)results.append(el('p','沒有符合的圖解頁面，請調整編別、條號或關鍵字。','empty'));if(total>1){const prev=button('上一頁結果',()=>{state.page--;renderDiagram3dLibrary()}),next=button('下一頁結果',()=>{state.page++;renderDiagram3dLibrary()});prev.disabled=state.page<=1;next.disabled=state.page>=total;pagination.append(prev,el('span',state.page+' / '+total),next)}
+}
+function showDiagram3dLibrary(){if(!diagram3dLibrary)return;oldShow('search');for(const id of ['searchview','volumesview','aboutview','updatesview'])$(id)?.classList.add('hidden');diagram3dLibrary.classList.remove('hidden');document.querySelectorAll('aside .nav').forEach(e=>e.classList.remove('active'));diagram3dNav.classList.add('active');renderDiagram3dLibrary()}
+function installDiagram3dIntegration(){
+ if(!diagram3dData.books.length)return;
+ document.querySelector('h1').textContent='查閱條文，對照函釋與 3D 圖解。';document.querySelector('main>.intro').textContent='依編別與條號查詢，直接開啟年份版本、函釋說明及對應的 3D 圖解原頁。';
+ diagram3dLibrary=el('section',undefined,'hidden');diagram3dLibrary.id='diagram3dview';diagram3dLibrary.append(el('h2','3D圖解與條文對照'),el('p',diagram3dData.stats.books+' 份章節 PDF，共 '+diagram3dData.stats.pages+' 頁，已對應 '+diagram3dData.stats.linked_articles+' 條條文。依原書條號標題、圖號標籤及續頁關係連結。','intro'),el('p',diagram3dEdition+'｜謝仰泰著・詹氏書局。圖解保留原頁；條文請搭配所選年份閱讀。','diagram3d-version-note'));
+ const form=el('form',undefined,'searchbox'),row=el('div',undefined,'searchrow'),input=el('input');input.type='search';input.id='diagram3dQuery';input.placeholder='輸入條號或圖解關鍵字，例如：第33條、樓梯、停車';input.setAttribute('aria-label','搜尋3D圖解');const submit=button('搜尋圖解',()=>{} ,'primary');submit.type='submit';row.append(input,submit);form.append(row);const filters=el('div',undefined,'filters'),label=el('label','編別'),select=el('select');select.id='diagram3dLaw';select.append(new Option('全部編別',''));for(const [law,d]of baseDocs)select.append(new Option(d.title.replace('建築技術規則',''),law));label.append(select);filters.append(label,button('清除圖解條件',()=>{input.value='';select.value='';Object.assign(diagram3dSearchState,{query:'',law:'',page:1});renderDiagram3dLibrary()}));form.append(filters);form.onsubmit=e=>{e.preventDefault();Object.assign(diagram3dSearchState,{query:input.value,law:select.value,page:1});renderDiagram3dLibrary()};select.onchange=()=>{Object.assign(diagram3dSearchState,{query:input.value,law:select.value,page:1});renderDiagram3dLibrary()};
+ const count=el('p',undefined,'meta');count.id='diagram3dCount';count.setAttribute('aria-live','polite');const results=el('div',undefined,'results'),pagination=el('div',undefined,'pagination');results.id='diagram3dResults';pagination.id='diagram3dPagination';diagram3dLibrary.append(form,count,results,pagination);document.querySelector('footer').before(diagram3dLibrary);
+ diagram3dNav=button('3D圖解與條文對照',()=>{showDiagram3dLibrary();history.replaceState(null,'','#library3d=1')},'nav');diagram3dNav.id='diagram3dNav';$('referenceNav').after(diagram3dNav);
+ const hide=()=>{diagram3dLibrary.classList.add('hidden');diagram3dNav.classList.remove('active')},previousEnter=enter,previousShow=showView,previousUpdate=$('updateNav').onclick;enter=function(...args){hide();return previousEnter(...args)};showView=function(view){if(view==='diagrams3d')return showDiagram3dLibrary();hide();return previousShow(view)};$('updateNav').onclick=event=>{hide();return previousUpdate(event)};
+ Object.assign(window.technicalApp,{openDiagram3D:openDiagram3d,showDiagramLibrary:showDiagram3dLibrary,showView,enter});
+}
+const diagram3dStyle=el('style');diagram3dStyle.textContent=`
+.diagram3d-edition{font-size:16px;color:#617267;line-height:1.9}.diagram3d-version-note{font-size:17px;line-height:1.9;color:#496c78;margin:10px 0 20px}.diagram3d-links .diagram3d-link{font-size:20px}.diagram3d-reading h3{font-size:24px;line-height:1.7}.diagram3d-reading .meta{font-size:16px}.diagram3d-pager{margin:22px 0}.diagram3d-pager select{font:inherit;max-width:100%;padding:8px;border:1px solid #b7c8ce;background:#fffdf7;border-radius:4px}.diagram3d-related{display:flex;flex-direction:column;gap:9px;margin:20px 0;padding:15px 0;border-top:1px solid #d4ddd3;border-bottom:1px solid #d4ddd3}.diagram3d-related .secondary{font-size:18px}.diagram3d-figure{margin:24px 0;max-width:100%}.diagram3d-figure>figcaption{font-size:20px;font-weight:700;line-height:1.8;margin-bottom:12px}.diagram3d-figure .actions{margin-bottom:14px}.diagram3d-card{gap:12px}.diagram3d-card h3{font-size:22px;line-height:1.7}.diagram3d-thumb{width:100%;height:190px;padding:0;background:white;overflow:hidden;border:1px solid #d4ddd3;border-radius:4px;cursor:zoom-in}.diagram3d-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%}.diagram3d-card .actions{gap:12px}#diagram3dview .searchbox{margin:20px 0}#diagram3dview .card .actions{margin-top:12px}#diagram3dview .card .secondary{font-size:18px}
+@media(max-width:800px){.diagram3d-links .diagram3d-link{font-size:19px}.diagram3d-reading h3{font-size:23px}.diagram3d-pager select{width:100%;order:-1}.diagram3d-figure>figcaption{font-size:19px}.diagram3d-thumb{height:170px}}
+@media print{.diagram3d-reading>.actions,.diagram3d-pager,.diagram3d-related,.diagram3d-figure>.actions,.diagram3d-version-note{display:none!important}.diagram3d-figure{margin:8px 0;break-inside:avoid}.diagram3d-figure>figcaption{font-size:11pt}.diagram3d-figure img{max-height:250mm;object-fit:contain}}
+`;
+document.head.append(diagram3dStyle);
+
 // Literal source matches keep formula layout changes tied to the selected text.
 const readableFormulaRules=[];
 function formulaRule(source,math,label){readableFormulaRules.push({source,math,label})}
@@ -170,6 +224,8 @@ document.head.append(officialFigureStyle);
 const interpretationCache=new Map();
 function openReaderLocation(){
  const query=new URLSearchParams(location.hash.slice(1));
+ if(query.get('diagram3d')){openDiagram3d(query.get('diagram3d'),{law:query.get('pcode'),article:query.get('article'),version:query.get('version')});return}
+ if(query.get('library3d')){showDiagram3dLibrary();return}
  if(query.get('pcode')&&query.get('letter'))window.technicalApp.openInterpretation(query.get('pcode'),query.get('article'),query.get('letter'));
  else if(query.get('pcode'))window.technicalApp.openArticle(query.get('pcode'),query.get('article'),query.get('version'));
  else if(query.get('unit'))window.technicalApp.openUnit(query.get('unit'));
@@ -223,7 +279,7 @@ function renderArticleResources(d,u,selectedId){
  }
  const figures=availableOfficialVisuals(d,u,vs.find(v=>v.id===selectedId)||vs.at(-1));
  if(figures.length){const a=resourceAnchor('官方公式／圖例（'+figures.reduce((n,r)=>n+r.pages.length,0)+' 頁）',versionHref(d,u,vs.at(-1)),()=>{openArticle(d,u,selectedId);document.querySelector('#articleFigures')?.scrollIntoView({block:'start'})});host.append(a)}
- return host;
+ appendDiagram3dResource(host,d,u,selectedId);return host;
 }
 function openInterpretation(d,u,id){
  const group=related(d,u).find(r=>interpretationRecords(r).some(record=>record.id===id));if(!group)return;
@@ -680,5 +736,5 @@ async function saveUpdate(){const r=previewUpdate();if(!r)return;if(location.pro
 // Volume searches remain available as a secondary route.
 for(const c of $('volumes').children){const b=[...c.querySelectorAll('button')].find(b=>b.textContent==='查詢本冊');if(b){const d=DB.documents.find(d=>d.title===c.querySelector('h3').textContent);b.onclick=()=>{enter(false);$('kind').value='';$('volume').value=d.id;page=1;render()}}}
 window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
-window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle);enter(true);const hash=new URLSearchParams(location.hash.slice(1));if(hash.get('pcode')&&hash.get('letter'))window.technicalApp.openInterpretation(hash.get('pcode'),hash.get('article'),hash.get('letter'));else if(hash.get('pcode'))window.technicalApp.openArticle(hash.get('pcode'),hash.get('article'),hash.get('version'));else if(hash.get('unit'))openUnit(hash.get('unit'));
+installDiagram3dIntegration();window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle,diagram3dStyle);enter(true);openReaderLocation();
 })();
