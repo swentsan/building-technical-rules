@@ -4,6 +4,31 @@ const css=document.createElement('style');css.textContent=`
 .articlelayout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;margin-top:20px}.articlelayout>section{min-width:0}.articlelayout h3{border-bottom:2px solid #b9c8a5;padding-bottom:10px}.relatedgroup{padding:14px;background:#f0f3e7;border:1px solid var(--line);border-radius:6px;margin:12px 0}.relatedgroup summary{font-weight:bold;cursor:pointer}.relatedgroup .reading{font-size:13px;line-height:1.9}.relatedgroup details{margin:10px 0}.relatedpreview{font-size:13px;white-space:pre-wrap;line-height:1.9}.relcount{font-size:11px;padding:3px 8px;border-radius:4px;background:#e4edda;margin:4px 5px 10px 0}.versionpanel{border-top:2px solid #b9c8a5;margin-top:26px;padding-top:15px}.comparecontrols{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.comparecontrols select{padding:7px;max-width:100%}.parallel{display:grid;grid-template-columns:1fr 1fr;gap:16px}.parallel>div{padding:14px;background:#f4f4ec;border:1px solid var(--line);min-width:0}.difftext{white-space:pre-wrap;font-size:14px;line-height:2;padding:15px;border:1px solid var(--line)}ins{background:#dcefd5;color:#235522;text-decoration:none;border-bottom:2px solid #649d56}del{background:#f6deda;color:#8d322b;text-decoration:line-through}.updateform{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:20px;border:1px solid var(--line);background:#fffdf7;border-radius:7px}.updateform label{display:flex;flex-direction:column;gap:6px;font-size:13px}.updateform input,.updateform select,.updateform textarea{font:inherit;padding:9px;border:1px solid var(--line);border-radius:4px;min-width:0;width:100%;background:white}.updateform .wide{grid-column:1/-1}.updateform textarea{min-height:120px}.updateform .fulltext{min-height:260px}.articlemeta{display:flex;gap:5px;flex-wrap:wrap}.pending{background:#f4e0ce;padding:8px 12px;color:#81462c;font-size:13px}.updatepreview{margin:20px 0}.artifactstatus{font-size:13px;color:var(--muted)}.articlelayout .actions{margin:12px 0}@media(max-width:800px){.articlelayout,.parallel,.updateform{grid-template-columns:1fr}.updateform .wide{grid-column:auto}.articlelayout{gap:15px}}@media print{.comparecontrols,.updateform{display:none}.articlelayout,.parallel{display:block}.relatedgroup{break-inside:avoid}}`;
 document.head.append(css);
 css.textContent+='#articleLetters{max-height:760px;overflow:auto;padding-right:8px}#articleLetters>h3{position:sticky;top:0;background:#fffdf7;z-index:1}@media(max-width:800px){#articleLetters{max-height:650px}}';
+// Make legal text the main reading surface; metadata remains secondary.
+css.textContent+=`
+.article-results{grid-template-columns:minmax(0,1fr);gap:16px}
+.articlecard{padding:24px 28px}
+.articlehead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;width:100%;margin-bottom:8px}
+.articlehead h3{font-size:23px;line-height:1.45;margin:0}
+.articlehead .tag{font-size:12px;background:transparent;border:0;padding:0;color:var(--muted);margin:0}
+.articlecard .clause-preview{font-size:21px;font-weight:500;line-height:1.95;color:#173b35;white-space:pre-wrap;margin:8px 0 18px;width:100%;letter-spacing:.02em}
+.articlefooter{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;width:100%;border-top:1px solid #e7ebe1;padding-top:11px;margin-top:0}
+.articlefooter .meta{font-size:12px;margin:0}
+.articlefooter .articlemeta{gap:6px}
+.articlefooter .relcount{font-size:11px;font-weight:400;background:#edf1e6;padding:2px 7px;margin:0;color:#61715f}
+.articlecard .actions{margin-top:13px;gap:8px}
+.articlecard .actions .secondary{font-size:12px;padding:5px 10px}
+main>h1{font-size:clamp(26px,2.8vw,34px);margin:18px 0 8px}
+.stats{margin:18px 0}.stat{padding:11px 18px}.stat b{font-size:26px}
+dialog{width:min(1280px,96vw)}
+.articlelayout{grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:28px}
+#articleText .reading{font-size:21px;font-weight:500;line-height:2.05;letter-spacing:.02em;color:#173b35}
+.articlelayout h3{font-size:17px}
+.relatedpreview{font-size:14px}
+.difftext,.parallel .reading{font-size:18px;line-height:2}
+@media(max-width:800px){.articlecard{padding:19px 18px}.articlehead{gap:6px 12px}.articlehead h3{font-size:21px}.articlecard .clause-preview{font-size:20px;line-height:1.95;margin-bottom:16px}.articlefooter{gap:7px 12px}.articlelayout{grid-template-columns:minmax(0,1fr);gap:20px}#articleText .reading{font-size:20px;line-height:2}.difftext,.parallel .reading{font-size:17px}}
+@media print{.articlecard .clause-preview,#articleText .reading{font-size:14pt}.articlecard{padding:14px 0}.article-results{display:block}}
+`;
 document.querySelector('.asidefoot').innerHTML='條文查詢 → 相關解釋函 → 版本比對<br><br>一般查詢可離線使用。<br>新增異動請使用資料夾內的維護入口。';
 const linkMap=new Map(),versionMap=new Map(),baseDocs=new Map(DB.documents.filter(d=>d.module_kind==='official').map(d=>[d.pcode,d]));
 for(const r of DB.article_links||[]){const k=r.pcode+'|'+r.article_key;if(!linkMap.has(k))linkMap.set(k,[]);linkMap.get(k).push(r)}
@@ -30,7 +55,28 @@ function setVolumeOptions(all){const previous=$('volume').value;$('volume').repl
 function enter(isArticle){articleMode=isArticle;$('updatesview').classList.add('hidden');oldShow('search');$('kind').closest('label').classList.toggle('hidden',isArticle);extra.classList.toggle('hidden',!isArticle);setVolumeOptions(!isArticle);$('kind').value=isArticle?'official':'letters';page=1;$('volume').value='';render();refnav.classList.toggle('active',!isArticle);document.querySelector('[data-view="search"]').classList.toggle('active',isArticle);updatenav.classList.remove('active')}
 showView=function(v){$('updatesview').classList.add('hidden');refnav.classList.remove('active');updatenav.classList.remove('active');if(v==='search')enter(true);else oldShow(v)};
 document.querySelectorAll('[data-view]').forEach(e=>e.onclick=()=>showView(e.dataset.view));
-render=function(){if(!articleMode)return oldRender();activeTokens=queryTokens();const vol=$('volume').value;filtered=lawArticles.filter(x=>(!vol||x.d.id===vol)&&(!linkedOnly.checked||related(x.d,x.u).length)&&activeTokens.every(t=>x.text.includes(t)));if($('sort').value==='hits'&&activeTokens.length)filtered.sort((a,b)=>score(b.text)-score(a.text));const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.max(1,Math.min(page,pages));$('resultcount').textContent=filtered.length.toLocaleString()+' 條符合 · 點開條文同步查看解釋函與異動';$('results').replaceChildren();for(const {u,d,version}of filtered.slice((page-1)*pageSize,page*pageSize)){const c=el('article',undefined,'card');c.dataset.unit=u.id;const rel=related(d,u),vs=versions(d,u);c.append(el('span',d.title.replace('建築技術規則',''),'tag official'));const h=el('h3');h.append(button(u.heading,()=>openArticle(d,u),'titlebtn'));c.append(h,el('p','公布版次 '+(version?.publication_date||d.header_dates.at(-1)),'meta'));const badges=el('div',undefined,'articlemeta');if(rel.length)badges.append(el('span','相關解釋函彙編 '+rel.length+' 組','relcount'));if(vs.length>1)badges.append(el('span',vs.length+' 版可比較','relcount'));c.append(badges);const p=el('p',undefined,'snippet');p.append(highlight(snippet(u),$('query').value.trim().split(/\s+/)));c.append(p);const a=el('div',undefined,'actions');a.append(button('條文・解釋函・異動',()=>openArticle(d,u)),link('官方來源',version?.source_url||sourceUrl(d,u)));c.append(a);$('results').append(c)}if(!filtered.length)$('results').append(el('p','沒有符合條件的條文，請調整關鍵字或編別。','empty'));$('pagination').replaceChildren();if(pages>1){const a=button('上一頁',()=>{page--;render()}),b=button('下一頁',()=>{page++;render()});a.disabled=page===1;b.disabled=page===pages;$('pagination').append(a,el('span',page+' / '+pages),b)}};
+render=function(){
+ $('results').classList.toggle('article-results',articleMode);if(!articleMode)return oldRender();
+ activeTokens=queryTokens();const vol=$('volume').value;
+ filtered=lawArticles.filter(x=>(!vol||x.d.id===vol)&&(!linkedOnly.checked||related(x.d,x.u).length)&&activeTokens.every(t=>x.text.includes(t)));
+ if($('sort').value==='hits'&&activeTokens.length)filtered.sort((a,b)=>score(b.text)-score(a.text));
+ const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.max(1,Math.min(page,pages));
+ $('resultcount').textContent=filtered.length.toLocaleString()+' 條符合 · 點開條文同步查看解釋函與異動';$('results').replaceChildren();
+ for(const {u,d,version}of filtered.slice((page-1)*pageSize,page*pageSize)){
+  const c=el('article',undefined,'card articlecard');c.dataset.unit=u.id;const rel=related(d,u),vs=versions(d,u);
+  const head=el('div',undefined,'articlehead'),h=el('h3');h.append(button(u.heading,()=>openArticle(d,u),'titlebtn'));
+  head.append(h,el('span',d.title.replace('建築技術規則',''),'tag official'));c.append(head);
+  const p=el('p',undefined,'snippet clause-preview'),preview=u.text.length>900?u.text.slice(0,900).trimEnd()+'…':u.text;
+  p.append(highlight(preview,$('query').value.trim().split(/\s+/)));c.append(p);
+  const footer=el('div',undefined,'articlefooter'),badges=el('div',undefined,'articlemeta');
+  if(rel.length)badges.append(el('span','相關解釋函彙編 '+rel.length+' 組','relcount'));
+  if(vs.length>1)badges.append(el('span',vs.length+' 版可比較','relcount'));
+  footer.append(el('p','公布版次 '+(version?.publication_date||d.header_dates.at(-1)),'meta'),badges);c.append(footer);
+  const a=el('div',undefined,'actions');a.append(button('閱讀完整條文與函釋',()=>openArticle(d,u)),link('官方來源',version?.source_url||sourceUrl(d,u)));c.append(a);$('results').append(c)
+ }
+ if(!filtered.length)$('results').append(el('p','沒有符合條件的條文，請調整關鍵字或編別。','empty'));
+ $('pagination').replaceChildren();if(pages>1){const a=button('上一頁',()=>{page--;render()}),b=button('下一頁',()=>{page++;render()});a.disabled=page===1;b.disabled=page===pages;$('pagination').append(a,el('span',page+' / '+pages),b)}
+};
 linkedOnly.onchange=()=>{page=1;render()};$('clear').onclick=()=>{$('query').value='';$('volume').value='';$('kind').value=articleMode?'official':'';$('sort').value='source';linkedOnly.checked=false;page=1;render()};
 openUnit=function(id){const x=lawArticles.find(x=>x.u.id===id)||(units.has(id)?lawArticles.find(x=>x.d.id===units.get(id).document_id&&x.u.article_key===units.get(id).article_key):null);if(x)return openArticle(x.d,x.u);oldOpen(id);if(lastArticle)$('detailbody').prepend(button('← 返回 '+lastArticle.u.heading+' 與解釋函',()=>openArticle(lastArticle.d,lastArticle.u)))};
 function groupElement(r,compactView=false){const d=docs.get(r.document_id),box=el('article',undefined,'relatedgroup');box.dataset.link=r.id;box.append(el('b',r.label),el('p',d.title+'｜PDF '+r.page_start+(r.page_end!==r.page_start?'–'+r.page_end:'')+' 頁','meta'));if(r.subjects?.length)for(const s of r.subjects.slice(0,3))box.append(el('p','主旨：'+s,'relatedpreview'));const first=units.get(r.unit_ids[0]);if(first&&!compactView)box.append(el('p',first.text.slice(0,850)+(first.text.length>850?'…':''),'relatedpreview'));const a=el('div',undefined,'actions');a.append(link('開啟原 PDF',d.source_relative+'#page='+r.page_start),button('逐頁閱讀',()=>openUnit(r.unit_ids[0])));box.append(a);if(!compactView){const detail=el('details');detail.append(el('summary','展開本組全文（'+r.unit_ids.length+' 頁，含跨頁內容）'));detail.ontoggle=()=>{if(!detail.open||detail.dataset.loaded)return;detail.dataset.loaded='1';for(const id of r.unit_ids){const u=units.get(id);detail.append(el('p','PDF 第'+u.page_start+'頁','meta'),el('pre',u.text,'reading'))}};box.append(detail)}return box}
