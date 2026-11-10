@@ -1,6 +1,6 @@
 """Build the four-way entrance while preserving existing article share URLs."""
 from pathlib import Path
-import json,re,shutil
+import hashlib,json,re,shutil
 
 ROOT=Path(__file__).resolve().parent.parent
 KEELUNG_OFFICIAL='https://www.klcg.gov.tw/tw/urban/2580.html'
@@ -35,6 +35,12 @@ def render(root,public):
 def decorate(path,public):
     html=path.read_text(encoding='utf-8')
     html=re.sub(r'<!-- PORTAL_NAV_START -->.*?<!-- PORTAL_NAV_END -->','',html,flags=re.S)
+    # New reader routes must always load the matching client code, even for
+    # visitors whose browser cached the preceding release's analysis script.
+    asset=path.parent/'assets/article-learning.js'
+    if 'src="assets/article-learning.js' in html:
+        version=hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
+        html=re.sub(r'src="assets/article-learning.js(?:\?[^\"]*)?"',f'src="assets/article-learning.js?v={version}"',html)
     home='index.html' if public else '法規研讀入口.html'
     keelung=KEELUNG_OFFICIAL if public else '法規查詢.html'
     block=f'<!-- PORTAL_NAV_START --><script src="assets/portal-navigation.js" data-portal-home="{home}" data-portal-keelung="{keelung}"></script><!-- PORTAL_NAV_END -->'
