@@ -341,6 +341,7 @@ function renderArticleResources(d,u,selectedId){
  }
  const figures=availableOfficialVisuals(d,u,allVersions.find(v=>v.id===selectedId)||allVersions.at(-1));
  if(figures.length){const a=resourceAnchor('官方公式／圖例（'+figures.reduce((n,r)=>n+r.pages.length,0)+' 頁）',versionHref(d,u,allVersions.at(-1)),()=>{openArticle(d,u,selectedId);document.querySelector('#articleFigures')?.scrollIntoView({block:'start'})});host.append(a)}
+ const analysisPath=globalThis.TECHNICAL_HOSTED_READONLY?'analysis.html':'條文分析與教學.html';const analysis=link('分析本條／教學',analysisPath+'#'+new URLSearchParams({pcode:d.pcode,article:u.article_key,...(selectedId?{version:selectedId}:{})}));analysis.className='secondary analysis-resource-link';host.append(analysis);
  appendOfficialHistoryResource(host,d,u,selectedId);appendDiagram3dResource(host,d,u,selectedId);return host;
 }
 function openInterpretation(d,u,id){
@@ -813,5 +814,6 @@ async function saveUpdate(){const r=previewUpdate();if(!r)return;if(location.pro
 // Volume searches remain available as a secondary route.
 for(const c of $('volumes').children){const b=[...c.querySelectorAll('button')].find(b=>b.textContent==='查詢本冊');if(b){const d=DB.documents.find(d=>d.title===c.querySelector('h3').textContent);b.onclick=()=>{enter(false);$('kind').value='';$('volume').value=d.id;page=1;render()}}}
 window.technicalApp={...window.technicalApp,openUnit,openArticle:(pcode,key,versionId)=>{const x=historyArticle(pcode,key,versionId);if(x)openArticle(x.d,x.u,versionId)},openInterpretation:(pcode,key,id)=>{const x=lawArticles.find(x=>x.d.pcode===pcode&&x.u.article_key===key);if(x)openInterpretation(x.d,x.u,id)},render,showView,enter,versionCount:(pcode,key)=>distinctContentVersions(versionMap.get(pcode+'|'+key)||[]).length,diffSegments};
+{const nav=document.querySelector('aside nav')||$('updateNav')?.parentElement;if(nav){const a=link('條文分析與教學',globalThis.TECHNICAL_HOSTED_READONLY?'analysis.html':'條文分析與教學.html');a.className='nav';a.id='analysisNav';nav.insertBefore(a,$('updateNav'))}}
 installOfficialHistory();window.technicalApp.openOfficialHistory=openOfficialHistory;installDiagram3dIntegration();window.addEventListener('hashchange',openReaderLocation);document.head.append(readingStyle,officialFigureStyle,interpretationImageStyle,unifiedTypographyStyle,diagram3dStyle);enter(true);openReaderLocation();
 })();
