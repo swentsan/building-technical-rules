@@ -18,7 +18,7 @@ function fillNote(){const n=note();for(const f of fieldNames)document.querySelec
 function renderWorkspace(){
  $('articleTitle').textContent=laws.get(selected.pcode).title+'｜'+selected.heading;$('sourceMeta').textContent='原文來源版次：'+version.date+'｜內容版次：'+canonical.date+(canonical.is_history_baseline?'（最早收錄基準）':'');
  $('versionSelect').replaceChildren();for(const v of selected.versions){const o=new Option(v.date+(v.is_history_baseline?'・收錄基準':''),v.id);$('versionSelect').append(o)}$('versionSelect').value=canonical.id;
- $('sourceText').textContent=version.text;$('sourceText').classList.toggle('has-table',/[┌┐┬┼│─]/.test(version.text));$('officialLink').href=version.source_url;$('readerLink').href=readerHref();$('historyLink').href=readerHref(selected,version,true);
+ $('sourceText').textContent=version.text;$('sourceText').classList.toggle('has-table',/[┌┐┬┼│─]/.test(version.text));$('officialLink').href=version.source_url;$('visualClassroomLink').href=(reader==='index.html'?'illustrations.html':'條文圖解教室.html')+'#'+new URLSearchParams({pcode:selected.pcode,article:selected.article_key,version:version.id});$('readerLink').href=readerHref();$('historyLink').href=readerHref(selected,version,true);
  const warning=version.effective_warning||'';$('sourceWarning').textContent=warning;$('sourceWarning').hidden=!warning;$('effectiveNote').textContent=version.effective_note||'此來源未另列單一施行日期；請由官方來源及本條沿革核對。';fillNote();renderLocators();renderSlide();
 }
 function renderResults(){
