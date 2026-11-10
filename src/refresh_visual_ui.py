@@ -12,6 +12,6 @@ def build_visual_page(root=ROOT):
 def publish_visual(root,output):
  root=Path(root);output=Path(output);assets=output/'docs/assets';assets.mkdir(parents=True,exist_ok=True);build(root/'technical/corpus.json',root/'tools/visual-lessons-source.json',assets/'article-visual-lessons.js')
  for name in ASSETS:shutil.copy2(root/'tools'/name,assets/name)
- (output/'docs/illustrations.html').write_text((root/'tools/illustrations.template.html').read_text(encoding='utf-8').replace('__READER__','index.html').replace('__ANALYSIS__','analysis.html'),encoding='utf-8');(output/'src').mkdir(exist_ok=True)
+ (output/'docs/illustrations.html').write_text((root/'tools/illustrations.template.html').read_text(encoding='utf-8').replace('__READER__','technical.html').replace('__ANALYSIS__','analysis.html'),encoding='utf-8');(output/'src').mkdir(exist_ok=True)
  for name in SOURCES:shutil.copy2(root/'tools'/name,output/'src'/name)
 if __name__=='__main__':print(build_visual_page())
