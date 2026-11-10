@@ -1,0 +1,3770 @@
+[
+  {
+    "id": "BP-001",
+    "topic": "01 送件與分工",
+    "title": "建造行為及執照類型",
+    "action": "辨識新建、增建、改建、修建或雜項工作物，確認申請執照類型及例外。",
+    "evidence": "工程範圍說明、現況及計畫圖",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "申請程序／人工判定",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_9",
+        "law_title": "建築法",
+        "heading": "第9條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=9",
+        "version_date": "2022-05-11",
+        "quote": "本法所稱建造，係指左列行為：\n一、新建：為新建造之建築物或將原建築物全部拆除而重行建築者。\n二、增建：於原建築物增加其面積或高度者。但以過廊與原建築物連接者，應視為新建。\n三、改建：將建築物之一部分拆除，於原建築基地範圍內改造，而不增高或擴大面積者。\n四、修建：建築物之基礎、樑柱、承重牆壁、樓地板、屋架及屋頂，其中任何",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_25",
+        "law_title": "建築法",
+        "heading": "第25條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=25",
+        "version_date": "2022-05-11",
+        "quote": "建築物非經申請直轄市、縣（市）（局）主管建築機關之審查許可並發給執照，不得擅自建造或使用或拆除。但合於第七十八條及第九十八條規定者，不在此限。\n直轄市、縣（市）（局）主管建築機關為處理擅自建造或使用或拆除之建築物，得派員攜帶證明文件，進入公私有土地或建築物內勘查。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_28",
+        "law_title": "建築法",
+        "heading": "第28條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=28",
+        "version_date": "2022-05-11",
+        "quote": "建築執照分左列四種：\n一、建造執照：建築物之新建、增建、改建及修建，應請領建造執照。\n二、雜項執照：雜項工作物之建築，應請領雜項執照。\n三、使用執照：建築物建造完成後之使用或變更使用，應請領使用執照。\n四、拆除執照：建築物之拆除，應請領拆除執照。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-002",
+    "topic": "01 送件與分工",
+    "title": "申請書與土地權利",
+    "action": "核對起造人、基地、土地權利及同意文件；查核有無書件與權利內容審認分開記錄。",
+    "evidence": "申請書、謄本、地籍圖、土地使用同意書",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "書件查核",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_30",
+        "law_title": "建築法",
+        "heading": "第30條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=30",
+        "version_date": "2022-05-11",
+        "quote": "起造人申請建造執照或雜項執照時，應備具申請書、土地權利證明文件、工程圖樣及說明書。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_31",
+        "law_title": "建築法",
+        "heading": "第31條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=31",
+        "version_date": "2022-05-11",
+        "quote": "建造執照或雜項執照申請書，應載明左列事項：\n一、起造人之姓名、年齡、住址。起造人為法人者，其名稱及事務所。\n二、設計人之姓名、住址、所領證書字號及簽章。\n三、建築地址。\n四、基地面積、建築面積、基地面積與建築面積之百分比。\n五、建築物用途。\n六、工程概算。\n七、建築期限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_2",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第2點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "建造執照及雜項執照應由直轄市、縣（市）政府及內政部核定之特設主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目（建築執照及雜項執照規定項目審查表如 附表一 ），分為查核項目及審查項目，其餘項目應由建築師或建築師及專業工業技師簽證負責（建築執照及雜項執照建築師簽證表如 附表二 ）。\n\n前項屬查核項目者，主管建築機關僅",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_3",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第3點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "查核項目規定如下：\n\n（一）書表：\n\n1.建造執照或雜項執照申請書。\n\n2.規定項目審查表。\n\n3.現地彩色照片。\n\n4.起造人委託建築師之委託書（免由建築師設計者，免附）。\n\n（二）土地權利證明文件：\n\n1.土地使用權同意書（限土地非自有者）。\n2.使用共同壁協定書（未使用共同壁者，免附）。\n\n3.土地登記(簿)謄本",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-003",
+    "topic": "01 送件與分工",
+    "title": "圖樣、說明書及比例尺",
+    "action": "核對位置、地盤、平立剖、構造材料、設備、計算書等圖說及規定比例尺。",
+    "evidence": "圖說目錄、圖號、比例尺、計算書",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "書件查核；技術內容另簽證",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_32",
+        "law_title": "建築法",
+        "heading": "第32條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=32",
+        "version_date": "2022-05-11",
+        "quote": "工程圖樣及說明書應包括左列各款︰\n一、基地位置圖。\n二、地盤圖，其比例尺不得小於一千二百分之一。\n三、建築物之平面、立面、剖面圖，其比例尺不得小於二百分之一。\n四、建築物各部之尺寸構造及材料，其比例尺不得小於三十分之一。\n五、直轄市、縣（市）主管建築機關規定之必要結構計算書。\n六、直轄市、縣（市）主管建築機關規定之必要",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_3",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第3點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "查核項目規定如下：\n\n（一）書表：\n\n1.建造執照或雜項執照申請書。\n\n2.規定項目審查表。\n\n3.現地彩色照片。\n\n4.起造人委託建築師之委託書（免由建築師設計者，免附）。\n\n（二）土地權利證明文件：\n\n1.土地使用權同意書（限土地非自有者）。\n2.使用共同壁協定書（未使用共同壁者，免附）。\n\n3.土地登記(簿)謄本",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-004",
+    "topic": "01 送件與分工",
+    "title": "設計及專業簽證資格",
+    "action": "確認開業建築師及專業技師資格、承辦範圍與簽章；免由建築師設計案件另核地方標準。",
+    "evidence": "開業、執業證明、簽證表及委託書",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "資格及簽證範圍核對",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_13",
+        "law_title": "建築法",
+        "heading": "第13條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=13",
+        "version_date": "2022-05-11",
+        "quote": "本法所稱建築物設計人及監造人為建築師，以依法登記開業之建築師為限。但有關建築物結構及設備等專業工程部分，除五層以下非供公眾使用之建築物外，應由承辦建築師交由依法登記開業之專業工業技師負責辦理，建築師並負連帶責任。\n公有建築物之設計人及監造人，得由起造之政府機關、公營事業機構或自治團體內，依法取得建築師或專業工業技師證書",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070036_20230811",
+        "unit_id": "central_D0070036_20230811_art_3",
+        "law_title": "建築物結構與設備專業工程技師簽證規則",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070036&flno=3",
+        "version_date": "2023-08-11",
+        "quote": "本規則所稱專業技師，指依本法第八條第一項規定，領有執業執照，並依本法第七條第一項第一款、第二款規定方式執業，辦理建築物結構與設備專業工程之技師。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070036_20230811",
+        "unit_id": "central_D0070036_20230811_art_4",
+        "law_title": "建築物結構與設備專業工程技師簽證規則",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070036&flno=4",
+        "version_date": "2023-08-11",
+        "quote": "專業技師辦理建築物結構與設備專業工程相關技術事務並簽證負責（以下簡稱簽證）時，應先檢具下列文件、資料，申經中央主管建築機關許可，並公告後始得為之：\n一、申請書。\n二、執業技師之簽名及印鑑卡、執業圖記。\n三、執業執照及其影本各一份。\n前項許可期限末日與執業執照效期末日相同，執業執照效期屆滿換發後，許可事項無變更者，免重新",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070036_20230811",
+        "unit_id": "central_D0070036_20230811_art_5",
+        "law_title": "建築物結構與設備專業工程技師簽證規則",
+        "heading": "第5條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070036&flno=5",
+        "version_date": "2023-08-11",
+        "quote": "專業技師辦理簽證業務時，應依中央主管建築機關指定項目為之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "kl_bm_017_official_4f73760f0f62",
+        "unit_id": "kl_bm_017_official_4f73760f0f62_u0002",
+        "law_title": "基隆市建築工程免由建築師設計、監造及營造業承造一定金額工程造價標準",
+        "heading": "第二條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL055276&media=print",
+        "version_date": "2024-12-20",
+        "quote": "第二條\n基隆市建築工程造價為新台幣四十萬元以下者，免由建築師設計、監造及\n營造業承造。"
+      },
+      {
+        "document_id": "kl_bm_017_official_4f73760f0f62",
+        "unit_id": "kl_bm_017_official_4f73760f0f62_u0003",
+        "law_title": "基隆市建築工程免由建築師設計、監造及營造業承造一定金額工程造價標準",
+        "heading": "第三條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL055276&media=print",
+        "version_date": "2024-12-20",
+        "quote": "第三條\n本標準自中華民國一百一十四年一月一日起施行。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-005",
+    "topic": "01 送件與分工",
+    "title": "行政查核與技術責任分工",
+    "action": "依規定項目區分查核、審查及其餘簽證；地方核定增加項目及免由建築師設計案件另核。",
+    "evidence": "規定項目審查表、建築師簽證表、地方核定規定",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "審查分工確認",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_34",
+        "law_title": "建築法",
+        "heading": "第34條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=34",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關審查或鑑定建築物工程圖樣及說明書，應就規定項目為之，其餘項目由建築師或建築師及專業工業技師依本法規定簽證負責。對於特殊結構或設備之建築物並得委託或指定具有該項學識及經驗之專家或機關、團體為之；其委託或指定之審查或鑑定費用由起造人負擔。\n前項規定項目之審查或鑑定人員以大、專有關系、科畢業",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_2",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第2點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "建造執照及雜項執照應由直轄市、縣（市）政府及內政部核定之特設主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目（建築執照及雜項執照規定項目審查表如 附表一 ），分為查核項目及審查項目，其餘項目應由建築師或建築師及專業工業技師簽證負責（建築執照及雜項執照建築師簽證表如 附表二 ）。\n\n前項屬查核項目者，主管建築機關僅",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_5",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第5點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "第三點第四款規定之其他查核項目及第四點第三款規定之其他審查項目，得由直轄市、縣（市）政府另定委辦規則，報經內政部核定後實施。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_6",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第6點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "依規定免由建築師設計之建造執照及雜項執照案件，第三點之查核項目及建築師或建築師及專業工業技師簽證之其餘項目，應為直轄市、縣（市）主管建築機關辦理之審查項目。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-006",
+    "topic": "01 送件與分工",
+    "title": "預審及特殊結構設備審查",
+    "action": "如有預審或特殊結構設備，核對審定事項、附帶條件及送審圖說一致性。",
+    "evidence": "預審審定書、專家審查文件、條件追蹤表",
+    "applicability": "有預審或特殊結構設備案件",
+    "responsibility": "書件查核及專案審查",
+    "refs": [
+      {
+        "document_id": "central_D0070135_19850626",
+        "unit_id": "central_D0070135_19850626_art_2",
+        "law_title": "建造執照預審辦法",
+        "heading": "第2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070135&flno=2",
+        "version_date": "1985-06-26",
+        "quote": "建築物之起造人或受其委託之設計人於申請建造執照前得填具申請書（如附表一）詳細列明預審事項及理由，繳納審查費，檢附工程圖樣及說明書暨其他有關證明文件向直轄市、縣（市）（局）主管建築機關申請預審。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070135_19850626",
+        "unit_id": "central_D0070135_19850626_art_4",
+        "law_title": "建造執照預審辦法",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070135&flno=4",
+        "version_date": "1985-06-26",
+        "quote": "建造執照預審小組每月月底開會一次，審理該月二十日前申請預審案件。必要時得加開預審會議為不定期審查。\n直轄市、縣（市）（局）主管建築機關應於預審會議之日起十日內，將審定結果製作審定書（如附表二）通知申請人。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_34",
+        "law_title": "建築法",
+        "heading": "第34條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=34",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關審查或鑑定建築物工程圖樣及說明書，應就規定項目為之，其餘項目由建築師或建築師及專業工業技師依本法規定簽證負責。對於特殊結構或設備之建築物並得委託或指定具有該項學識及經驗之專家或機關、團體為之；其委託或指定之審查或鑑定費用由起造人負擔。\n前項規定項目之審查或鑑定人員以大、專有關系、科畢業",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_3",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第3點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "查核項目規定如下：\n\n（一）書表：\n\n1.建造執照或雜項執照申請書。\n\n2.規定項目審查表。\n\n3.現地彩色照片。\n\n4.起造人委託建築師之委託書（免由建築師設計者，免附）。\n\n（二）土地權利證明文件：\n\n1.土地使用權同意書（限土地非自有者）。\n2.使用共同壁協定書（未使用共同壁者，免附）。\n\n3.土地登記(簿)謄本",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-007",
+    "topic": "01 送件與分工",
+    "title": "通知改正與復審",
+    "action": "逐項記錄不合條款、圖號與改正結果，並核對法定程序及時限。",
+    "evidence": "一次通知改正、回覆表及送件日期",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "行政程序",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_33",
+        "law_title": "建築法",
+        "heading": "第33條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=33",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關收到起造人申請建造執照或雜項執照書件之日起，應於十日內審查完竣，合格者即發給執照。但供公眾使用或構造複雜者，得視需要予以延長，最長不得超過三十日。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_35",
+        "law_title": "建築法",
+        "heading": "第35條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=35",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關，對於申請建造執照或雜項執照案件，認為不合本法規定或基於本法所發布之命令或妨礙當地都市計畫或區域計畫有關規定者，應將其不合條款之處，詳為列舉，依第三十三條所規定之期限，一次通知起造人，令其改正。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_36",
+        "law_title": "建築法",
+        "heading": "第36條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=36",
+        "version_date": "2022-05-11",
+        "quote": "起造人應於接獲第一次通知改正之日起六個月內，依照通知改正事項改正完竣送請復審；屆期未送請復審或復審仍不合規定者，主管建築機關得將該申請案件予以駁回。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_spot_check_20220527",
+        "unit_id": "central_spot_check_20220527_art_4",
+        "law_title": "建造執照及雜項執照簽證項目抽查作業要點",
+        "heading": "第4點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/law%26regusw/188",
+        "version_date": "2022-05-27",
+        "quote": "主管建築機關於審查建造執照或雜項執照申請案件時，應就規定項目逐一核對，必要時通知起造人及設計人到場說明。審查合格者，應依建築法第三十三條規定即發給執照；審查不合格者，依建築法第三十五條規定一次通知改正。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-008",
+    "topic": "01 送件與分工",
+    "title": "簽證抽查及必抽項目",
+    "action": "依樓層、用途及特殊基地情形核對抽查規定；綠建築、無障礙及結構計算列入必要抽查項目。",
+    "evidence": "抽查名冊、基地敏感區資料、簽證及檢核表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "主管機關抽查；設計人備查",
+    "refs": [
+      {
+        "document_id": "central_spot_check_20220527",
+        "unit_id": "central_spot_check_20220527_art_5",
+        "law_title": "建造執照及雜項執照簽證項目抽查作業要點",
+        "heading": "第5點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/law%26regusw/188",
+        "version_date": "2022-05-27",
+        "quote": "主管建築機關對於建造執照及雜項執照之簽證項目，應視實際需要按下列比例抽查：\n（一）五層以下非供公眾使用之建築物每十件抽查一件以上。\n（二）五層以下供公眾使用之建築物每十件抽查二件以上。\n（三）六層以上至十層之建築物每十件抽查二件以上。\n（四）十一層以上至十四層之建築物每十件抽查四件以上。\n（五）十五層以上建築物每十件抽",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_spot_check_20220527",
+        "unit_id": "central_spot_check_20220527_art_7",
+        "law_title": "建造執照及雜項執照簽證項目抽查作業要點",
+        "heading": "第7點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/law%26regusw/188",
+        "version_date": "2022-05-27",
+        "quote": "依第五點規定比例抽查之建築物，其綠建築設計、無障礙設施設計及結構計算書，應列為必要抽查項目，主管建築機關並得委託或指定具有該項學識及經驗之專家或機關（構）、學校或團體辦理抽查。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-009",
+    "topic": "02 土地與基地",
+    "title": "都市計畫土地使用",
+    "action": "取得基地所屬現行計畫書圖、分區及土管要點，逐項核對用途及附帶條件；不得僅用中央一般上限代替個別計畫。",
+    "evidence": "分區證明、計畫名稱及公告文號、土管條文",
+    "applicability": "都市計畫區",
+    "responsibility": "法定審查",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_35",
+        "law_title": "建築法",
+        "heading": "第35條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=35",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關，對於申請建造執照或雜項執照案件，認為不合本法規定或基於本法所發布之命令或妨礙當地都市計畫或區域計畫有關規定者，應將其不合條款之處，詳為列舉，依第三十三條所規定之期限，一次通知起造人，令其改正。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070001_20210526",
+        "unit_id": "central_D0070001_20210526_art_32",
+        "law_title": "都市計畫法",
+        "heading": "第32條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070001&flno=32",
+        "version_date": "2021-05-26",
+        "quote": "都市計畫得劃定住宅、商業、工業等使用區，並得視實際情況，劃定其他使用區域或特定專用區。\n前項各使用區，得視實際需要，再予劃分，分別予以不同程度之使用管制。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070001_20210526",
+        "unit_id": "central_D0070001_20210526_art_39",
+        "law_title": "都市計畫法",
+        "heading": "第39條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070001&flno=39",
+        "version_date": "2021-05-26",
+        "quote": "對於都市計畫各使用區及特定專用區內土地及建築物之使用、基地面積或基地內應保留空地之比率、容積率、基地內前後側院之深度及寬度、停車場及建築物之高度，以及有關交通、景觀或防火等事項，內政部或直轄市政府得依據地方實際情況，於本法施行細則中作必要之規定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_4",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第4點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "審查項目規定如下：\n\n（一）基地條件限制：\n\n1.套繪圖查核結果基地無違反規定重複建築使用。\n\n2.基地符合畸零地使用規則規定。\n\n3.基地符合禁限建規定。\n4.建築基地全部或一部位於地質敏感區內且無基地地質調查及地質安全評估結果報告經其他目的事業主管機關審查通過之證明文件者，其基地地質調查及地質安全評估結果報告。\n\n",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-010",
+    "topic": "02 土地與基地",
+    "title": "省施行細則與個別計畫",
+    "action": "依計畫及適用細則確認分區使用、建蔽容積；記錄計畫有無規定及採用依據。",
+    "evidence": "計畫書、分區用途及建蔽容積檢討表",
+    "applicability": "適用都市計畫法臺灣省施行細則之都市計畫區",
+    "responsibility": "法定審查",
+    "refs": [
+      {
+        "document_id": "central_D0070012_20260812",
+        "unit_id": "central_D0070012_20260812_art_14",
+        "law_title": "都市計畫法臺灣省施行細則",
+        "heading": "第14條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070012&flno=14",
+        "version_date": "2026-08-12",
+        "quote": "都市計畫範圍內土地得視實際發展情形，劃定下列各種使用區，分別限制其使用：\n一、住宅區。\n二、商業區。\n三、工業區：\n（一）特種工業區。\n（二）甲種工業區。\n（三）乙種工業區。\n（四）零星工業區。\n四、行政區。\n五、文教區。\n六、體育運動區。\n七、風景區。\n八、保存區。\n九、保護區。\n十、農業區。\n十一、其他使用區。\n除",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070012_20260812",
+        "unit_id": "central_D0070012_20260812_art_15",
+        "law_title": "都市計畫法臺灣省施行細則",
+        "heading": "第15條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070012&flno=15",
+        "version_date": "2026-08-12",
+        "quote": "住宅區為保護居住環境而劃定，不得為下列建築物及土地之使用：\n一、第十七條規定限制之建築及使用。\n二、使用電力及氣體燃料（使用動力不包括空氣調節、抽水機及其附屬設備）超過三匹馬力，電熱超過三十瓩（附屬設備與電熱不得流用於作業動力）、作業廠房樓地板面積合計超過一百平方公尺或其地下層無自然通風口（開窗面積未達廠房面積七分之一",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070012_20260812",
+        "unit_id": "central_D0070012_20260812_art_17",
+        "law_title": "都市計畫法臺灣省施行細則",
+        "heading": "第17條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070012&flno=17",
+        "version_date": "2026-08-12",
+        "quote": "商業區為促進商業發展而劃定，不得為下列建築物及土地之使用：\n一、第十八條規定限制之建築及使用。\n二、使用電力及氣體燃料（使用動力不包括空氣調節、抽水機及附屬設備）超過十五匹馬力、電熱超過六十瓩（附屬設備與電熱不得流用於作業動力）或作業廠房之樓地板面積合計超過三百平方公尺者。但報業印刷及冷藏業，不在此限。\n三、經營下列事",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070012_20260812",
+        "unit_id": "central_D0070012_20260812_art_33",
+        "law_title": "都市計畫法臺灣省施行細則",
+        "heading": "第33條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070012&flno=33",
+        "version_date": "2026-08-12",
+        "quote": "都市計畫地區內，為使土地合理使用，應依下列規定，於都市計畫書內訂定容積管制規定：\n一、住宅區及商業區，應依計畫容納人口、居住密度、每人平均居住樓地板面積及公共設施服務水準，訂定平均容積率，並依其計畫特性、區位、面臨道路寬度、鄰近公共設施之配置情形、地形地質、發展現況及限制，分別訂定不同之容積率管制。\n二、其他使用分區，",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070012_20260812",
+        "unit_id": "central_D0070012_20260812_art_34",
+        "law_title": "都市計畫法臺灣省施行細則",
+        "heading": "第34條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070012&flno=34",
+        "version_date": "2026-08-12",
+        "quote": "都市計畫地區各土地使用分區之容積率，依都市計畫書中所載規定；未載明者，其容積率不得超過下列規定：\n一、住宅區及商業區：\n┌─────┬───┬─────────┬─────────┐\n  │居住密度（│分區別│鄰里性公共設施用地│鄰里性公共設施用地│\n  │人／公頃）│      │比值未逾百分之十五│比值超過百分之十",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-011",
+    "topic": "02 土地與基地",
+    "title": "非都市土地容許使用",
+    "action": "確認使用分區、編定用地、容許使用項目及細目、開發許可與地方調降限制。",
+    "evidence": "土地謄本、容許使用附表、開發許可書",
+    "applicability": "非都市土地",
+    "responsibility": "法定審查",
+    "refs": [
+      {
+        "document_id": "central_D0060013_20260527",
+        "unit_id": "central_D0060013_20260527_art_3",
+        "law_title": "非都市土地使用管制規則",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0060013&flno=3",
+        "version_date": "2026-05-27",
+        "quote": "非都市土地依其使用分區之性質，編定為甲種建築、乙種建築、丙種建築、丁種建築、農牧、林業、養殖、鹽業、礦業、窯業、交通、水利、遊憩、古蹟保存、生態保護、國土保安、殯葬、海域、特定目的事業等使用地。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0060013_20260527",
+        "unit_id": "central_D0060013_20260527_art_4",
+        "law_title": "非都市土地使用管制規則",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0060013&flno=4",
+        "version_date": "2026-05-27",
+        "quote": "非都市土地之使用，除國家公園區內土地，由國家公園主管機關依法管制外，按其編定使用地之類別，依本規則規定管制之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0060013_20260527",
+        "unit_id": "central_D0060013_20260527_art_6",
+        "law_title": "非都市土地使用管制規則",
+        "heading": "第6條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0060013&flno=6",
+        "version_date": "2026-05-27",
+        "quote": "非都市土地經劃定使用分區並編定使用地類別，應依其容許使用之項目及許可使用細目使用。但中央目的事業主管機關認定為重大建設計畫或其報經行政院核定之重大政策所需之臨時性設施，經徵得使用地之中央主管機關及有關機關同意後，得核准為臨時使用。中央目的事業主管機關於核准時，應函請直轄市或縣（市）政府將臨時使用用途及期限等資料，依相關",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0060013_20260527",
+        "unit_id": "central_D0060013_20260527_art_9",
+        "law_title": "非都市土地使用管制規則",
+        "heading": "第9條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0060013&flno=9",
+        "version_date": "2026-05-27",
+        "quote": "下列非都市土地建蔽率及容積率不得超過下列規定。但直轄市或縣（市）政府得視實際需要酌予調降，並報請中央主管機關備查︰\n一、甲種建築用地︰建蔽率百分之六十。容積率百分之二百四十。\n二、乙種建築用地︰建蔽率百分之六十。容積率百分之二百四十。\n三、丙種建築用地︰建蔽率百分之四十。容積率百分之一百二十。\n四、丁種建築用地︰建蔽率",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-012",
+    "topic": "02 土地與基地",
+    "title": "基地完整及法定空地",
+    "action": "核對基地範圍、合併、法定空地與套繪，不得重複使用；合併或分割個案另核。",
+    "evidence": "地籍、套繪圖、基地及法定空地面積表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "法定審查",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_11",
+        "law_title": "建築法",
+        "heading": "第11條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=11",
+        "version_date": "2022-05-11",
+        "quote": "本法所稱建築基地，為供建築物本身所占之地面及其所應留設之法定空地。建築基地原為數宗者，於申請建築前應合併為一宗。\n前項法定空地之留設，應包括建築物與其前後左右之道路或其他建築物間之距離，其寬度於建築管理規則中定之。\n應留設之法定空地，非依規定不得分割、移轉，並不得重複使用；其分割要件及申請核發程序等事項之辦法，由中央主",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_4",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第4點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "審查項目規定如下：\n\n（一）基地條件限制：\n\n1.套繪圖查核結果基地無違反規定重複建築使用。\n\n2.基地符合畸零地使用規則規定。\n\n3.基地符合禁限建規定。\n4.建築基地全部或一部位於地質敏感區內且無基地地質調查及地質安全評估結果報告經其他目的事業主管機關審查通過之證明文件者，其基地地質調查及地質安全評估結果報告。\n\n",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-013",
+    "topic": "02 土地與基地",
+    "title": "畸零基地與禁限建",
+    "action": "核對地方畸零地寬深、禁限建條件及必要調處；不能只以基地總面積判斷。",
+    "evidence": "基地尺寸、畸零地證明、調處及禁限建查詢",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "法定審查",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_44",
+        "law_title": "建築法",
+        "heading": "第44條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=44",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）政府應視當地實際情形，規定建築基地最小面積之寬度及深度；建築基地面積畸零狹小不合規定者，非與鄰接土地協議調整地形或合併使用，達到規定最小面積之寬度及深度，不得建築。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_45",
+        "law_title": "建築法",
+        "heading": "第45條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=45",
+        "version_date": "2022-05-11",
+        "quote": "前條基地所有權人與鄰接土地所有權人於不能達成協議時，得申請調處，直轄市、縣（市）（局）政府應於收到申請之日起一個月內予以調處；調處不成時，基地所有權人或鄰接土地所有權人得就規定最小面積之寬度及深度範圍內之土地按徵收補償金額預繳承買價款申請該管地方政府徵收後辦理出售。徵收之補償，土地以市價為準，建築物以重建價格為準，所有",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_46",
+        "law_title": "建築法",
+        "heading": "第46條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=46",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）主管建築機關應依照前二條規定，並視當地實際情形，訂定畸零地使用規則，報經內政部核定後發布實施。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_4",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第4點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "審查項目規定如下：\n\n（一）基地條件限制：\n\n1.套繪圖查核結果基地無違反規定重複建築使用。\n\n2.基地符合畸零地使用規則規定。\n\n3.基地符合禁限建規定。\n4.建築基地全部或一部位於地質敏感區內且無基地地質調查及地質安全評估結果報告經其他目的事業主管機關審查通過之證明文件者，其基地地質調查及地質安全評估結果報告。\n\n",
+        "effective_warning": null
+      },
+      {
+        "document_id": "kl_bm_008_official_2e7663fcd28f",
+        "unit_id": "kl_bm_008_official_2e7663fcd28f_u0001",
+        "law_title": "基隆市畸零地使用規則",
+        "heading": "第一條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL003536&media=print",
+        "version_date": "2011-10-07",
+        "quote": "第 一 條\n本規則依建築法（以下簡稱本法）第四十六條規定訂定之。"
+      },
+      {
+        "document_id": "kl_bm_008_official_2e7663fcd28f",
+        "unit_id": "kl_bm_008_official_2e7663fcd28f_u0002",
+        "law_title": "基隆市畸零地使用規則",
+        "heading": "第二條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL003536&media=print",
+        "version_date": "2011-10-07",
+        "quote": "第 二 條\n畸零地及其相鄰土地之使用管理，依本規則之規定。\n前項所稱畸零地係指本法第三條規定地區內面積狹小或地界曲折之基地。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-014",
+    "topic": "02 土地與基地",
+    "title": "地質調查及安全評估",
+    "action": "確認地基調查及地質敏感區報告的書件、審查分工與原核定條件。",
+    "evidence": "地基調查、地質安全評估及核定文件",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "書件查核或法定審查，依是否經其他機關審查通過判定",
+    "refs": [
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_3",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第3點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "查核項目規定如下：\n\n（一）書表：\n\n1.建造執照或雜項執照申請書。\n\n2.規定項目審查表。\n\n3.現地彩色照片。\n\n4.起造人委託建築師之委託書（免由建築師設計者，免附）。\n\n（二）土地權利證明文件：\n\n1.土地使用權同意書（限土地非自有者）。\n2.使用共同壁協定書（未使用共同壁者，免附）。\n\n3.土地登記(簿)謄本",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_review_items_20150605",
+        "unit_id": "central_review_items_20150605_art_4",
+        "law_title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+        "heading": "第4點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622",
+        "version_date": "2015-06-05",
+        "quote": "審查項目規定如下：\n\n（一）基地條件限制：\n\n1.套繪圖查核結果基地無違反規定重複建築使用。\n\n2.基地符合畸零地使用規則規定。\n\n3.基地符合禁限建規定。\n4.建築基地全部或一部位於地質敏感區內且無基地地質調查及地質安全評估結果報告經其他目的事業主管機關審查通過之證明文件者，其基地地質調查及地質安全評估結果報告。\n\n",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_spot_check_20220527",
+        "unit_id": "central_spot_check_20220527_art_5",
+        "law_title": "建造執照及雜項執照簽證項目抽查作業要點",
+        "heading": "第5點",
+        "official_url": "https://www.nlma.gov.tw/ch/legislation/law%26regusw/188",
+        "version_date": "2022-05-27",
+        "quote": "主管建築機關對於建造執照及雜項執照之簽證項目，應視實際需要按下列比例抽查：\n（一）五層以下非供公眾使用之建築物每十件抽查一件以上。\n（二）五層以下供公眾使用之建築物每十件抽查二件以上。\n（三）六層以上至十層之建築物每十件抽查二件以上。\n（四）十一層以上至十四層之建築物每十件抽查四件以上。\n（五）十五層以上建築物每十件抽",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-015",
+    "topic": "02 土地與基地",
+    "title": "建築線與道路退讓",
+    "action": "核對建築線指定、計畫退縮、未闢道路與現有巷道；將指示圖及有效道路資料疊合配置圖。",
+    "evidence": "建築線指示圖、道路境界、退縮線",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "行政審查及技術檢討",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_42",
+        "law_title": "建築法",
+        "heading": "第42條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=42",
+        "version_date": "2022-05-11",
+        "quote": "建築基地與建築線應相連接，其接連部分之最小寬度，由直轄市、縣（市）主管建築機關統一規定。但因該建築物周圍有廣場或永久性之空地等情形，經直轄市、縣（市）主管建築機關認為安全上無礙者，其寬度得不受限制。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_48",
+        "law_title": "建築法",
+        "heading": "第48條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=48",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）（局）主管建築機關，應指定已經公告道路之境界線為建築線。但都市細部計畫規定須退縮建築時，從其規定。\n前項以外之現有巷道，直轄市、縣（市）（局）主管建築機關，認有必要時得另定建築線；其辦法於建築管理規則中定之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_49",
+        "law_title": "建築法",
+        "heading": "第49條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=49",
+        "version_date": "2022-05-11",
+        "quote": "在依法公布尚未闢築或拓寬之道路線兩旁建造建築物，應依照直轄市、縣（市）（局）主管建築機關指定之建築線退讓。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_50",
+        "law_title": "建築法",
+        "heading": "第50條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=50",
+        "version_date": "2022-05-11",
+        "quote": "直轄市、縣（市）主管建築機關基於維護交通安全、景致觀瞻或其他需要，對於道路交叉口及面臨河湖、廣場等地帶之申請建築，得訂定退讓辦法令其退讓。\n前項退讓辦法，應報請內政部核定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_8",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第8條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=8",
+        "version_date": "2026-02-23",
+        "quote": "基地臨接供通行之現有巷道，其申請建築原則及現有巷道申請改道，廢止辦法由直轄市、縣（市）政府定之。\n基地他側同時臨接較寬之道路並為角地者，建築物高度不受現有巷道寬度之限制。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-016",
+    "topic": "02 土地與基地",
+    "title": "基地地坪與排水防洪",
+    "action": "核對道路、基地、底層地坪及騎樓高程，檢討防洪與雨污排水例外。",
+    "evidence": "高程剖面、排水流向、防水及防洪設計",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_43",
+        "law_title": "建築法",
+        "heading": "第43條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=43",
+        "version_date": "2022-05-11",
+        "quote": "建築物基地地面，應高出所臨接道路邊界處之路面；建築物底層地板面，應高出基地地面，但對於基地內之排水無礙，或因建築物用途上之需要，另有適當之防水及排水設備者，不在此限。\n建築物設有騎樓者，其地平面不得與鄰接之騎樓地平面高低不平。但因地勢關係，經直轄市、縣（市）（局）主管機關核准者，不在此限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_4",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=4",
+        "version_date": "2026-02-23",
+        "quote": "建築基地之地面高度，應在當地洪水位以上，但具有適當防洪及排水設備，或其建築物有一層以上高於洪水位，經當地主管建築機關認為無礙安全者，不在此限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_5",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第5條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=5",
+        "version_date": "2026-02-23",
+        "quote": "建築基地內之雨水污水應設置適當排水設備或處理設備，並排入該地區之公共下水道。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-017",
+    "topic": "03 量體與一般設計",
+    "title": "面積與高度定義",
+    "action": "統一建築面積、樓地板面積、基地地面、建築高度與層數的量測基準。",
+    "evidence": "面積計算、立剖面、地下層及屋突計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_1",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=1",
+        "version_date": "2026-02-23",
+        "quote": "本編建築技術用語，其他各編得適用，其定義如下：\n一、一宗土地：本法第十一條所稱一宗土地，指一幢或二幢以上有連帶使用性之建築物所使用之建築基地。但建築基地為道路、鐵路或永久性空地等分隔者，不視為同一宗土地。\n二、建築基地面積：建築基地（以下簡稱基地）之水平投影面積。\n三、建築面積：建築物外牆中心線或其代替柱中心線以內之最",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-018",
+    "topic": "03 量體與一般設計",
+    "title": "建蔽率及跨分區空地",
+    "action": "核對計畫、地方規定及跨分區空地；逐一列示採用數值及法源。",
+    "evidence": "建蔽率、各分區面積、法定空地計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "法定值審查及計算簽證",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_25",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第25條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=25",
+        "version_date": "2026-02-23",
+        "quote": "基地之建蔽率，依都市計畫法及其他有關法令之規定；其有未規定者，得視實際情況，由直轄市、縣（市）政府訂定，報請中央主管建築機關核定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_29",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第29條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=29",
+        "version_date": "2026-02-23",
+        "quote": "建築基地跨越二個以上使用分區時，應保留空地面積，建築物高度，應依照各分區使用之規定分別計算，但空地之配置不予限制。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_165",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第165條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=165",
+        "version_date": "2026-02-23",
+        "quote": "建築基地跨越二個以上使用分區時，空地及建築物樓地板面積之配置不予限制，但應保留空地面積應依照各分區使用規定，分別計算。\n前項使用分區不包括都市計畫法第三十二條其他使用區及特定專用區。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070001_20210526",
+        "unit_id": "central_D0070001_20210526_art_39",
+        "law_title": "都市計畫法",
+        "heading": "第39條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070001&flno=39",
+        "version_date": "2021-05-26",
+        "quote": "對於都市計畫各使用區及特定專用區內土地及建築物之使用、基地面積或基地內應保留空地之比率、容積率、基地內前後側院之深度及寬度、停車場及建築物之高度，以及有關交通、景觀或防火等事項，內政部或直轄市政府得依據地方實際情況，於本法施行細則中作必要之規定。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-019",
+    "topic": "03 量體與一般設計",
+    "title": "容積面積與免計項目",
+    "action": "逐項核對容積面積、陽臺、梯廳、設備及其他免計項目，記錄條件及上限。",
+    "evidence": "容積逐層面積及免計明細",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_160",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第160條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=160",
+        "version_date": "2026-02-23",
+        "quote": "實施容積管制地區之建築設計，除都市計畫法令或都市計畫書圖另有規定外，依本章規定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_161",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第161條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=161",
+        "version_date": "2026-02-23",
+        "quote": "本規則所稱容積率，指基地內建築物之容積總樓地板面積與基地面積之比。基地面積之計算包括法定騎樓面積。\n前項所稱容積總樓地板面積，指建築物除依本編第五十五條、第一百六十二條、第一百八十一條、第三百條及其他法令規定，不計入樓地板面積部分外，其餘各層樓地板面積之總和。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_162",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第162條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=162",
+        "version_date": "2026-02-23",
+        "quote": "前條容積總樓地板面積依本編第一條第五款、第七款及下列規定計算之：\n一、每層陽臺、屋簷突出建築物外牆中心線或柱中心線超過二公尺或雨遮、花臺突出超過一公尺者，應自其外緣分別扣除二公尺或一公尺作為中心線，計算該層樓地板面積。每層陽臺面積未超過該層樓地板面積之百分之十部分，得不計入該層樓地板面積。每層共同使用之樓梯間、昇降機間",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-020",
+    "topic": "03 量體與一般設計",
+    "title": "容積管制適用與高度",
+    "action": "先確認是否實施容積管制，再核對第166條排除適用項目及適用高度規定。",
+    "evidence": "適用條文表、道路及量體高度檢討",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_14",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第14條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=14",
+        "version_date": "2026-02-23",
+        "quote": "建築物高度不得超過基地面前道路寬度之一‧五倍加六公尺。面前道路寬度之計算，依左列規定：\n一、道路邊指定有牆面線者，計至牆面線。\n二、基地臨接計畫圓環，以交會於圓環之最寬道路視為面前道路；基地他側同時臨接道路，其高度限制並應依本編第十六條規定。\n三、基地以私設通路連接建築線，並作為主要進出道路者，該私設通路視為面前道路。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_15",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第15條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=15",
+        "version_date": "2026-02-23",
+        "quote": "基地周圍臨接或面對永久性空地，其高度限制如左：\n一、基地臨接道路之對側有永久性空地，其高度不得超過該道路寬度與面對永久性空地深度合計之一‧五倍，且以該基地臨接較寬（最寬）道路寬度之二倍加六公尺為限。\n二、基地周圍臨接永久性空地，永久性空地之寬度與深度（或深度之和）應為二十公尺以上，建築物高度以該基地臨接較寬（最寬）道路",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_16",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第16條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=16",
+        "version_date": "2026-02-23",
+        "quote": "基地臨接兩條以上道路，其高度限制如左：\n一、基地臨接最寬道路境界線深進其路寬二倍且未逾三十公尺範圍內之部分，以最寬道路視為面前道路。\n二、前款範圍外之基地，以其他道路中心線各深進十公尺範圍內，自次寬道路境界線深進其路寬二倍且未逾三十公尺，以次寬道路視為面前道路，並依此類推。\n三、前二款範圍外之基地，以最寬道路視為面前道",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_164",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第164條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=164",
+        "version_date": "2026-02-23",
+        "quote": "建築物高度依下列規定：\n一、建築物以三‧六比一之斜率，依垂直建築線方向投影於面前道路之陰影面積，不得超過基地臨接面前道路之長度與該道路寬度乘積之半，且其陰影最大不得超過面前道路對側境界線；建築基地臨接面前道路之對側有永久性空地，其陰影面積得加倍計算。陰影及高度之計算如下：\nＬ×Ｓw\n    Ａs≦ ──────\n   ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_166",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第166條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=166",
+        "version_date": "2026-02-23",
+        "quote": "本編第二條、第二條之一、第十四條第一項有關建築物高度限制部分，第十五條、第二十三條、第二十六條、第二十七條，不適用實施容積管制地區。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-021",
+    "topic": "03 量體與一般設計",
+    "title": "基地通路",
+    "action": "確認基地通路連接建築線、使用人數或樓地板面積相關寬度；先判斷第166條排除規定。",
+    "evidence": "通路配置、寬度尺寸、服務樓地板面積",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_2",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=2",
+        "version_date": "2026-02-23",
+        "quote": "基地應與建築線相連接，其連接部份之最小長度應在二公尺以上。基地內私設通路之寬度不得小於左列標準：\n一、長度未滿十公尺者為二公尺。\n二、長度在十公尺以上未滿二十公尺者為三公尺。\n三、長度大於二十公尺為五公尺。\n四、基地內以私設通路為進出道路之建築物總樓地板面積合計在一、○○○平方公尺以上者，通路寬度為六公尺。\n五、前款私",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_163",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第163條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=163",
+        "version_date": "2026-02-23",
+        "quote": "基地內各幢建築物間及建築物至建築線間之通路，得計入法定空地面積。\n基地內通路之寬度不得小於左列標準，但以基地內通路為進出道路之建築物，其總樓地板面積合計在一、○○○平方公尺以上者，通路寬度為六公尺。\n一、長度未滿十公尺者為二公尺。\n二、長度在十公尺以上未滿二十公尺者為三公尺。\n三、長度在二十公尺以上者為五公尺。\n基地內",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_166",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第166條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=166",
+        "version_date": "2026-02-23",
+        "quote": "本編第二條、第二條之一、第十四條第一項有關建築物高度限制部分，第十五條、第二十三條、第二十六條、第二十七條，不適用實施容積管制地區。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-022",
+    "topic": "03 量體與一般設計",
+    "title": "日照與居室",
+    "action": "依用途核對住宅居室及日照要求；日影高度另依適用條文檢討。",
+    "evidence": "居室配置、用途、日照及日影分析",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_40",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第40條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=40",
+        "version_date": "2026-02-23",
+        "quote": "住宅至少應有一居室之窗可直接獲得日照。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_164",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第164條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=164",
+        "version_date": "2026-02-23",
+        "quote": "建築物高度依下列規定：\n一、建築物以三‧六比一之斜率，依垂直建築線方向投影於面前道路之陰影面積，不得超過基地臨接面前道路之長度與該道路寬度乘積之半，且其陰影最大不得超過面前道路對側境界線；建築基地臨接面前道路之對側有永久性空地，其陰影面積得加倍計算。陰影及高度之計算如下：\nＬ×Ｓw\n    Ａs≦ ──────\n   ",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-023",
+    "topic": "03 量體與一般設計",
+    "title": "採光面積與有效範圍",
+    "action": "逐室檢討開口面積、有效採光範圍及面臨條件，記錄例外或替代措施。",
+    "evidence": "各居室面積、窗面積、採光剖面",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_41",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第41條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=41",
+        "version_date": "2026-02-23",
+        "quote": "建築物之居室應設置採光用窗或開口，其採光面積依下列規定：\n一、幼兒園及學校教室不得小於樓地板面積五分之一。\n二、住宅之居室，寄宿舍之臥室，醫院之病房及兒童福利設施包括保健館、育幼院、育嬰室、養老院等建築物之居室，不得小於該樓地板面積八分之一。\n三、位於地板面以上七十五公分範圍內之窗或開口面積不得計入採光面積之內。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_42",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第42條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=42",
+        "version_date": "2026-02-23",
+        "quote": "建築物外牆依前條規定留設之採光用窗或開口應在有效採光範圍內並依下式計算之：\n一、設有居室建築物之外牆高度（採光用窗或開口上端有屋簷時為其頂端部分之垂直距離）（H）與自該部分至其面臨鄰地境界線或同一基地內之他幢建築物或同一幢建築物內相對部分（如天井）之水平距離（D）之比，不得大於下表規定：\n┌───┬──────────",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-024",
+    "topic": "03 量體與一般設計",
+    "title": "自然及機械通風",
+    "action": "依居室用途、開口及通風方式檢討法定要求。",
+    "evidence": "通風面積表、機械換氣及管路",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_43",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第43條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=43",
+        "version_date": "2026-02-23",
+        "quote": "居室應設置能與戶外空氣直接流通之窗戶或開口，或有效之自然通風設備，或依建築設備編規定設置之機械通風設備，並應依下列規定：\n一、一般居室及浴廁之窗戶或開口之有效通風面積，不得小於該室樓地板面積百分之五。但設置符合規定之自然或機械通風設備者，不在此限。\n二、廚房之有效通風開口面積，不得小於該室樓地板面積十分之一，且不得小於",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_44",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第44條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=44",
+        "version_date": "2026-02-23",
+        "quote": "自然通風設備之構造應依左列規定：\n一、應具有防雨、防蟲作用之進風口，排風口及排風管道。\n二、排風管道應以不燃材料建造，管道應儘可能豎立並直通戶外。除頂部及一個排風口外，不得另設其他開口，一般居室及無窗居室之排風管有效斷面積不得小於左列公式之計算值；\nＡf\n     Ａv=────\n          250√h\n其中Ａ",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-025",
+    "topic": "03 量體與一般設計",
+    "title": "鄰地開口與隔音",
+    "action": "核對鄰地界線開口限制及分戶牆樓板隔音構造。",
+    "evidence": "界址及開口距離、隔音構造明細",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_45",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第45條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=45",
+        "version_date": "2026-02-23",
+        "quote": "建築物外牆開設門窗、開口，廢氣排出口或陽臺等，依下列規定：\n一、門窗之開啟均不得妨礙公共交通。\n二、緊接鄰地之外牆不得向鄰地方向開設門窗、開口及設置陽臺。但外牆或陽臺外緣距離境界線之水平距離達一公尺以上時，或以不能透視之固定玻璃磚砌築者，不在此限。\n三、同一基地內各幢建築物間或同一幢建築物內相對部份之外牆開設門窗、開口",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_46",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第46條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=46",
+        "version_date": "2026-02-23",
+        "quote": "新建或增建建築物之空氣音隔音設計，其適用範圍如下：\n一、寄宿舍、旅館等之臥室、客房或醫院病房之分間牆。\n二、連棟住宅、集合住宅之分戶牆。\n三、昇降機道與第一款建築物居室相鄰之分間牆，及與前款建築物居室相鄰之分戶牆。\n四、第一款及第二款建築物置放機械設備空間與上層或下層居室分隔之樓板。\n新建或增建建築物之樓板衝擊音隔音設",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-026",
+    "topic": "03 量體與一般設計",
+    "title": "樓梯尺寸及淨空",
+    "action": "依用途核對寬度、梯級、平台、淨空、扶手與欄杆；避難樓梯另依防火避難章。",
+    "evidence": "樓梯大樣、級高級深、剖面淨空及扶手",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_33",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第33條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=33",
+        "version_date": "2026-02-23",
+        "quote": "建築物樓梯及平臺之寬度、梯級之尺寸，應依下列規定：\n┌────────────┬───────┬────┬────┐\n│用途類別                │樓梯及平臺寬度│級高尺寸│級深尺寸│\n├────────────┼───────┼────┼────┤\n│一、小學校舍等供兒童使用│一點四零公尺以│十六公分│",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_34",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第34條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=34",
+        "version_date": "2026-02-23",
+        "quote": "前條附表第一、二欄樓梯高度每三公尺以內，其他各欄每四公尺以內應設置平台，其深度不得小於樓梯寬度。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_35",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第35條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=35",
+        "version_date": "2026-02-23",
+        "quote": "自樓梯級面最外緣量至天花板底面、梁底面或上一層樓梯底面之垂直淨空距離，不得小於一九○公分。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_36",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第36條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=36",
+        "version_date": "2026-02-23",
+        "quote": "樓梯內兩側均應裝設距梯級鼻端高度七十五公分以上之扶手，但第三十三條第三、四款有壁體者，可設一側扶手，並應依左列規定：\n一、樓梯之寬度在三公尺以上者，應於中間加裝扶手，但級高在十五公分以下，且級深在三十公分以上者得免設置。\n二、樓梯高度在一公尺以下者得免裝設扶手。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_37",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第37條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=37",
+        "version_date": "2026-02-23",
+        "quote": "樓梯數量及其應設置之相關位置依本編第四章之規定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_38",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第38條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=38",
+        "version_date": "2026-02-23",
+        "quote": "設置於露臺、陽臺、室外走廊、室外樓梯、平屋頂及室內天井部分等之欄桿扶手高度，不得小於一‧一○公尺；十層以上者，不得小於一‧二○公尺。\n建築物使用用途為 A-1、A-2、B-2、D-2、D-3、F-3、G-2、H-2 組者，前項欄桿不得設有可供直徑十公分物體穿越之鏤空或可供攀爬之水平橫條。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-027",
+    "topic": "03 量體與一般設計",
+    "title": "一般坡道與防護",
+    "action": "核對代替樓梯坡道及安全防護；無障礙坡道另併讀無障礙規範。",
+    "evidence": "坡度、寬度、平台及欄杆大樣",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_38",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第38條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=38",
+        "version_date": "2026-02-23",
+        "quote": "設置於露臺、陽臺、室外走廊、室外樓梯、平屋頂及室內天井部分等之欄桿扶手高度，不得小於一‧一○公尺；十層以上者，不得小於一‧二○公尺。\n建築物使用用途為 A-1、A-2、B-2、D-2、D-3、F-3、G-2、H-2 組者，前項欄桿不得設有可供直徑十公分物體穿越之鏤空或可供攀爬之水平橫條。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_39",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第39條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=39",
+        "version_date": "2026-02-23",
+        "quote": "建築物內規定應設置之樓梯可以坡道代替之，除其淨寬應依本編第三十三條之規定外，並應依左列規定：\n一、坡道之坡度，不得超過一比八。\n二、坡道之表面，應為粗面或用其他防滑材料處理之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-028",
+    "topic": "03 量體與一般設計",
+    "title": "騎樓與無遮簷人行道",
+    "action": "核對中央授權及基隆地方寬度、高程、淨高與構造要求。",
+    "evidence": "騎樓配置剖面、地方規定及計畫書",
+    "applicability": "依都市計畫或地方規定須設騎樓／人行道",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_43",
+        "law_title": "建築法",
+        "heading": "第43條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=43",
+        "version_date": "2022-05-11",
+        "quote": "建築物基地地面，應高出所臨接道路邊界處之路面；建築物底層地板面，應高出基地地面，但對於基地內之排水無礙，或因建築物用途上之需要，另有適當之防水及排水設備者，不在此限。\n建築物設有騎樓者，其地平面不得與鄰接之騎樓地平面高低不平。但因地勢關係，經直轄市、縣（市）（局）主管機關核准者，不在此限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_57",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第57條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=57",
+        "version_date": "2026-02-23",
+        "quote": "凡經指定在道路兩旁留設之騎樓或無遮簷人行道，其寬度及構造由市、縣（市）主管建築機關參照當地情形，並依照左列標準訂定之：\n一、寬度：自道路境界線至建築物地面層外牆面，不得小於三‧五公尺，但建築物有特殊用途或接連原有騎樓或無遮簷人行道，且其建築設計，無礙於市容觀瞻者，市、縣（市）主管建築機關，得視實際需要，將寬度酌予增減並",
+        "effective_warning": null
+      },
+      {
+        "document_id": "kl_bm_019_official_7a0ff9bd6c8e",
+        "unit_id": "kl_bm_019_official_7a0ff9bd6c8e_u0001",
+        "law_title": "基隆市都市計畫區騎樓設置標準",
+        "heading": "第一條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004306&media=print",
+        "version_date": "2011-12-19",
+        "quote": "第 一 條\n本標準依建築技術規則建築設計施工編第五十七條及臺灣省建管理規則第\n二十條規定訂定之。"
+      },
+      {
+        "document_id": "kl_bm_019_official_7a0ff9bd6c8e",
+        "unit_id": "kl_bm_019_official_7a0ff9bd6c8e_u0002",
+        "law_title": "基隆市都市計畫區騎樓設置標準",
+        "heading": "第二條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004306&media=print",
+        "version_date": "2011-12-19",
+        "quote": "第 二 條\n實施都市計畫區域內左列各款之建築基地應設置騎樓或無遮簷人行道，但\n都市計畫說明書另有規定者從其規定：\n一  面臨都市計畫道路寬度在七公尺以上之商業區。\n二  面臨都市計畫道路寬度在七公尺以上之住宅區，但道路坡度陡斜情形\n及特殊者視實際情形經專案核准不在此限。 (申請建築線指示時由專\n案小姐會勘研商決定並公告"
+      },
+      {
+        "document_id": "kl_bm_019_official_7a0ff9bd6c8e",
+        "unit_id": "kl_bm_019_official_7a0ff9bd6c8e_u0003",
+        "law_title": "基隆市都市計畫區騎樓設置標準",
+        "heading": "第三條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004306&media=print",
+        "version_date": "2011-12-19",
+        "quote": "第 三 條\n騎樓及無遮簷人行道之寬度及構造依左列規定：\n一  寬度自道路境界線至建築物地面屋外墻面不得小於三．六四公尺，但\n建物有特殊用途連接原有騎樓或無遮簷人行道，其設計無礙市容觀瞻\n者得視實際需要將寬度酌予增減並公有之。\n二  騎樓地面或無遮簷人行道應與人行道齊平無人行道者應高於道路邊界\n處 10 至 20 公分 "
+      },
+      {
+        "document_id": "kl_bm_019_official_7a0ff9bd6c8e",
+        "unit_id": "kl_bm_019_official_7a0ff9bd6c8e_u0004",
+        "law_title": "基隆市都市計畫區騎樓設置標準",
+        "heading": "第四條",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004306&media=print",
+        "version_date": "2011-12-19",
+        "quote": "第 四 條\n本標準自發布日施行。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-029",
+    "topic": "04 停車與車道",
+    "title": "法定停車數量",
+    "action": "先核對都市計畫法令、計畫書規定，再依第59條及表計算，不可逕以單一用途面積比套用。",
+    "evidence": "逐用途樓地板、停車數量及計畫條文",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_59",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第59條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=59",
+        "version_date": "2026-02-23",
+        "quote": "建築物新建、改建、變更用途或增建部分，依都市計畫法令或都市計畫書之規定，設置停車空間。其未規定者，依下表規定。\n┌─┬──────────┬────────┬────────┐\n│類│建築物用途          │都市計畫內區域  │都市計畫外區域  │\n│別│                    ├───┬───",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-030",
+    "topic": "04 停車與車道",
+    "title": "停車位及進出空間",
+    "action": "核對汽車位尺寸、角度、車道、出入口、轉彎與坡度等完整條件。",
+    "evidence": "車位編號尺寸、車行軌跡、車道平剖面",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_60",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第60條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=60",
+        "version_date": "2026-02-23",
+        "quote": "停車空間及其應留設供汽車進出用之車道，規定如下：\n一、每輛停車位為寬二點五公尺，長五點五公尺。但停車位角度在三十度以下者，停車位長度為六公尺。大客車每輛停車位為寬四公尺，長十二點四公尺。\n二、設置於室內之停車位，其五分之一車位數，每輛停車位寬度得寬減二十公分。但停車位長邊鄰接牆壁者，不得寬減，且寬度寬減之停車位不得連續",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_61",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第61條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=61",
+        "version_date": "2026-02-23",
+        "quote": "車道之寬度、坡度及曲線半徑應依下列規定：\n一、車道之寬度：\n（一）單車道寬度應為三點五公尺以上。\n（二）雙車道寬度應為五點五公尺以上。\n（三）停車位角度超過六十度者，其停車位前方應留設深六公尺，寬五公尺以上之空間。\n二、車道坡度不得超過一比六，其表面應用粗面或其他不滑之材料。\n三、車道之內側曲線半徑應為五公尺以上。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-031",
+    "topic": "04 停車與車道",
+    "title": "車庫換氣及構造",
+    "action": "核對車庫用途、樓地板面積、換氣、地坪及防火相關要求。",
+    "evidence": "車庫面積、換氣計算及平剖面",
+    "applicability": "設置車庫案件",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_139",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第139條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=139",
+        "version_date": "2026-02-23",
+        "quote": "車庫部分之樓地板面積超過五百平方公尺者，其構造設備除依本編第六十一條、第六十二條規定外，應依下列規定。但使用特殊裝置經主管建築機關認為具有同等效能者，不在此限。\n一、應設置能供給樓地板面積每一平方公尺每小時二十五立方公尺以上換氣量之機械通風設備。但設有各層樓地板面積十分之一以上有效通風之開口面積者，不在此限。\n二、汽車",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-032",
+    "topic": "05 防火與避難",
+    "title": "防火構造適用",
+    "action": "依使用類組、樓層及面積判定防火構造及主要構造防火時效。",
+    "evidence": "使用類組、樓層面積、防火時效表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_69",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第69條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=69",
+        "version_date": "2026-02-23",
+        "quote": "下表之建築物應為防火構造。但工廠建築，除依下表 C  類規定外，作業廠房樓地板面積，合計超過五十平方公尺者，其主要構造，均應以不燃材料建造。\n┌─────────┬────────────────────┐\n│　建築物使用類組  │            應為防火構造者              │\n├─┬──────",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_70",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第70條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=70",
+        "version_date": "2026-02-23",
+        "quote": "防火構造之建築物，其主要構造之柱、樑、承重牆壁、樓地板及屋頂應具有左表規定之防火時效：\n┌──────┬───────┬───────┬───────┐\n│        層數│自頂層起算不超│自頂層起算超過│自頂層起算第十│\n│            │              │第四層至第十四│五層以上之各樓│\n",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-033",
+    "topic": "05 防火與避難",
+    "title": "主要構造防火性能",
+    "action": "核對牆、梁、柱、樓板、屋頂等構造的防火時效及認可文件。",
+    "evidence": "構造大樣、材料厚度及防火認可",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_71",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第71條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=71",
+        "version_date": "2026-02-23",
+        "quote": "具有三小時以上防火時效之樑、柱，應依左列規定：\n一、樑：\n（一）鋼筋混凝土造或鋼骨鋼筋混凝土造。\n（二）鋼骨造而覆以鐵絲網水泥粉刷其厚度在八公分以上（使用輕骨材時為七公分）或覆以磚、石或空心磚，其厚度在九公分以上者（使用輕骨材時為八公分）。\n（三）其他經中央主管建築機關認可具有同等以上之防火性能者。\n二、柱：短邊寬度在",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_72",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第72條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=72",
+        "version_date": "2026-02-23",
+        "quote": "具有二小時以上防火時效之牆壁、樑、柱、樓地板，應依左列規定：\n一、牆壁：\n（一）鋼筋混凝土造或鋼骨鋼筋混凝土造厚度在十公分以上，且鋼骨混凝土造之混凝土保護層厚度在三公分以上者。\n（二）鋼骨造而雙面覆以鐵絲網水泥粉刷，其單面厚度在四公分以上，或雙面覆以磚、石或空心磚，其單面厚度在五公分以上者。但用以保護鋼骨構造之鐵絲網水",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_73",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第73條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=73",
+        "version_date": "2026-02-23",
+        "quote": "具有一小時以上防火時效之牆壁、樑、柱、樓地板，應依左列規定：\n一、牆壁：\n（一）鋼筋混凝土造、鋼骨鋼筋混凝土造或鋼骨混凝土造厚度在七公分以上者。\n（二）鋼骨造而雙面覆以鐵絲網水泥粉刷，其單面厚度在三公分以上或雙面覆以磚、石或水泥空心磚，其單面厚度在四公分以上者。但用以保護鋼骨之鐵絲網水泥砂漿保護層應將非不燃材料部分扣除",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_74",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第74條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=74",
+        "version_date": "2026-02-23",
+        "quote": "具有半小時以上防火時效之非承重外牆、屋頂及樓梯，應依左列規定：\n一、非承重外牆：經中央主管建築機關認可具有半小時以上之防火時效者。\n二、屋頂：\n（一）鋼筋混凝土造或鋼骨鋼筋混凝土造。\n（二）鐵絲網混凝土造、鐵絲網水泥砂漿造、用鋼鐵加強之玻璃磚造或鑲嵌鐵絲網玻璃造。\n（三）鋼筋混凝土（預鑄）版，其厚度在四公分以上者。\n（",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-034",
+    "topic": "05 防火與避難",
+    "title": "防火門窗及設備",
+    "action": "檢查防火設備認可、尺寸、開啟方式、周邊構造與遮煙等條件。",
+    "evidence": "門窗表、防火認可、五金及安裝大樣",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_75",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第75條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=75",
+        "version_date": "2026-02-23",
+        "quote": "防火設備種類如左：\n一、防火門窗。\n二、裝設於防火區劃或外牆開口處之撒水幕，經中央主管建築機關認可具有防火區劃或外牆同等以上之防火性能者。\n三、其他經中央主管建築機關認可具有同等以上之防火性能者。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_76",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第76條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=76",
+        "version_date": "2026-02-23",
+        "quote": "防火門窗係指防火門及防火窗，其組件包括門窗扇、門窗樘、開關五金、嵌裝玻璃、通風百葉等配件或構材；其構造應依左列規定：\n一、防火門窗周邊十五公分範圍內之牆壁應以不燃材料建造。\n二、防火門之門扇寬度應在七十五公分以上，高度應在一百八十公分以上。\n三、常時關閉式之防火門應依左列規定：\n（一）免用鑰匙即可開啟，並應裝設經開啟後",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-035",
+    "topic": "05 防火與避難",
+    "title": "面積與垂直防火區劃",
+    "action": "繪製各層面積區劃及垂直區劃，檢討免區劃情形與十一層以上特別限制。",
+    "evidence": "防火區劃平剖面、區劃面積、例外依據",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_79",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第79條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=79",
+        "version_date": "2026-02-23",
+        "quote": "防火構造建築物總樓地板面積在一、五○○平方公尺以上者，應按每一、五○○平方公尺，以具有一小時以上防火時效之牆壁、防火門窗等防火設備與該處防火構造之樓地板區劃分隔。防火設備並應具有一小時以上之阻熱性。\n前項應予區劃範圍內，如備有效自動滅火設備者，得免計算其有效範圍樓地面板面積之二分之一。\n防火區劃之牆壁，應突出建築物外牆",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_79-1",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第79-1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=79-1",
+        "version_date": "2026-02-23",
+        "quote": "防火構造建築物供左列用途使用，無法區劃分隔部分，以具有一小時以上防火時效之牆壁、防火門窗等防火設備與該處防火構造之樓地板自成一個區劃者，不受前條第一項之限制：\n一、建築物使用類組為Ａ－１組或Ｄ－２組之觀眾席部分。\n二、建築物使用類組為Ｃ類之生產線部分、Ｄ－３組或Ｄ－４組之教室、體育館、零售市場、停車空間及其他類似用途建",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_79-2",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第79-2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=79-2",
+        "version_date": "2026-02-23",
+        "quote": "防火構造建築物內之挑空部分、昇降階梯間、安全梯之樓梯間、昇降機道、垂直貫穿樓板之管道間及其他類似部分，應以具有一小時以上防火時效之牆壁、防火門窗等防火設備與該處防火構造之樓地板形成區劃分隔。昇降機道裝設之防火設備應具有遮煙性能。管道間之維修門並應具有一小時以上防火時效及遮煙性能。\n前項昇降機道前設有昇降機間且併同區劃者",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_83",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第83條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=83",
+        "version_date": "2026-02-23",
+        "quote": "建築物自第十一層以上部分，除依第七十九條之二規定之垂直區劃外，應依左列規定區劃：\n一、樓地板面積超過一○○平方公尺，應按每一○○平方公尺範圍內，以具有一小時以上防火時效之牆壁、防火門窗等防火設備與各該樓層防火構造之樓地板形成區劃分隔。但建築物使用類組Ｈ–２組使用者，區劃面積得增為二○○平方公尺。\n二、自地板面起一‧二公",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-036",
+    "topic": "05 防火與避難",
+    "title": "非防火構造區劃",
+    "action": "按主要構造及用途核對區劃面積、連續牆及屋頂交接。",
+    "evidence": "構造種類、區劃平剖面及穿屋頂大樣",
+    "applicability": "非防火構造或連棟建築",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_80",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第80條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=80",
+        "version_date": "2026-02-23",
+        "quote": "非防火構造之建築物，其主要構造使用不燃材料建造者，應按其總樓地板面積每一、○○○平方公尺以具有一小時防火時效之牆壁及防火門窗等防火設備予以區劃分隔。\n前項之區劃牆壁應自地面層起，貫穿各樓層而與屋頂交接，並突出建築物外牆面五十公分以上。但與區劃牆壁交接處之外牆有長度九十公分以上，且具有一小時以上防火時效者，得免突出。\n第",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_81",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第81條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=81",
+        "version_date": "2026-02-23",
+        "quote": "非防火構造之建築物，其主要構造為木造等可燃材料建造者，應按其總樓地板面積每五○○平方公尺，以具有一小時以上防火時效之牆壁予以區劃分隔。\n前項之區劃牆壁應為獨立式構造，並應自地面層起，貫穿各樓層與屋頂，除該牆突出外牆及屋面五十公分以上者外，與該牆交接處之外牆及屋頂應有長度三．六公尺以上部分具有一小時以上防火時效且無開口，",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_82",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第82條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=82",
+        "version_date": "2026-02-23",
+        "quote": "非防火構造建築物供左列用途使用時，其無法區劃分隔部分，以具有半小時以上防火時效之牆壁、樓板及防火門窗等防火設備自成一個區劃，其天花板及面向室內之牆壁，以使用耐燃一級材料裝修者，不受前二條規定限制。\n一、體育館、建築物使用類組為Ｃ類之生產線部分及其他供類似用途使用之建築物。\n二、樓梯間、昇降機間及其他類似用途使用部分。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_84",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第84條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=84",
+        "version_date": "2026-02-23",
+        "quote": "非防火構造之連棟式建築物，其建築面積超過三○○平方公尺且屋頂為木造等可燃材料建造之屋架時，應在長度每十五公尺範圍內以具有一小時以上防火時效之牆壁區劃之，並應突出建築物外牆面五十公分以上。但與其交接處之外牆面長度有九十公分以上，且該外牆構造具有與防火區劃之牆壁同等以上防火時效者，得免突出。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-037",
+    "topic": "05 防火與避難",
+    "title": "貫穿部及分戶分間牆",
+    "action": "核對風管、管線貫穿防火填塞及分戶分間牆區劃構造。",
+    "evidence": "管線綜合圖、防火填塞與牆體大樣",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_85",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第85條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=85",
+        "version_date": "2026-02-23",
+        "quote": "貫穿防火區劃牆壁或樓地板之風管，應在貫穿部位任一側之風管內裝設防火閘門或閘板，其與貫穿部位合成之構造，並應具有一小時以上之防火時效。\n貫穿防火區劃牆壁或樓地板之電力管線、通訊管線及給排水管線或管線匣，與貫穿部位合成之構造，應具有一小時以上之防火時效。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_86",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第86條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=86",
+        "version_date": "2026-02-23",
+        "quote": "分戶牆及分間牆構造依下列規定：\n一、連棟式或集合住宅之分戶牆，應以具有一小時以上防火時效之牆壁及防火門窗等防火設備與該處之樓板或屋頂形成區劃分隔。\n二、建築物使用類組為 A  類、D 類、B-1 組、B-2 組、B-4 組、F-1 組、H-1 組、總樓地板面積為三百平方公尺以上之 B-3  組及各級政府機關建築物，其各",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-038",
+    "topic": "05 防火與避難",
+    "title": "無窗居室及內裝材料",
+    "action": "判定無窗戶居室並核對區劃與材料耐燃等級、適用例外。",
+    "evidence": "開口判定、各空間內裝材料表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_1",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=1",
+        "version_date": "2026-02-23",
+        "quote": "本編建築技術用語，其他各編得適用，其定義如下：\n一、一宗土地：本法第十一條所稱一宗土地，指一幢或二幢以上有連帶使用性之建築物所使用之建築基地。但建築基地為道路、鐵路或永久性空地等分隔者，不視為同一宗土地。\n二、建築基地面積：建築基地（以下簡稱基地）之水平投影面積。\n三、建築面積：建築物外牆中心線或其代替柱中心線以內之最",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_87",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第87條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=87",
+        "version_date": "2026-02-23",
+        "quote": "建築物有本編第一條第三十五款第二目規定之無窗戶居室者，區劃或分隔其居室之牆壁及門窗應以不燃材料建造。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_88",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第88條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=88",
+        "version_date": "2026-02-23",
+        "quote": "建築物之內部裝修材料應依下表規定。但符合下列情形之一者，不在此限：\n一、除下表（十）至（十四）所列建築物，及建築使用類組為 B-1、B-2、B-3 組及 I  類者外，按其樓地板面積每一百平方公尺範圍內以具有一小時以上防火時效之牆壁、防火門窗等防火設備與該層防火構造之樓地板區劃分隔者，或其設於地面層且樓地板面積在一百平",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-039",
+    "topic": "05 防火與避難",
+    "title": "避難層及樓層出入口",
+    "action": "核對適用範圍、出口位置、數量、寬度及開啟方式。",
+    "evidence": "避難層及各層出口配置、門窗表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_89",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第89條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=89",
+        "version_date": "2026-02-23",
+        "quote": "本節規定之適用範圍，以左列情形之建築物為限。但建築物以無開口且具有一小時以上防火時效之牆壁及樓地板所區劃分隔者，適用本章各節規定，視為他棟建築物：\n一、建築物使用類組為Ａ、Ｂ、Ｄ、Ｅ、Ｆ、Ｇ及Ｈ類者。\n二、三層以上之建築物。\n三、總樓地板面積超過一、○○○平方公尺之建築物。\n四、地下層或有本編第一條第三十五款第二目及第",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_90",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第90條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=90",
+        "version_date": "2026-02-23",
+        "quote": "直通樓梯於避難層開向屋外之出入口，應依左列規定：\n一、六層以上，或建築物使用類組為Ａ、Ｂ、Ｄ、Ｅ、Ｆ、Ｇ類及Ｈ－１組用途使用之樓地板面積合計超過五○○平方公尺者，除其直通樓梯於避難層之出入口直接開向道路或避難用通路者外，應在避難層之適當位置，開設二處以上不同方向之出入口。其中至少一處應直接通向道路，其他各處可開向寬一‧",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_91",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第91條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=91",
+        "version_date": "2026-02-23",
+        "quote": "避難層以外之樓層，通達供避難使用之走廊或直通樓梯間，其出入口依左列規定：\n一、建築物使用類組為Ａ－１組部分，其自觀眾席開向二側及後側走廊之出入口，不得小於觀眾席樓地板合計面積每十平方公尺寬十七公分之計算值。\n二、建築物使用類組為Ｂ－１、Ｂ－２、Ｄ－１、Ｄ－２組者，地面層以上各樓層之出入口不得小於各該樓層樓地板面積每一○",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-040",
+    "topic": "05 防火與避難",
+    "title": "走廊寬度與步行距離",
+    "action": "逐居室量測走廊與避難動線，依類組、構造及條文例外檢討。",
+    "evidence": "走廊淨寬、最遠步行路徑、距離標註",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_92",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第92條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=92",
+        "version_date": "2026-02-23",
+        "quote": "走廊之設置應依左列規定：\n一、供左表所列用途之使用者，走廊寬度依其規定：\n┌──────────┬────────┬────────┐\n    │      走  廊  配  置│走廊二側有居室者│  其  他  走  廊│\n    │用途                │                │      ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_93",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第93條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=93",
+        "version_date": "2026-02-23",
+        "quote": "直通樓梯之設置應依左列規定：\n一、任何建築物自避難層以外之各樓層均應設置一座以上之直通樓梯（包括坡道）通達避難層或地面，樓梯位置應設於明顯處所。\n二、自樓面居室之任一點至樓梯口之步行距離（即隔間後之可行距離非直線距離）依左列規定：\n（一）建築物用途類組為Ａ類、Ｂ－１、Ｂ－２、Ｂ－３及Ｄ－１組者，不得超過三十公尺。建築物",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_94",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第94條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=94",
+        "version_date": "2026-02-23",
+        "quote": "避難層自樓梯口至屋外出入口之步行距離不得超過前條規定。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-041",
+    "topic": "05 防火與避難",
+    "title": "直通樓梯數量及配置",
+    "action": "依樓層、使用類組及面積判斷直通樓梯數量及避難動線。",
+    "evidence": "樓梯服務範圍、最遠路徑及兩方向檢討",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_93",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第93條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=93",
+        "version_date": "2026-02-23",
+        "quote": "直通樓梯之設置應依左列規定：\n一、任何建築物自避難層以外之各樓層均應設置一座以上之直通樓梯（包括坡道）通達避難層或地面，樓梯位置應設於明顯處所。\n二、自樓面居室之任一點至樓梯口之步行距離（即隔間後之可行距離非直線距離）依左列規定：\n（一）建築物用途類組為Ａ類、Ｂ－１、Ｂ－２、Ｂ－３及Ｄ－１組者，不得超過三十公尺。建築物",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_95",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第95條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=95",
+        "version_date": "2026-02-23",
+        "quote": "八層以上之樓層及下列建築物，應自各該層設置二座以上之直通樓梯達避難層或地面：\n一、主要構造屬防火構造或使用不燃材料所建造之建築物在避難層以外之樓層供下列使用，或地下層樓地板面積在二百平方公尺以上者。\n（一）建築物使用類組為 A-1  組者。\n（二）建築物使用類組為 F-1  組樓層，其病房之樓地板面積超過一○○平方公尺",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-042",
+    "topic": "05 防火與避難",
+    "title": "安全梯與特別安全梯",
+    "action": "確認應設種類及防火區劃、排煙、排氣、前室與門開啟條件。",
+    "evidence": "梯間平剖面、前室、開口及排煙系統",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_96",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第96條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=96",
+        "version_date": "2026-02-23",
+        "quote": "下列建築物依規定應設置之直通樓梯，其構造應改為室內或室外之安全梯或特別安全梯，且自樓面居室之任一點至安全梯口之步行距離應合於本編第九十三條規定：\n一、通達三層以上，五層以下之各樓層，直通樓梯應至少有一座為安全梯。\n二、通達六層以上，十四層以下或通達地下二層之各樓層，應設置安全梯；通達十五層以上或地下三層以下之各樓層，應",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_97",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第97條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=97",
+        "version_date": "2026-02-23",
+        "quote": "安全梯之構造，依下列規定：\n一、室內安全梯之構造：\n（一）安全梯間四周牆壁除外牆依前章規定外，應具有一小時以上防火時效，天花板及牆面之裝修材料並以耐燃一級材料為限。\n（二）進入安全梯之出入口，應裝設具有一小時以上防火時效及半小時以上阻熱性且具有遮煙性能之防火門，並不得設置門檻；其寬度不得小於九十公分。\n（三）安全梯間應",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-043",
+    "topic": "05 防火與避難",
+    "title": "樓梯總寬與屋頂避難平台",
+    "action": "依用途及規模核對樓梯總寬與應設屋頂避難平台條件。",
+    "evidence": "服務樓地板面積、樓梯寬度合計及屋頂平面",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_98",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第98條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=98",
+        "version_date": "2026-02-23",
+        "quote": "直通樓梯每一座之寬度依本編第三十三條規定，且其總寬度不得小於左列規定：\n一、供商場使用者，以該建築物各層中任一樓層（不包括避難層）商場之最大樓地板面積每一○○平方公尺寬六十公分之計算值，並以避難層為分界，分別核計其直通樓梯總寬度。\n二、建築物用途類組為Ａ－１組者，按觀眾席面積每十平方公尺寬十公分之計算值，且其二分之一寬",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_99",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第99條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=99",
+        "version_date": "2026-02-23",
+        "quote": "建築物在五層以上之樓層供建築物使用類組Ａ－１、Ｂ－１及Ｂ－２組使用者，應依左列規定設置具有戶外安全梯或特別安全梯通達之屋頂避難平臺：\n一、屋頂避難平臺應設置於五層以上之樓層，其面積合計不得小於該棟建築物五層以上最大樓地板面積二分之一。屋頂避難平臺任一邊邊長不得小於六公尺，分層設置時，各處面積均不得小於二百平方公尺，且其",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-044",
+    "topic": "05 防火與避難",
+    "title": "排煙設備",
+    "action": "確認應設空間、區劃、排煙口及安全梯間相關排煙方式，與消防圖說協調。",
+    "evidence": "排煙區劃、計算、排煙口、送排風管",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_100",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第100條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=100",
+        "version_date": "2026-02-23",
+        "quote": "左列建築物應設置排煙設備。但樓梯間、昇降機間及其他類似部份，不在此限：\n一、供本編第六十九條第一類、第四類使用及第二類之養老院、兒童福利設施之建築物，其每層樓地板面積超過五○○平方公尺者。但每一○○平方公尺以內以分間牆或以防煙壁區劃分隔者，不在此限。\n二、本編第一條第三十一款第三目所規定之無窗戶居室。\n前項第一款之防煙",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_101",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第101條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=101",
+        "version_date": "2026-02-23",
+        "quote": "排煙設備之構造，應依左列規定：\n一、每層樓地板面積在五○○平方公尺以內，得以防煙壁區劃，區劃範圍內任一部份至排煙口之水平距離，不得超過四十五公尺，排煙口之開口面積，不得小於防煙區劃部份樓地板面積百分之二，並應開設在天花板或天花板下八十公分範圍內之外牆，或直接與排煙風道（管）相接。\n二、排煙口在平時應保持關閉狀態，需要排",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_102",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第102條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=102",
+        "version_date": "2026-02-23",
+        "quote": "一、應設置可開向戶外之窗戶，其面積不得小於二平方公尺，二者兼用時，不得小於三平方公尺，並應位於天花板高度二分之一以上範圍內。\n二、未設前款規定之窗戶時，應依其規定位置開設面積在四平方公尺以上之排煙口，（兼排煙室使用時，應為六平方公尺以上），並直接連通排煙管道。\n三、排煙管道之內部斷面積，不得小於六平方公尺（兼排煙室使用",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-045",
+    "topic": "05 防火與避難",
+    "title": "緊急照明與電源",
+    "action": "核對應設空間、構造及緊急電源配置。",
+    "evidence": "緊急照明平面、回路及備用電源",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_104",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第104條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=104",
+        "version_date": "2026-02-23",
+        "quote": "左列建築物，應設置緊急照明設備：\n一、供本編第六十九條第一類、第四類及第二類之醫院、旅館等用途建築物之居室。\n二、本編第一條第三十一款第（一）目規定之無窗戶或無開口之居室。\n三、前二款之建築物，自居室至避難層所需經過之走廊、樓梯、通道及其他平時依賴人工照明之部份。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_105",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第105條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=105",
+        "version_date": "2026-02-23",
+        "quote": "緊急照明之構造應依建築設備篇之規定。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_3",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=3",
+        "version_date": "2022-12-29",
+        "quote": "建築物之各處所除應裝置一般照明設備外，應依本規則建築設計施工編第一百一十六條之二規定設置安全維護照明裝置，並應依各類場所消防安全設備設置標準之規定裝置緊急照明燈、出口標示燈及避難方向指示燈等設備。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_7",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第7條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=7",
+        "version_date": "2022-12-29",
+        "quote": "建築物內之下列各項設備應接至緊急電源：\n一、火警自動警報設備。\n二、緊急廣播設備。\n三、地下室排水、污水抽水幫浦。\n四、消防幫浦。\n五、消防用排煙設備。\n六、緊急昇降機。\n七、緊急照明燈。\n八、出口標示燈。\n九、避難方向指示燈。\n十、緊急電源插座。\n十一、防災中心用電設備。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_9",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第9條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=9",
+        "version_date": "2022-12-29",
+        "quote": "緊急昇降機及消防用緊急供電設備之配線，均應連接至電動機，並依各類場所消防安全設備設置標準規定設置。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-046",
+    "topic": "05 防火與避難",
+    "title": "緊急用昇降機",
+    "action": "確認應設數量、機間、昇降機道及構造要求，並與設備圖說一致。",
+    "evidence": "高度及樓層面積、昇降機及機間詳圖",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_55",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第55條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=55",
+        "version_date": "2026-02-23",
+        "quote": "昇降機之設置依下列規定：\n一、六層以上之建築物，至少應設置一座以上之昇降機通達避難層。建築物高度超過十層樓，依本編第一百零六條規定，設置可供緊急用之昇降機。\n二、機廂之面積超過一平方公尺或其淨高超過一點二公尺之昇降機，均依本規則之規定。但臨時用昇降機經主管建築機關認為其構造與安全無礙時，不在此限。\n三、昇降機道之構造應",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_106",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第106條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=106",
+        "version_date": "2026-02-23",
+        "quote": "依本編第五十五條規定應設置之緊急用昇降機，其設置標準依左列規定：\n一、建築物高度超過十層樓以上部分之最大一層樓地板面積，在一、五○○平方公尺以下者，至少應設置一座：超過一、五○○平方公尺時，每達三、○○○平方公尺，增設一座。\n二、左列建築物不受前款之限制：\n（一）超過十層樓之部分為樓梯間、昇降機間、機械室、裝飾塔、屋頂",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_107",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第107條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=107",
+        "version_date": "2026-02-23",
+        "quote": "緊急用昇降機之構造除本編第二章第十二節及建築設備編對昇降機有關機廂、昇降機道、機械間安全裝置、結構計算等之規定外，並應依下列規定：\n一、機間：\n（一）除避難層、集合住宅採取複層式構造者其無出入口之樓層及整層非供居室使用之樓層外，應能連通每一樓層之任何部分。\n（二）四周應為具有一小時以上防火時效之牆壁及樓板，其天花板及牆",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-047",
+    "topic": "05 防火與避難",
+    "title": "緊急進口",
+    "action": "依樓層及臨路開口判斷是否需設緊急進口，核對尺寸、間距、標誌及到達條件。",
+    "evidence": "外牆開口、立面、臨路及救災通路",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_108",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第108條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=108",
+        "version_date": "2026-02-23",
+        "quote": "建築物在二層以上，第十層以下之各樓層，應設置緊急進口。但面臨道路或寬度四公尺以上之通路，且各層之外牆每十公尺設有窗戶或其他開口者，不在此限。\n前項窗戶或開口寬應在七十五公分以上及高度一‧二公尺以上，或直徑一公尺以上之圓孔，開口之下緣應距樓地板八十公分以下，且無柵欄，或其他阻礙物者。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_109",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第109條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=109",
+        "version_date": "2026-02-23",
+        "quote": "緊急進口之構造應依左列規定：\n一、進口應設地面臨道路或寬度在四公尺以上通路之各層外牆面。\n二、進口之間隔不得大於四十公尺。\n三、進口之寬度應在七十五公分以上，高度應在一‧二公尺以上。其開口之下端應距離樓地板面八十公分範圍以內。\n四、進口應為可自外面開啟或輕易破壞得以進入室內之構造。\n五、進口外應設置陽台，其寬度應為一公",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-048",
+    "topic": "05 防火與避難",
+    "title": "防火間隔及外牆開口",
+    "action": "量測地界退縮，核對外牆、開口及防火設備要求。",
+    "evidence": "地界距離、立面開口及外牆防火明細",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_110",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第110條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=110",
+        "version_date": "2026-02-23",
+        "quote": "防火構造建築物，除基地鄰接寬度六公尺以上之道路或深度六公尺以上之永久性空地側外，依左列規定：\n一、建築物自基地境界線退縮留設之防火間隔未達一．五公尺範圍內之外牆部分，應具有一小時以上防火時效，其牆上之開口應裝設具同等以上防火時效之防火門或固定式防火窗等防火設備。\n二、建築物自基地境界線退縮留設之防火間隔在一．五公尺以上",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-049",
+    "topic": "06 消防設備",
+    "title": "消防場所分類與專業設計",
+    "action": "按實際用途確認消防分類與設計資格，核對開工前消防圖說審查。",
+    "evidence": "消防分類表、設備師資格、消防審查核准",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "消防專業設計與主管機關審查",
+    "refs": [
+      {
+        "document_id": "central_D0120001_20241129",
+        "unit_id": "central_D0120001_20241129_art_6",
+        "law_title": "消防法",
+        "heading": "第6條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120001&flno=6",
+        "version_date": "2024-11-29",
+        "quote": "本法所定各類場所之管理權人對其實際支配管理之場所，應設置並維護其消防安全設備；場所之分類及消防安全設備設置之標準，由中央主管機關定之。\n消防機關得依前項所定各類場所之危險程度，分類列管檢查及複查。\n第一項所定各類場所因用途、構造特殊，或引用與依第一項所定標準同等以上效能之技術、工法或設備者，得檢附具體證明，經中央主管機",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120001_20241129",
+        "unit_id": "central_D0120001_20241129_art_7",
+        "law_title": "消防法",
+        "heading": "第7條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120001&flno=7",
+        "version_date": "2024-11-29",
+        "quote": "依各類場所消防安全設備設置標準設置之消防安全設備，其設計、監造應由消防設備師為之；其測試、檢修應由消防設備師或消防設備士為之。\n前項消防安全設備之設計、監造、測試及檢修，得由現有相關專門職業及技術人員或技術士暫行為之；其期限至本法中華民國一百十二年五月三十日修正之條文施行之日起五年止。\n開業建築師、電機技師得執行滅火器",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120001_20241129",
+        "unit_id": "central_D0120001_20241129_art_10",
+        "law_title": "消防法",
+        "heading": "第10條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120001&flno=10",
+        "version_date": "2024-11-29",
+        "quote": "供公眾使用建築物之消防安全設備圖說，應由直轄市、縣（市）消防機關於主管建築機關許可開工前，審查完成。\n依建築法第三十四條之一申請預審事項，涉及建築物消防安全設備者，主管建築機關應會同消防機關預為審查。\n非供公眾使用建築物變更為供公眾使用或原供公眾使用建築物變更為他種公眾使用時，主管建築機關應會同消防機關審查其消防安全設",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_12",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第12條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=12",
+        "version_date": "2024-04-24",
+        "quote": "各類場所按用途分類如下：\n一、甲類場所：\n（一）電影片映演場所（戲院、電影院）、歌廳、舞廳、夜總會、俱樂部、理容院（觀光理髮、視聽理容等）、指壓按摩場所、錄影節目帶播映場所（MTV等）、視聽歌唱場所（KTV等）、酒家、酒吧、酒店（廊）。\n（二）保齡球館、撞球場、集會堂、健身休閒中心（含提供指壓、三溫暖等設施之美容瘦身場",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-050",
+    "topic": "06 消防設備",
+    "title": "滅火設備設置適用",
+    "action": "依用途、樓層、面積及危險程度逐項核對滅火器、室內外消防栓及撒水等設備。",
+    "evidence": "設備適用檢討表、消防平面及水力計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "消防專業設計與審查",
+    "refs": [
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_14",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第14條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=14",
+        "version_date": "2024-04-24",
+        "quote": "下列場所應設置滅火器：\n一、甲類場所、地下建築物、幼兒園。\n二、總樓地板面積在一百五十平方公尺以上之乙、丙、丁類場所。\n三、設於地下層或無開口樓層，且樓地板面積在五十平方公尺以上之各類場所。\n四、設有放映室或變壓器、配電盤及其他類似電氣設備之各類場所。\n五、設有鍋爐房、廚房等大量使用火源之各類場所。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_15",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第15條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=15",
+        "version_date": "2024-04-24",
+        "quote": "下列場所應設置室內消防栓設備：\n一、五層以下建築物，供第十二條第一款第一目所列場所使用，任何一層樓地板面積在三百平方公尺以上者；供同款其他各目及第二款至第四款所列場所使用，任何一層樓地板面積在五百平方公尺以上者；或為學校教室任何一層樓地板面積在一千四百平方公尺以上者。\n二、六層以上建築物，供第十二條第一款至第四款所列場",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_16",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第16條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=16",
+        "version_date": "2024-04-24",
+        "quote": "下列場所應設置室外消防栓設備：\n一、高度危險工作場所，其建築物及儲存場所之第一層及第二層樓地板面積合計在三千平方公尺以上者。\n二、中度危險工作場所，其建築物及儲存場所之第一層及第二層樓地板面積合計在五千平方公尺以上者。\n三、低度危險工作場所，其建築物及儲存場所之第一層及第二層樓地板面積合計在一萬平方公尺以上者。\n四、如",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_17",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第17條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=17",
+        "version_date": "2024-04-24",
+        "quote": "下列場所或樓層應設置自動撒水設備：\n一、十層以下建築物之樓層，供第十二條第一款第一目所列場所使用，樓地板面積合計在三百平方公尺以上者；供同款其他各目及第二款第一目所列場所使用，樓地板面積在一千五百平方公尺以上者。\n二、建築物在十一層以上之樓層，樓地板面積在一百平方公尺以上者。\n三、地下層或無開口樓層，供第十二條第一款所",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_18",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第18條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=18",
+        "version_date": "2024-04-24",
+        "quote": "下表所列之場所，應就水霧、泡沫、二氧化碳、惰性氣體、鹵化烴或乾粉滅火設備等選擇設置之。但外牆開口面積（常時開放部分）達該層樓地板面積百分之十五以上者，上列除惰性氣體及鹵化烴外之滅火設備得採移動式設置。\n樓地板面積在三百平方公尺以上之餐廳或供第十二條第一款第六目所定榮譽國民之家、長期照顧服務機構（限機構住宿式、社區式之建",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-051",
+    "topic": "06 消防設備",
+    "title": "火警自動警報設置",
+    "action": "核對用途、樓層、面積及無開口等條件，據條文完整判定。",
+    "evidence": "警報適用表、探測器及回路圖",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "消防專業設計與審查",
+    "refs": [
+      {
+        "document_id": "central_D0120029_20240424",
+        "unit_id": "central_D0120029_20240424_art_19",
+        "law_title": "各類場所消防安全設備設置標準",
+        "heading": "第19條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0120029&flno=19",
+        "version_date": "2024-04-24",
+        "quote": "下列場所應設置火警自動警報設備：\n一、五層以下之建築物，供第十二條第一款及第二款第十二目所列場所使用，任何一層之樓地板面積在三百平方公尺以上者；或供同條第二款（第十二目除外）至第四款所列場所使用，任何一層樓地板面積在五百平方公尺以上者。\n二、六層以上十層以下之建築物任何一層樓地板面積在三百平方公尺以上者。\n三、十一層以",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-052",
+    "topic": "07 防空與高層",
+    "title": "防空附建適用與面積",
+    "action": "核對指定地區、用途、層數、附建基準、免設及扣除條件；注意115年7月1日施行版。",
+    "evidence": "指定地區依據、用途層數及防空面積計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_140",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第140條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=140",
+        "version_date": "2026-02-23",
+        "quote": "凡經中央主管建築機關指定之適用地區，有新建、增建、改建或變更用途行為之建築物或供公眾使用之建築物，應依本編第一百四十一條附建基準之規定設置防空避難設備。但符合下列規定之一者不在此限：\n一、建築物變更用途後應附建之基準與原用途相同或較寬者。\n二、依本條指定為適用地區以前建造之建築物申請垂直方向增建者。\n三、建築基地周圍一",
+        "effective_warning": "115年2月23日修正，115年7月1日施行；較早申請或既有核准案件仍須另核適用時點。"
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_141",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第141條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=141",
+        "version_date": "2026-02-23",
+        "quote": "防空避難設備之附建基準依下列規定：\n一、非供公眾使用之建築物，其層數在六層以上者，按建築面積全部附建。\n二、供公眾使用之建築物：\n（一）供戲院、電影院、歌廳、舞廳及演藝場等使用者，按建築面積全部附建。\n（二）供學校使用之建築物，按其主管機關核定計畫容納使用人數每人一平方公尺計算，整體規劃附建防空避難設備。並應就實際情形",
+        "effective_warning": "115年2月23日修正，115年7月1日施行；較早申請或既有核准案件仍須另核適用時點。"
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_142",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第142條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=142",
+        "version_date": "2026-02-23",
+        "quote": "建築物附建防空避難設備之規定如下：\n一、應按建築面積全部附建防空避難設備之建築物，因建築設備或結構上之原因，設置昇降機機道之緩衝基坑、機械室、電氣室、機器之基礎、蓄水池、污水處理設施、排水系統之截留器或分離器等固定設備設在地面以下部分及盥洗室，其所占面積不得超過附建避難設備面積四分之一。\n二、進出口樓梯及機械停車設備所",
+        "effective_warning": "115年2月23日修正，115年7月1日施行；較早申請或既有核准案件仍須另核適用時點。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-053",
+    "topic": "07 防空與高層",
+    "title": "防空設備構造",
+    "action": "依施行版核對淨高、進出口、通路、通氣與防護構造。",
+    "evidence": "防空平剖面、出入口及構造詳圖",
+    "applicability": "應附建防空避難設備",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_144",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第144條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=144",
+        "version_date": "2026-02-23",
+        "quote": "防空避難設備之設計及構造準則規定如下：\n一、天花板高度或地板至梁底之高度不得小於二點一公尺。\n二、進出口之設置依下列規定：\n（一）面積未達二百四十平方公尺者，應設二處進出口。其中一處得為通達戶外之爬梯式緊急出口。緊急出口淨寬至少為零點六公尺見方或直徑零點八五公尺以上。\n（二）面積達二百四十平方公尺以上者，應設二處階梯式",
+        "effective_warning": "115年2月23日修正，115年7月1日施行；較早申請或既有核准案件仍須另核適用時點。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-054",
+    "topic": "07 防空與高層",
+    "title": "高層建築適用及退縮",
+    "action": "先判定高層建築，再核對空地比與落物曲線退縮，並展開高層章其他規定。",
+    "evidence": "高度層數判定、空地及落物曲線圖",
+    "applicability": "高度或樓層符合第227條者",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_227",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第227條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=227",
+        "version_date": "2026-02-23",
+        "quote": "本章所稱高層建築物，係指高度在五十公尺或樓層在十六層以上之建築物。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_228",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第228條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=228",
+        "version_date": "2026-02-23",
+        "quote": "高層建築物之總樓地板面積與留設空地之比，不得大於左列各值：\n一、商業區：三十。\n二、住宅區及其他使用分區：十五。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_229",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第229條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=229",
+        "version_date": "2026-02-23",
+        "quote": "高層建築物應自建築線及地界線依落物曲線距離退縮建築。但建築物高度在五十公尺以下部分得免退縮。\n落物曲線距離為建築物各該部分至基地地面高度平方根之二分之一。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-055",
+    "topic": "08 無障礙",
+    "title": "無障礙設施適用",
+    "action": "依新建增建、公共建築物類別及例外，確認設施範圍；尺寸與構造須併讀官方無障礙設施設計規範及勘誤。",
+    "evidence": "適用類別表、例外理由、無障礙檢討圖",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_167",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第167條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=167",
+        "version_date": "2026-02-23",
+        "quote": "為便利行動不便者進出及使用建築物，新建或增建建築物，應依本章規定設置無障礙設施。但符合下列情形之一者，不在此限：\n一、獨棟或連棟建築物，該棟自地面層至最上層均屬同一住宅單位且第二層以上僅供住宅使用。\n二、供住宅使用之公寓大廈專有及約定專用部分。\n三、除公共建築物外，建築基地面積未達一百五十平方公尺或每棟每層樓地板面積均",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_170",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第170條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=170",
+        "version_date": "2026-02-23",
+        "quote": "公共建築物之適用範圍如下表：",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0050046_20250801",
+        "unit_id": "central_D0050046_20250801_art_57",
+        "law_title": "身心障礙者權益保障法",
+        "heading": "第57條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0050046&flno=57",
+        "version_date": "2025-08-01",
+        "quote": "新建公共建築物及活動場所，應規劃設置便於各類身心障礙者行動與使用之設施及設備。未符合規定者，不得核發建築執照或對外開放使用。\n公共建築物及活動場所應至少於其室外通路、避難層坡道及扶手、避難層出入口、室內出入口、室內通路走廊、樓梯、升降設備、哺（集）乳室、廁所盥洗室（含移動式）、浴室、輪椅觀眾席位周邊、停車場等其他必要處",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-056",
+    "topic": "08 無障礙",
+    "title": "連續無障礙通路",
+    "action": "追蹤居室出入口至廁所、浴室、客房、昇降、停車及樓梯之通達；尺寸依官方設計規範另核。",
+    "evidence": "連續動線圖、坡道門檻淨寬及轉彎詳圖",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_167-1",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第167-1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=167-1",
+        "version_date": "2026-02-23",
+        "quote": "居室出入口及具無障礙設施之廁所盥洗室、浴室、客房、昇降設備、停車空間及樓梯應設有無障礙通路通達。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0050046_20250801",
+        "unit_id": "central_D0050046_20250801_art_57",
+        "law_title": "身心障礙者權益保障法",
+        "heading": "第57條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0050046&flno=57",
+        "version_date": "2025-08-01",
+        "quote": "新建公共建築物及活動場所，應規劃設置便於各類身心障礙者行動與使用之設施及設備。未符合規定者，不得核發建築執照或對外開放使用。\n公共建築物及活動場所應至少於其室外通路、避難層坡道及扶手、避難層出入口、室內出入口、室內通路走廊、樓梯、升降設備、哺（集）乳室、廁所盥洗室（含移動式）、浴室、輪椅觀眾席位周邊、停車場等其他必要處",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-057",
+    "topic": "08 無障礙",
+    "title": "無障礙樓梯",
+    "action": "核對至少一座無障礙直通樓梯及設計細節；詳讀設計規範。",
+    "evidence": "樓梯剖面、扶手、防滑及視覺警示",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_167-2",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第167-2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=167-2",
+        "version_date": "2026-02-23",
+        "quote": "建築物設置之直通樓梯，至少應有一座為無障礙樓梯。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-058",
+    "topic": "09 結構與設備",
+    "title": "結構分析及設計方法",
+    "action": "核對分析方法、構件強度與載重假設；技術規範版次由結構設計人另確認。",
+    "evidence": "結構計算書、設計規範版次及分析模型",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_1",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=1",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造須依業經公認通用之設計方法，予以合理分析，並依所規定之需要強度設計之。剛構必須按其束制程度及構材勁度，分配適當之彎矩設計之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_2",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=2",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造各構材之強度，須能承受靜載重與活載重，並使各部構材之有效強度，不低於本編所規定之設計需要強度。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-059",
+    "topic": "09 結構與設備",
+    "title": "耐震與耐風",
+    "action": "比較風力、地震力及橫力，核對採用較不利設計；另依現行耐震耐風規範。",
+    "evidence": "設計地震與風力參數、荷重組合及計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_3",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=3",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造除垂直載重外，須設計能以承受風力或地震力或其他橫力。風力與地震力不必同時計入；但需比較兩者，擇其較大者應用之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_4",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=4",
+        "version_date": "2023-05-10",
+        "quote": "本編規定之材料容許應力及基土支承力，如將風力或地震力與垂直載重合併計算時，得依中央主管建築機關所定相關設計規範規定予以增加。但所得設計結果不得小於僅計算垂直載重之所得值。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-060",
+    "topic": "09 結構與設備",
+    "title": "結構圖與計算書一致",
+    "action": "核對構件尺寸、材料、接合與計算模型、符號、輸入輸出一致。",
+    "evidence": "結構平立剖、接合大樣、計算與程式資料",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_5",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第5條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=5",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造之設計圖，須明確標示全部構造設計之平面、立面、剖面及各構材斷面、尺寸、用料規格、相互接合關係：並能達到明細周全，依圖施工無疑義。繪圖應依公制標準，一般構造尺度，以公分為單位；精細尺度，得以公厘為單位，但須於圖上詳細說明。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_6",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第6條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=6",
+        "version_date": "2023-05-10",
+        "quote": "建築物之結構計算書，應詳細列明載重、材料強度及結構設計計算。所用標註及符號，均應與設計圖一致。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_7",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第7條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=7",
+        "version_date": "2023-05-10",
+        "quote": "使用電子計算機程式之結構計算，可以設計標準、輸入值、輸出值等能以符合結構計算規定之資料，代替計算書。但所用電子計算機程式必須先經直轄市、縣（市）主管建築機關備案。當地主管建築機關認為有需要時，應由設計人提供其他方法證明電子計算機程式之確實，作為以後同樣設計之應用。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-061",
+    "topic": "09 結構與設備",
+    "title": "靜載與活載",
+    "action": "依實際材料、屋面、隔牆及空間用途核對載重，不得漏算固定設備或特殊重載。",
+    "evidence": "逐層載重表、設備重量及用途標示",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_10",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第10條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=10",
+        "version_date": "2023-05-10",
+        "quote": "靜載重為建築物本身各部份之重量及固定於建築物構造上各物之重量，如牆壁、隔牆、梁柱、樓板及屋頂等，可移動隔牆不作為靜載重。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_11",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第11條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=11",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造之靜載重，應予按實核計。建築物應用各種材料之單位體積重量，應不小於左表所列，不在表列之材料，應按實計算重量。\n┌─────┬─────────┬─────┬────────┐\n│材料名稱  │重量              │材料名稱  │重量            │\n│          │（公斤／立方公",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_12",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第12條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=12",
+        "version_date": "2023-05-10",
+        "quote": "屋面重量，應按實計算，並不得小於下表所列；不在表列之屋面亦應按實計算重量：\n┌───────┬───────┬─────┬───────┐\n│屋面名稱      │重量（公斤／平│屋面名稱  │重量（公斤／平│\n│              │方公尺）      │          │方公尺）      │\n├───",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_13",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第13條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=13",
+        "version_date": "2023-05-10",
+        "quote": "天花板（包括暗筋）重量，應按實計算，並不得小於下表所列；不在表列之天花板，亦應按實計算重量：\n┌─────┬───────┬─────┬───────┐\n│天花板名稱│重量（公斤／平│天花板名稱│重量（公斤／平│\n│          │方公尺）      │          │方公尺）      │\n├─────┼",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_14",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第14條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=14",
+        "version_date": "2023-05-10",
+        "quote": "地板面分實舖地板及空舖地板兩種，其重量應按實計算，並不得小於下表所列，不在表列之地板面，亦應按實計算重量：\n┌──────┬───────┬──────┬───────┐\n│實舖地板名稱│重量（公斤／平│實舖地板名稱│重量（公斤／平│\n│            │方公尺）      │            │方公尺）",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_15",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第15條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=15",
+        "version_date": "2023-05-10",
+        "quote": "牆壁量重，按牆壁本身及牆面粉刷與貼面，分別按實計算，並不得小於下表所列；不在表列之牆壁亦應按實計算重量：\n┌────────┬──────┬───────┬──────┐\n│                │重量（公斤／│              │重量（公斤／│\n│    牆壁名稱    │平方公尺）  │   牆",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_16",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第16條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=16",
+        "version_date": "2023-05-10",
+        "quote": "垂直載重中不屬於靜載重者，均為活載重，活載重包括建築物室內人員、傢俱、設備、貯藏物品、活動隔間等。工廠建築應包括機器設備及堆置材料等。倉庫建築應包括貯藏物品、搬運車輛及吊裝設備等。積雪地區應包括雪載重。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_17",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第17條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=17",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造之活載重，因樓地板之用途而不同，不得小於下表所列；不在表列之樓地板用途或使用情形與表列不同，應按實計算，並須詳列於結構計算書中：\n車庫及停車場等類似場所每平方公尺不得少於五百公斤。\n走廊、樓梯之活載重應與室載重相同。但人群聚集之公共走廊、樓梯每平方公尺不得少於五百公斤。\n屋頂露臺之活載重得較室載重每平方公尺減",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-062",
+    "topic": "09 結構與設備",
+    "title": "結構施工與材料試驗",
+    "action": "檢查施工說明、材料品質及試驗要求，與設計條件及監造計畫銜接。",
+    "evidence": "結構施工規範、試驗及品質計畫",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_8",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第8條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=8",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造施工，須以施工說明書詳細說明施工品質之需要，除設計圖及詳細圖能以表明者外，所有為達成設計規定之施工品質要求，均應詳細載明施工說明書中。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070116_20230510",
+        "unit_id": "central_D0070116_20230510_art_9",
+        "law_title": "建築技術規則建築構造編",
+        "heading": "第9條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070116&flno=9",
+        "version_date": "2023-05-10",
+        "quote": "建築物構造施工期中，監造人須隨工作進度，依中華民國國家標準，取樣試驗證明所用材料及工程品質符合規定，特殊試驗得依國際通行試驗方法。\n施工期間工程疑問不能解釋時，得以試驗方法證明之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-063",
+    "topic": "09 結構與設備",
+    "title": "用電及緊急電源",
+    "action": "核對用電規則、合格器具及緊急電源服務設備；詳細電氣計算由專業人員檢核。",
+    "evidence": "單線圖、負載計算、設備檢驗及緊急供電",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_1",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=1",
+        "version_date": "2022-12-29",
+        "quote": "建築物之電氣設備，應依用戶用電設備裝置規則、各類場所消防安全設備設置標準及輸配電業所定電度表備置相關規定辦理；未規定者，依本章之規定辦理。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_2",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=2",
+        "version_date": "2022-12-29",
+        "quote": "使用於建築物內之電氣材料及器具，均應為經中央目的事業主管機關或其認可之檢驗機構檢驗合格之產品。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_7",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第7條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=7",
+        "version_date": "2022-12-29",
+        "quote": "建築物內之下列各項設備應接至緊急電源：\n一、火警自動警報設備。\n二、緊急廣播設備。\n三、地下室排水、污水抽水幫浦。\n四、消防幫浦。\n五、消防用排煙設備。\n六、緊急昇降機。\n七、緊急照明燈。\n八、出口標示燈。\n九、避難方向指示燈。\n十、緊急電源插座。\n十一、防災中心用電設備。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_9",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第9條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=9",
+        "version_date": "2022-12-29",
+        "quote": "緊急昇降機及消防用緊急供電設備之配線，均應連接至電動機，並依各類場所消防安全設備設置標準規定設置。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-064",
+    "topic": "09 結構與設備",
+    "title": "避雷設置",
+    "action": "依高度、用途確認應設避雷及保護範圍。",
+    "evidence": "避雷配置、接地及保護範圍計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_20",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第20條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=20",
+        "version_date": "2022-12-29",
+        "quote": "下列建築物應有符合本節所規定之避雷設備：\n一、建築物高度在二十公尺以上者。\n二、建築物高度在三公尺以上並作危險物品倉庫使用者（火藥庫、可燃性液體倉庫、可燃性氣體倉庫等）。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_21",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第21條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=21",
+        "version_date": "2022-12-29",
+        "quote": "避雷設備受雷部之保護角及保護範圍，應依下列規定：\n一、受雷部採用富蘭克林避雷針者，其針體尖端與受保護地面周邊所形成之圓錐體即為避雷針之保護範圍，此圓錐體之頂角之一半即為保護角，除危險物品倉庫之保護角不得超過四十五度外，其他建築物之保護角不得超過六十度。\n二、受雷部採用前款型式以外者，應依本規則總則編第四條規定，向中央主",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-065",
+    "topic": "09 結構與設備",
+    "title": "給排水及截留器",
+    "action": "核對給排水設計、容量、管徑及特殊用途截留分離設備，並併讀設備設計技術規範。",
+    "evidence": "給排水昇位圖、水量管徑及截留器計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_26",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第26條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=26",
+        "version_date": "2022-12-29",
+        "quote": "建築物給水排水系統設計裝設及設備容量、管徑計算，除自來水用戶用水設備標準、下水道用戶排水設備標準，及各地區另有規定者從其規定外，應依本章及建築物給水排水設備設計技術規範規定辦理。\n前項建築物給水排水設備設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_29",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第29條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=29",
+        "version_date": "2022-12-29",
+        "quote": "給水排水管路之配置，應依建築物給水排水設備設計技術規範設計，以確保建築物安全，避免管線設備腐蝕及污染。\n排水系統應裝設衛生上必要之設備，並應依下列規定設置截留器、分離器：\n一、餐廳、店鋪、飲食店、市場、商場、旅館、工廠、機關、學校、醫院、老人福利機構、身心障礙福利機構、兒童及少年安置教養機構及俱樂部等建築物之附設食品烹",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-066",
+    "topic": "09 結構與設備",
+    "title": "廁所及衛生設備數量",
+    "action": "按建築物種類、使用人數及男女配置核對數量，無障礙設施另核。",
+    "evidence": "使用人數、器具數量表及廁所平面",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_47",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第47條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=47",
+        "version_date": "2026-02-23",
+        "quote": "凡有居室之建築物，其樓地板面積達三十平方公尺以上者，應設置廁所。但同一基地內，已有廁所者不在此限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_48",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第48條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=48",
+        "version_date": "2026-02-23",
+        "quote": "廁所應設有開向戶外可直接通風之窗戶，但沖洗式廁所，如依本章第八節規定設有適當之通風設備者不在此限。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_37",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第37條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=37",
+        "version_date": "2022-12-29",
+        "quote": "建築物裝設之衛生設備數量不得少於下表規定：\n┌─────┬─────────┬───┬───────┬──┐\n│建築物種類│      大便器      │小便器│    洗面盆    │浴缸│\n│          │                  │      │              │或淋│\n│    ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_38",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第38條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=38",
+        "version_date": "2022-12-29",
+        "quote": "裝設洗手槽時，以每四十五公分長度相當於一個洗面盆。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-067",
+    "topic": "09 結構與設備",
+    "title": "污水處理及放流水",
+    "action": "核對污水處理與放流水規定，確認管線接管及主管機關要求。",
+    "evidence": "污水處理計算、排放路徑及接管文件",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_49",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第49條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=49",
+        "version_date": "2026-02-23",
+        "quote": "沖洗式廁所排水、生活雜排水除依下水道法令規定排洩至污水下水道系統或集中處理場者外，應設置污水處理設施，並排至有出口之溝渠，其排放口上方應予標示，並不得堆放雜物。但起造人申請建造執照時，經當地下水道主管機關認定該建造執照案屆本法第五十三條第一項規定之建築期限時，公共污水下水道系統可容納該新建建築物之污水者，得免予設置污水",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070117_20221229",
+        "unit_id": "central_D0070117_20221229_art_39",
+        "law_title": "建築技術規則建築設備編",
+        "heading": "第39條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070117&flno=39",
+        "version_date": "2022-12-29",
+        "quote": "本規則建築設計施工編第四十九條規定之污水處理設施，其污水放流水質應符合水污染防治法規定。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-068",
+    "topic": "10 山坡地",
+    "title": "山坡地定義與坡度",
+    "action": "確認基地是否屬山坡地專章，依規定量測坡度並核對禁止開發條件。",
+    "evidence": "地形測量、坡度分析及地質調查",
+    "applicability": "山坡地案件",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_260",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第260條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=260",
+        "version_date": "2026-02-23",
+        "quote": "本章所稱山坡地，指依山坡地保育利用條例第三條之規定劃定，報請行政院核定公告之公、私有土地。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_261",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第261條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=261",
+        "version_date": "2026-02-23",
+        "quote": "本章建築技術用語定義如左：\n一、平均坡度：係指在比例尺不小於一千二百分之一實測地形圖上依左列平均坡度計算法得出之坡度值：\n（一）在地形圖上區劃正方格坵塊，其每邊長不大於二十五公尺。圖示如左：\n（二）每格坵塊各邊及地形圖等高線相交點之點數，記於各方格邊上，再將四邊之交點總和註在方格中間。圖示如左：\n│      │   ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_262",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第262條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=262",
+        "version_date": "2026-02-23",
+        "quote": "山坡地有下列各款情形之一者，不得開發建築。但穿過性之道路、通路或公共設施管溝，經適當邊坡穩定之處理者，不在此限：\n一、坡度陡峭者：所開發地區之原始地形應依坵塊圖上之平均坡度之分布狀態，區劃成若干均質區。在坵塊圖上其平均坡度超過百分之三十者。但區內最高點及最低點間之坡度小於百分之十五，且區內不含顯著之獨立山頭或跨越主嶺線",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-069",
+    "topic": "10 山坡地",
+    "title": "山坡地人行步道及退縮",
+    "action": "核對人行步道、坡腳及擋土牆相關退縮；地方認定原則及例外併核。",
+    "evidence": "坡面及擋土剖面、退縮與人行步道配置",
+    "applicability": "山坡地案件",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_263",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第263條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=263",
+        "version_date": "2026-02-23",
+        "quote": "建築基地應自建築線或基地內通路邊退縮設置人行步道，其退縮距離不得小於一點五公尺，退縮部分得計入法定空地。但道路或基地內通路邊已設置人行步道者，可合併計算退縮距離。\n建築基地具特殊情形，經當地主管建築機關認定未能依前項規定退縮者，得減少其退縮距離或免予退縮；其認定原則由當地主管建築機關定之。\n臨建築線或基地內通路邊第一進",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_264",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第264條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=264",
+        "version_date": "2026-02-23",
+        "quote": "山坡地地面上之建築物至擋土牆坡腳間之退縮距離，應依左列公式計算：\n一、擋土牆上方無構造物載重者：\nＨ\n    Ｄ1≧ ──（１＋ｔａｎθ）\n           ２\n二、擋土牆上方有構造物載重者：\nＨ                 ２Ｑ\n    Ｄ2≧ ──（１＋ｔａｎθ＋───）\n           ２     ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_265",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第265條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=265",
+        "version_date": "2026-02-23",
+        "quote": "基地地面上建築物外牆距離高度一點五公尺以上之擋土設施者，其建築物外牆與擋土牆設施間應有二公尺以上之距離。但建築物外牆各點至高度三點六公尺以上擋土設施間之水平距離，應依左列公式計算：\nＨ－３‧６\nＤ≧２＋──────\n        　　４\nＨ：擋土設施各點至坡腳之高度。\nＤ：建築物外牆各點及擋土設施間之水平距離。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "kl_bm_022_official_f5b39d60f119",
+        "unit_id": "kl_bm_022_official_f5b39d60f119_art_1",
+        "law_title": "基隆市山坡地建築退縮設置人行步道認定原則",
+        "heading": "第1點",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004318&media=print",
+        "version_date": "2022-09-22",
+        "quote": "本認定原則依據建築技術規則建築設計施工編第二百六十三條第二項\n規定訂定。"
+      },
+      {
+        "document_id": "kl_bm_022_official_f5b39d60f119",
+        "unit_id": "kl_bm_022_official_f5b39d60f119_art_2",
+        "law_title": "基隆市山坡地建築退縮設置人行步道認定原則",
+        "heading": "第2點",
+        "official_url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004318&media=print",
+        "version_date": "2022-09-22",
+        "quote": "山坡地範圍內之建築基地符合以下各款情形之一者，得免退縮設置人\n行步道：\n（一）建築基地面積未達一千五百平方公尺。\n（二）於已開闢完成之重劃地區。\n（三）建築基地通行採人車分道設計，符合分道功能。\n（四）建築基地臨接之道路無法通行車輛。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-070",
+    "topic": "10 山坡地",
+    "title": "山坡地戶外階梯與地下層",
+    "action": "核對戶外階梯、地下層面積及建築高度限制。",
+    "evidence": "地形剖面、階梯、地下層與高度計算",
+    "applicability": "山坡地案件",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_266",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第266條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=266",
+        "version_date": "2026-02-23",
+        "quote": "建築物至建築線間之通路或建築物至通路間設置戶外階梯者，應依左列規定辦理：\n一、戶外階梯高度每三公尺應設置平台一處，平台深度不得小於階梯寬度。但平台深度大於二公尺者，得免再增加其寬度。\n二、戶外階梯每階之級深及級高，應依左列公式計算：\n２Ｒ＋Ｔ≧６４（ＣＭ）且Ｒ≦１８（ＣＭ）\n    Ｒ：每階之級高。\n    Ｔ：每階之",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_267",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第267條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=267",
+        "version_date": "2026-02-23",
+        "quote": "建築基地地下各層最大樓地板面積計算公式如左：\nA0<（1+Q）A/2\nA0：地下各層最大樓地板面積。\nA ：建築基地面積。\nQ ：該基地之最大建蔽率。\n建築物因施工安全或停車設備等特殊需要，經主管建築機關審定有增加地下各層樓地板面積必要者，得不受前項限制。\n建築基地內原有樹木，其距離地面一公尺高之樹幹周長大於五十公分以",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_268",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第268條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=268",
+        "version_date": "2026-02-23",
+        "quote": "建築物高度除依都市計畫法或區域計畫法有關規定許可者，從其規定外，不得高於法定最大容積率除以法定最大建蔽率之商乘三點六再乘以二，其公式如左：\n法定最大容積率\nH ≦────────×3.6×2\n    法定最大建蔽率\n建築物高度因構造或用途等特殊需要，經目的事業主管機關審定有增加其建築物高度必要者，得不受前項限制。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-071",
+    "topic": "10 山坡地",
+    "title": "水土保持送審",
+    "action": "判定水保計畫、簡易申報或免送審條件，核對主管機關核定及開發許可前置要求。",
+    "evidence": "水保適用表、土方量、核定計畫與條件",
+    "applicability": "山坡地或森林區相關開發行為",
+    "responsibility": "前置許可及專業水保審查",
+    "refs": [
+      {
+        "document_id": "central_M0110001_20161130",
+        "unit_id": "central_M0110001_20161130_art_12",
+        "law_title": "水土保持法",
+        "heading": "第12條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0110001&flno=12",
+        "version_date": "2016-11-30",
+        "quote": "水土保持義務人於山坡地或森林區內從事下列行為，應先擬具水土保持計畫，送請主管機關核定，如屬依法應進行環境影響評估者，並應檢附環境影響評估審查結果一併送核：\n一、從事農、林、漁、牧地之開發利用所需之修築農路或整坡作業。\n二、探礦、採礦、鑿井、採取土石或設置有關附屬設施。\n三、修建鐵路、公路、其他道路或溝渠等。\n四、開發建",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_M0110012_20250909",
+        "unit_id": "central_M0110012_20250909_art_3",
+        "law_title": "水土保持計畫審核監督辦法",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0110012&flno=3",
+        "version_date": "2025-09-09",
+        "quote": "於山坡地或森林區內從事本法第十二條第一項各款行為，且挖方及填方加計總和或堆積土石方分別未滿二千立方公尺，其水土保持計畫得以簡易水土保持申報書代替之種類及規模如下：\n一、從事農、林、漁、牧地之開發利用所需之修築農路：路基寬度未滿四公尺，且長度未滿五百公尺者。\n二、從事農、林、漁、牧地之開發利用所需之整坡作業：開挖整地面積",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_M0110012_20250909",
+        "unit_id": "central_M0110012_20250909_art_4",
+        "law_title": "水土保持計畫審核監督辦法",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0110012&flno=4",
+        "version_date": "2025-09-09",
+        "quote": "水土保持義務人有下列情形之一，免擬具水土保持計畫或簡易水土保持申報書送請主管機關審核：\n一、實施農業經營所需之開挖植穴、中耕除草等作業。\n二、經營農場或其他農業經營需要修築園內道或作業道，路基寬度在二‧五公尺以下且長度在一百公尺以下者。\n三、其他因農業經營需要，依水土保持技術規範實施水土保持處理與維護者。\n前項第二款及",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_M0110012_20250909",
+        "unit_id": "central_M0110012_20250909_art_5",
+        "law_title": "水土保持計畫審核監督辦法",
+        "heading": "第5條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0110012&flno=5",
+        "version_date": "2025-09-09",
+        "quote": "水土保持計畫及簡易水土保持申報書審查核定之分工如下：\n一、在直轄巿或縣（巿）行政區域內者，由該直轄巿、縣（巿）主管機關審查核定。\n二、跨越二以上直轄巿、縣（巿）行政區域者，由水土保持計畫所占面積較大之直轄巿、縣（巿）主管機關會同其他相關主管機關審查後，再分別核定。\n三、中央機關自行興辦者，由中央主管機關審查核定。\n前項",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_M0110012_20250909",
+        "unit_id": "central_M0110012_20250909_art_6",
+        "law_title": "水土保持計畫審核監督辦法",
+        "heading": "第6條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0110012&flno=6",
+        "version_date": "2025-09-09",
+        "quote": "水土保持義務人應依中央主管機關規定格式，擬具水土保持計畫或簡易水土保持申報書六份及主管機關要求抄件份數，並檢附下列文件，由目的事業主管機關受理後，送請主管機關審核：\n一、目的事業開發或利用之申請文件。\n二、環境影響說明書或環境影響評估報告書及審查結論各一份；無需者免附。\n三、水土保持規劃書審定本一份；無需者免附。\n水土",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-072",
+    "topic": "11 綠建築",
+    "title": "綠建築章適用",
+    "action": "核對新建增建及例外，確認各節適用範圍及定義。",
+    "evidence": "各節適用性表、例外理由",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_298",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第298條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=298",
+        "version_date": "2026-02-23",
+        "quote": "本章規定之適用範圍如下：\n一、建築基地綠化：指促進植栽綠化品質之設計，其適用範圍為新建建築物。但個別興建農舍及基地面積三百平方公尺以下者，不在此限。\n二、建築基地保水：指促進建築基地涵養、貯留、滲透雨水功能之設計，其適用範圍為新建建築物。但本編第十三章山坡地建築、地下水位小於一公尺之建築基地、個別興建農舍及基地面積三百",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_299",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第299條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=299",
+        "version_date": "2026-02-23",
+        "quote": "本章用詞，定義如下：\n一、綠化總固碳當量：指基地綠化栽植之各類植物固碳當量與其栽植面積乘積之總和。\n二、最小綠化面積：指基地面積扣除執行綠化有困難之面積後與基地內應保留法定空地比率之乘積。\n三、基地保水指標：指建築後之土地保水量與建築前自然土地之保水量之相對比值。\n四、建築物外殼耗能量：指為維持室內熱環境之舒適性，建築",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-073",
+    "topic": "11 綠建築",
+    "title": "基地綠化及保水",
+    "action": "分別檢討綠化與保水指標適用範圍及計算技術規範。",
+    "evidence": "植栽、覆土、綠化與保水計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_302",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第302條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=302",
+        "version_date": "2026-02-23",
+        "quote": "建築基地之綠化，其綠化總固碳當量應大於二分之一最小綠化面積與下表固碳當量基準值之乘積：\n┌──────────┬───────────────────┐\n│使用分區或用地      │固碳當量基準值                        │\n│                    │（公斤／（平方公尺‧年））",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_303",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第303條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=303",
+        "version_date": "2026-02-23",
+        "quote": "建築基地之綠化檢討以一宗基地為原則；如單一宗基地內之局部新建執照者，得以整宗基地綜合檢討或依基地內合理分割範圍單獨檢討。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_304",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第304條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=304",
+        "version_date": "2026-02-23",
+        "quote": "建築基地綠化之總固碳當量計算，應依設計技術規範辦理。\n前項建築基地綠化設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_305",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第305條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=305",
+        "version_date": "2026-02-23",
+        "quote": "建築基地應具備原裸露基地涵養或貯留滲透雨水之能力，其建築基地保水指標應大於○．五與基地內應保留法定空地比率之乘積。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_306",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第306條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=306",
+        "version_date": "2026-02-23",
+        "quote": "建築基地之保水設計檢討以一宗基地為原則；如單一宗基地內之局部新建執照者，得以整宗基地綜合檢討或依基地內合理分割範圍單獨檢討。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_307",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第307條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=307",
+        "version_date": "2026-02-23",
+        "quote": "建築基地保水指標之計算，應依設計技術規範辦理。\n前項建築基地保水設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-074",
+    "topic": "11 綠建築",
+    "title": "節能外殼與氣候區",
+    "action": "確認氣候區、住宿、學校、大型空間或混合用途外殼節能規定，並依計算技規。",
+    "evidence": "氣候區、窗牆比、遮陽、外殼節能計算",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_308",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第308條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=308",
+        "version_date": "2026-02-23",
+        "quote": "建築物建築外殼節約能源之設計，應依據下表氣候分區辦理：\n┌─────┬────────────────────────┐\n│氣候分區  │行政區域                                        │\n├─────┼────────────────────────┤\n│北部氣候區│臺北市、新",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_309",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第309條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=309",
+        "version_date": "2026-02-23",
+        "quote": "A 類第二組、B 類、D 類第二組、D 類第五組、E 類、F 類第一組、F 類第三組、F類第四組及G類空調型建築物，及C類之非倉儲製程部分等空調型建築物，為維持室內熱環境之舒適性，應依其耗能特性分區計算各分區之外殼耗能量，且各分區外殼耗能量對各分區樓地板面積之加權值，應低於下表外殼耗能基準對各分區樓地板面積之加權平均值",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_310",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第310條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=310",
+        "version_date": "2026-02-23",
+        "quote": "住宿類建築物外殼不透光之外牆部分之平均熱傳透率應低於三點五瓦／（平方公尺．度），且其建築物外殼等價開窗率之計算值應低於下表之基準值。但符合本編第三百零八條之二規定者，不在此限。\n┌──────┬──────┬──────────────┐\n│住宿類：    │  氣候分區  │建築物外殼等價開窗率基準值  │\n│Ｈ類第",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_311",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第311條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=311",
+        "version_date": "2026-02-23",
+        "quote": "學校類建築物之行政辦公、教室等居室空間之窗面平均日射取得量應分別低於下表之基準值。但符合本編第三百零八條之二規定者，不在此限：\n┌───────┬──────┬──────────────┐\n│學校類建築物：│  氣候分區  │窗面平均日射取得量          │\n│D 類第三組    │            │",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_312",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第312條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=312",
+        "version_date": "2026-02-23",
+        "quote": "大型空間類建築物居室空間之窗面平均日射取得量應分別低於下表公式所計算之基準值。但平均立面開窗率在百分之十以下，或符合本編第三百零八條之二規定者，不在此限：\n┌────────┬────┬────────────────┐\n│大型空間類建築物│氣候分區│窗面平均日射取得量基準值計算公式│\n│：              ",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_314",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第314條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=314",
+        "version_date": "2026-02-23",
+        "quote": "同一幢或連棟建築物中，有供本節適用範圍二類以上用途，且其各用途之規模分別達本編第二百九十八條第三款規定者，其耗能量之計算基準值，除本編第三百零九條之空調型建築物應依各耗能特性分區樓地板面積加權計算其基準值外，應分別依其規定基準值計算。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_315",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第315條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=315",
+        "version_date": "2026-02-23",
+        "quote": "有關建築物節約能源之外殼節約能源設計，應依設計技術規範辦理。\n前項建築物節約能源設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-075",
+    "topic": "11 綠建築",
+    "title": "雨水雜排水回收",
+    "action": "依適用條件檢討雨水或雜排水回收、利用範圍、標示及防誤接。",
+    "evidence": "回收利用系統、容量、管線及標示",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_300",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第300條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=300",
+        "version_date": "2026-02-23",
+        "quote": "適用本章之建築物，其容積樓地板面積、機電設備面積、屋頂突出物之計算，得依下列規定辦理：\n一、建築基地因設置雨水貯留利用系統及生活雜排水回收再利用系統，所增加之設備空間，於樓地板面積容積千分之五以內者，得不計入容積樓地板面積及不計入機電設備面積。\n二、建築物設置雨水貯留利用系統及生活雜排水回收再利用系統者，其屋頂突出物之",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_316",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第316條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=316",
+        "version_date": "2026-02-23",
+        "quote": "建築物應就設置雨水貯留利用系統或生活雜排水回收再利用系統，擇一設置。設置雨水貯留利用系統者，其雨水貯留利用率應大於百分之四；設置生活雜排水回收利用系統者，其生活雜排水回收再利用率應大於百分之三十。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_317",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第317條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=317",
+        "version_date": "2026-02-23",
+        "quote": "由雨水貯留利用系統或生活雜排水回收再利用系統處理後之用水，可使用於沖廁、景觀、澆灌、灑水、洗車、冷卻水、消防及其他不與人體直接接觸之用水。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_318",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第318條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=318",
+        "version_date": "2026-02-23",
+        "quote": "建築物設置雨水貯留利用或生活雜排水回收再利用設施者，應符合左列規定：\n一、輸水管線之坡度及管徑設計，應符合建築設備編第二章給水排水系統及衛生設備之相關規定。\n二、雨水供水管路之外觀應為淺綠色，且每隔五公尺標記雨水字樣；生活雜排水回收再利用水供水管之外觀應為深綠色，且每隔四公尺標記生活雜排水回收再利用水字樣。\n三、所有儲",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_319",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第319條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=319",
+        "version_date": "2026-02-23",
+        "quote": "建築物雨水及生活雜排水回收再利用之計算及系統設計，應依設計技術規範辦理。\n前項建築物雨水及生活雜排水回收再利用設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-076",
+    "topic": "11 綠建築",
+    "title": "綠建材",
+    "action": "核對適用材料、使用比率及計算範圍，採用有效標章與證明。",
+    "evidence": "綠建材面積計算、材料表及標章",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_321",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第321條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=321",
+        "version_date": "2026-02-23",
+        "quote": "建築物應使用綠建材，並符合下列規定：\n一、建築物室內裝修材料、樓地板面材料及窗，其綠建材使用率應達總面積百分之六十以上。但窗未使用綠建材者，得不計入總面積檢討。\n二、建築物戶外地面扣除車道、汽車出入緩衝空間、消防車輛救災活動空間、依其他法令規定不得鋪設地面材料之範圍及地面結構上無須再鋪設地面材料之範圍，其餘地面部分之綠",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_322",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第322條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=322",
+        "version_date": "2026-02-23",
+        "quote": "綠建材材料之構成，應符合左列規定之一：\n一、塑橡膠類再生品：塑橡膠再生品的原料須全部為國內回收塑橡膠，回收塑橡膠不得含有行政院環境保護署公告之毒性化學物質。\n二、建築用隔熱材料：建築用的隔熱材料其產品及製程中不得使用蒙特婁議定書之管制物質且不得含有環保署公告之毒性化學物質。\n三、水性塗料：不得含有甲醛、鹵性溶劑、汞、鉛",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_323",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第323條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=323",
+        "version_date": "2026-02-23",
+        "quote": "綠建材之使用率計算，應依設計技術規範辦理。\n前項綠建材設計技術規範，由中央主管建築機關定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-077",
+    "topic": "11 綠建築",
+    "title": "尚未施行條文排除",
+    "action": "第301條僅供公布文字查閱；官方仍註記施行日期另定，不得逕以本條認列容積獎勵。",
+    "evidence": "官方生效註記、另有獎勵法源及核准文件",
+    "applicability": "設計主張綠建築容積獎勵時",
+    "responsibility": "版次及生效狀態核對",
+    "refs": [
+      {
+        "document_id": "central_D0070115_20260223",
+        "unit_id": "central_D0070115_20260223_art_301",
+        "law_title": "建築技術規則建築設計施工編",
+        "heading": "第301條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=301",
+        "version_date": "2026-02-23",
+        "quote": "為積極維護生態環境，落實建築物節約能源，中央主管建築機關得以增加容積或其他獎勵方式，鼓勵建築物採用綠建築綜合設計。",
+        "effective_warning": "尚未施行：民國93年3月10日修正之第301條，官方註明施行日期另定。不得據此逕認容積獎勵可適用。"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-078",
+    "topic": "12 公寓與既有建物",
+    "title": "公寓權屬及規約草約",
+    "action": "申請建照及設計變更時，檢附四種權屬標示圖及規約草約，核對不得約定專用之共用部分。",
+    "evidence": "權屬標示、共用設施及規約草約",
+    "applicability": "公寓大廈案件",
+    "responsibility": "書件與權屬檢討",
+    "refs": [
+      {
+        "document_id": "central_D0070118_20220511",
+        "unit_id": "central_D0070118_20220511_art_7",
+        "law_title": "公寓大廈管理條例",
+        "heading": "第7條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070118&flno=7",
+        "version_date": "2022-05-11",
+        "quote": "公寓大廈共用部分不得獨立使用供做專有部分。其為下列各款者，並不得為約定專用部分：\n一、公寓大廈本身所占之地面。\n二、連通數個專有部分之走廊或樓梯，及其通往室外之通路或門廳；社區內各巷道、防火巷弄。\n三、公寓大廈基礎、主要樑柱、承重牆壁、樓地板及屋頂之構造。\n四、約定專用有違法令使用限制之規定者。\n五、其他有固定使用方法",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070118_20220511",
+        "unit_id": "central_D0070118_20220511_art_56",
+        "law_title": "公寓大廈管理條例",
+        "heading": "第56條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070118&flno=56",
+        "version_date": "2022-05-11",
+        "quote": "公寓大廈之起造人於申請建造執照時，應檢附專有部分、共用部分、約定專用部分、約定共用部分標示之詳細圖說及規約草約。於設計變更時亦同。\n前項規約草約經承受人簽署同意後，於區分所有權人會議訂定規約前，視為規約。\n公寓大廈之起造人或區分所有權人應依使用執照所記載之用途及下列測繪規定，辦理建物所有權第一次登記：\n一、獨立建築物所",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-079",
+    "topic": "12 公寓與既有建物",
+    "title": "使用類組判定",
+    "action": "依實際用途確認原核准及擬變更類組，核對附表一、二，避免僅以招牌名稱判斷。",
+    "evidence": "原使用執照、用途配置、類組判定表",
+    "applicability": "各類建築及變更使用案件",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_2",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=2",
+        "version_date": "2025-05-13",
+        "quote": "建築物之使用類別、組別及其定義，如附表一。\n前項建築物之使用項目舉例如附表二。\n原核發之使用執照未登載使用類組者，該管主管建築機關應於建築物申請變更使用執照時，依前二項規定確認其類別、組別，加註於使用執照或核發確認使用類組之文件。建築物所有權人申請加註者，亦同。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-080",
+    "topic": "12 公寓與既有建物",
+    "title": "變更使用適用與範圍",
+    "action": "核對土管、變更原則及檢討標準、局部變更及主從用途條件；地方免辦規定另核。",
+    "evidence": "原核准圖、變更範圍、附表三四五檢討",
+    "applicability": "既有建物變更使用",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_3",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=3",
+        "version_date": "2025-05-13",
+        "quote": "建築物變更使用類組時，除應符合都市計畫土地使用分區管制或非都市土地使用管制之容許使用項目規定外，並應依建築物變更使用原則表如附表三辦理。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_4",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=4",
+        "version_date": "2025-05-13",
+        "quote": "建築物變更使用類組規定檢討項目之各類組檢討標準如附表四。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_5",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第5條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=5",
+        "version_date": "2025-05-13",
+        "quote": "建築物變更使用類組，應以整層為之。但不妨害或破壞其他未變更使用部分之防火避難設施且符合下列情形之一者，得以該樓層局部範圍變更使用：\n一、變更範圍直接連接直通樓梯、梯廳或屋外，且以具有一小時以上防火時效之牆壁、樓板、防火門窗等防火構造及設備區劃分隔，其防火設備並應具有一小時以上之阻熱性。\n二、變更範圍以符合建築技術規則建",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_6",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第6條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=6",
+        "version_date": "2025-05-13",
+        "quote": "建築物於同一使用單元內，申請變更為多種使用類組者，應同時符合各使用類組依附表三規定之檢討項目及附表四規定之檢討標準。但符合下列各款規定者，得以主用途之使用類組檢討：\n一、具主從用途關係如附表五。\n二、從屬用途範圍之所有權應與主用途相同。\n三、從屬用途樓地板面積不得超過該使用單元樓地板面積之五分之二。\n四、同一使用單元內",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070141_20250513",
+        "unit_id": "central_D0070141_20250513_art_8",
+        "law_title": "建築物使用類組及變更使用辦法",
+        "heading": "第8條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070141&flno=8",
+        "version_date": "2025-05-13",
+        "quote": "本法第七十三條第二項所定有本法第九條建造行為以外主要構造、防火區劃、防火避難設施、消防設備、停車空間及其他與原核定使用不合之變更者，應申請變更使用執照之規定如下：\n一、建築物之基礎、樑柱、承重牆壁、樓地板等之變更。\n二、防火區劃範圍、構造或設備之調整或變更。\n三、防火避難設施：\n（一）直通樓梯、安全梯或特別安全梯之構造",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_73",
+        "law_title": "建築法",
+        "heading": "第73條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=73",
+        "version_date": "2022-05-11",
+        "quote": "建築物非經領得使用執照，不准接水、接電及使用。但直轄市、縣（市）政府認有左列各款情事之一者，得另定建築物接用水、電相關規定：\n一、偏遠地區且非屬都市計畫地區之建築物。\n二、因興辦公共設施所需而拆遷具整建需要且無礙都市計畫發展之建築物。\n三、天然災害損壞需安置及修復之建築物。\n四、其他有迫切民生需要之建築物。\n建築物應依",
+        "effective_warning": null
+      },
+      {
+        "document_id": "kl_bm_012_official_df5c6dc582d6",
+        "unit_id": "kl_bm_012_official_df5c6dc582d6_art_3",
+        "law_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+        "heading": "第3條",
+        "official_url": "https://www.klcg.gov.tw/tw/urban/2580-297250.html",
+        "version_date": "2025-01-20",
+        "quote": "建築物免辦理變更使用執照者 ， 其使用仍應符合都市計畫\n土地使用分區管制或非都市土地使用管制規則之容許使\n用項目及開發許可規定。"
+      },
+      {
+        "document_id": "kl_bm_012_official_df5c6dc582d6",
+        "unit_id": "kl_bm_012_official_df5c6dc582d6_art_4",
+        "law_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+        "heading": "第4條",
+        "official_url": "https://www.klcg.gov.tw/tw/urban/2580-297250.html",
+        "version_date": "2025-01-20",
+        "quote": "建築物免辦理變更使用執照 ， 如涉及實施都市計畫地區建\n築基地綜合設計(開放空間)、水保設施、都市設計審議、\n環境影響評估 、 鼓勵增設營業使用停車空間等原審查核定\n內容變更者，應依原核定程序經審查同意，始得適用本辦\n法。"
+      },
+      {
+        "document_id": "kl_bm_012_official_df5c6dc582d6",
+        "unit_id": "kl_bm_012_official_df5c6dc582d6_art_6",
+        "law_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+        "heading": "第6條",
+        "official_url": "https://www.klcg.gov.tw/tw/urban/2580-297250.html",
+        "version_date": "2025-01-20",
+        "quote": "建築物免辦理變更使用執照者 ， 應以一戶或原使用執照已\n核准具有一小時防火時效之防火牆或防火門窗區劃為單\n元。 \n前項變更單元以原使用執照核准圖說核准面積檢討 ， 其使\n用面積及規模不得逾附表規定。"
+      },
+      {
+        "document_id": "kl_bm_012_official_df5c6dc582d6",
+        "unit_id": "kl_bm_012_official_df5c6dc582d6_art_7",
+        "law_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+        "heading": "第7條",
+        "official_url": "https://www.klcg.gov.tw/tw/urban/2580-297250.html",
+        "version_date": "2025-01-20",
+        "quote": "建築物變更使用類組 ，符合附表所定要件者，免辦理變更\n使用執照。 \n前項情形，變更後之使用類組屬D-1、D-2、D-5、F-2、F-\n3、H-1、H-2（集合住宅、住宅除外） 場所者，需經目的事\n業主管機關許可後，始能營業之場所，其所有權人或使用\n人應向主管機關申請核發免辦理變更使用證明 ， 並經目的\n事業主管機關依該"
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-081",
+    "topic": "12 公寓與既有建物",
+    "title": "室內裝修許可及圖說",
+    "action": "確認是否屬室裝行為、應申請範圍及應附文件圖說；不得妨害防火避難與消防。",
+    "evidence": "原核准、室裝平立剖、材料及權利證明",
+    "applicability": "室內裝修或與建照併案",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070148_20231211",
+        "unit_id": "central_D0070148_20231211_art_3",
+        "law_title": "建築物室內裝修管理辦法",
+        "heading": "第3條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070148&flno=3",
+        "version_date": "2023-12-11",
+        "quote": "本辦法所稱室內裝修，指除壁紙、壁布、窗簾、家具、活動隔屏、地氈等之黏貼及擺設外之下列行為：\n一、固著於建築物構造體之天花板裝修。\n二、內部牆面裝修。\n三、高度超過地板面以上一點二公尺固定之隔屏或兼作櫥櫃使用之隔屏裝修。\n四、分間牆變更。",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070148_20231211",
+        "unit_id": "central_D0070148_20231211_art_22",
+        "law_title": "建築物室內裝修管理辦法",
+        "heading": "第22條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070148&flno=22",
+        "version_date": "2023-12-11",
+        "quote": "供公眾使用建築物或經內政部認定之非供公眾使用建築物之室內裝修，建築物起造人、所有權人或使用人應向直轄市、縣（市）主管建築機關或審查機構申請審核圖說，審核合格並領得直轄市、縣（市）主管建築機關發給之許可文件後，始得施工。\n非供公眾使用建築物變更為供公眾使用或原供公眾使用建築物變更為他種供公眾使用，應辦理變更使用執照涉室內",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070148_20231211",
+        "unit_id": "central_D0070148_20231211_art_23",
+        "law_title": "建築物室內裝修管理辦法",
+        "heading": "第23條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070148&flno=23",
+        "version_date": "2023-12-11",
+        "quote": "申請室內裝修審核時，應檢附下列圖說文件：\n一、申請書。\n二、建築物權利證明文件。\n三、前次核准使用執照平面圖、室內裝修平面圖或申請建築執照之平面圖。但經直轄市、縣（市）主管建築機關查明檔案資料確無前次核准使用執照平面圖或室內裝修平面圖屬實者，得以經開業建築師簽證符合規定之現況圖替代之。\n四、室內裝修圖說。\n前項第三款所",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070148_20231211",
+        "unit_id": "central_D0070148_20231211_art_24",
+        "law_title": "建築物室內裝修管理辦法",
+        "heading": "第24條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070148&flno=24",
+        "version_date": "2023-12-11",
+        "quote": "室內裝修圖說包括下列各款：\n一、位置圖：註明裝修地址、樓層及所在位置。\n二、裝修平面圖：註明各部分之用途、尺寸及材料使用，其比例尺不得小於一百分之一。但經直轄市、（縣）市主管建築機關同意者，比例尺得放寬至二百分之一。\n三、裝修立面圖：比例尺不得小於一百分之一。\n四、裝修剖面圖：註明裝修各部分高度、內部設施及各部分之材料",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_77-2",
+        "law_title": "建築法",
+        "heading": "第77-2條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=77-2",
+        "version_date": "2022-05-11",
+        "quote": "建築物室內裝修應遵守左列規定：\n一、供公眾使用建築物之室內裝修應申請審查許可，非供公眾使用建築物，經內政部認有必要時，亦同。但中央主管機關得授權建築師公會或其他相關專業技術團體審查。\n二、裝修材料應合於建築技術規則之規定。\n三、不得妨害或破壞防火避難設施、消防設備、防火區劃及主要構造。\n四、不得妨害或破壞保護民眾隱私權",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-082",
+    "topic": "12 公寓與既有建物",
+    "title": "原有合法建築物安全改善",
+    "action": "先證明原有合法及適用範圍，依改善辦法另作檢討；不可將新建規則直接視為唯一改善途徑。",
+    "evidence": "合法證明、原核准圖及改善計畫",
+    "applicability": "原有合法建築物改善案",
+    "responsibility": "技術簽證／人工檢核",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_77",
+        "law_title": "建築法",
+        "heading": "第77條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=77",
+        "version_date": "2022-05-11",
+        "quote": "建築物所有權人、使用人應維護建築物合法使用與其構造及設備安全。\n直轄市、縣（市）（局）主管建築機關對於建築物得隨時派員檢查其有關公共安全與公共衛生之構造與設備。\n供公眾使用之建築物，應由建築物所有權人、使用人定期委託中央主管建築機關認可之專業機構或人員檢查簽證，其檢查簽證結果應向當地主管建築機關申報。非供公眾使用之建築",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_77-1",
+        "law_title": "建築法",
+        "heading": "第77-1條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=77-1",
+        "version_date": "2022-05-11",
+        "quote": "為維護公共安全，供公眾使用或經中央主管建築機關認有必要之非供公眾使用之原有合法建築物，其構造、防火避難設施及消防設備不符現行規定者，應視其實際情形，令其改善或改變其他用途；其申請改善程序、項目、內容及方式等事項之辦法，由中央主管建築機關定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-083",
+    "topic": "13 後續施工與使用",
+    "title": "開工及勘驗條件",
+    "action": "核對開工、施工計畫、必須勘驗項目及申報程序，於圖說與施工計畫銜接。",
+    "evidence": "施工計畫、開工文件、指定勘驗表",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "建照核發後程序",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_54",
+        "law_title": "建築法",
+        "heading": "第54條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=54",
+        "version_date": "2022-05-11",
+        "quote": "起造人自領得建造執照或雜項執照之日起，應於六個月內開工；並應於開工前，會同承造人及監造人將開工日期，連同姓名或名稱、住址、證書字號及承造人施工計畫書，申請該管主管建築機關備查。\n起造人因故不能於前項期限內開工時，應敘明原因，申請展期一次，期限為三個月。未依規定申請展期，或已逾展期期限仍未開工者，其建造執照或雜項執照自規",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_56",
+        "law_title": "建築法",
+        "heading": "第56條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=56",
+        "version_date": "2022-05-11",
+        "quote": "建築工程中必須勘驗部分，應由直轄市、縣（市）主管建築機關於核定建築計畫時，指定由承造人會同監造人按時申報後，方得繼續施工，主管建築機關得隨時勘驗之。\n前項建築工程必須勘驗部分、勘驗項目、勘驗方式、勘驗紀錄保存年限、申報規定及起造人、承造人、監造人應配合事項，於建築管理規則中定之。",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  },
+  {
+    "id": "BP-084",
+    "topic": "13 後續施工與使用",
+    "title": "使用執照與設備許可",
+    "action": "核對竣工查驗、使用執照及昇降、機械停車設備使用許可；列為完工追蹤。",
+    "evidence": "竣工圖、使照、設備竣工檢查與許可",
+    "applicability": "依用途、規模及個案條件判定",
+    "responsibility": "完工與使用程序",
+    "refs": [
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_70",
+        "law_title": "建築法",
+        "heading": "第70條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=70",
+        "version_date": "2022-05-11",
+        "quote": "建築工程完竣後，應由起造人會同承造人及監造人申請使用執照。直轄市、縣（市）（局）主管建築機關應自接到申請之日起，十日內派員查驗完竣。其主要構造、室內隔間及建築物主要設備等與設計圖樣相符者，發給使用執照，並得核發謄本；不相符者，一次通知其修改後，再報請查驗。但供公眾使用建築物之查驗期限，得展延為二十日。\n建築物無承造人或",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_73",
+        "law_title": "建築法",
+        "heading": "第73條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=73",
+        "version_date": "2022-05-11",
+        "quote": "建築物非經領得使用執照，不准接水、接電及使用。但直轄市、縣（市）政府認有左列各款情事之一者，得另定建築物接用水、電相關規定：\n一、偏遠地區且非屬都市計畫地區之建築物。\n二、因興辦公共設施所需而拆遷具整建需要且無礙都市計畫發展之建築物。\n三、天然災害損壞需安置及修復之建築物。\n四、其他有迫切民生需要之建築物。\n建築物應依",
+        "effective_warning": null
+      },
+      {
+        "document_id": "central_D0070109_20220511",
+        "unit_id": "central_D0070109_20220511_art_77-4",
+        "law_title": "建築法",
+        "heading": "第77-4條",
+        "official_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070109&flno=77-4",
+        "version_date": "2022-05-11",
+        "quote": "建築物昇降設備及機械停車設備，非經竣工檢查合格取得使用許可證，不得使用。\n前項設備之管理人，應定期委託領有中央主管建築機關核發登記證之專業廠商負責維護保養，並定期向直轄市、縣（市）主管建築機關或由直轄市、縣（市）主管建築機關委託經中央主管建築機關指定之檢查機構或團體申請安全檢查。管理人未申請者，直轄市、縣（市）主管建築",
+        "effective_warning": null
+      }
+    ],
+    "automated": false,
+    "default_status": "未檢核"
+  }
+]

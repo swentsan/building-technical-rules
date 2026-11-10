@@ -1,0 +1,1900 @@
+{
+  "checked_on": "2026-11-09",
+  "coverage": {
+    "local_regulations": 41,
+    "urban_listing_entries": 71,
+    "law_category_entries": 104
+  },
+  "status_counts": {
+    "same_version": 25,
+    "amended": 10,
+    "date_conflict": 2,
+    "repealed": 1,
+    "unresolved": 2,
+    "partial_amendment": 1
+  },
+  "labels": {
+    "same_version": "版次相符",
+    "amended": "已有新版／修正",
+    "date_conflict": "日期記載不一致",
+    "repealed": "已停止適用",
+    "unresolved": "未取得官方現行本",
+    "partial_amendment": "附表已修正／整編本待核"
+  },
+  "records": [
+    {
+      "number": 1,
+      "family_id": "kl_bm_001",
+      "local_document_id": "kl_bm_001_8e526f725a32",
+      "local_title": "基隆市建築管理自治條例",
+      "local_dates": [
+        "2001-10-09",
+        "2011-07-20",
+        "2013-05-14"
+      ],
+      "official_title": "基隆市建築管理自治條例",
+      "official_date": "2013-05-14",
+      "official_announcement": "基府行法壹字第1020157501B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000079&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/260847617cfb0c11563bed6b.html",
+          "sha256": "b2c94178c4ad775b2b0c1f4cbda2197f595f1fee8fd23569127e7fc752bf9417"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000079#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/48541c53d6571934d5178677.html",
+          "sha256": "e6dac30fd9a290feadffd30b6ada8b492a34a2bf65252c24965e060349b17315"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國90年10月9日（90）基府秘法字第 090187 號令制定  公布全文 41 條；並自公布日起施行2.中華民國100年07月20日基府行法壹字第1000168494B號令修正3.102年5月14日基府行法壹字第1020157501B號令修正",
+      "official_system_date": "2013-05-14",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築管理自治條例",
+        "公發布日": "民國 90 年 10 月 09 日",
+        "修正日期": "民國 102 年 05 月 14 日",
+        "發文字號": "基府行法壹字第1020157501B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築管理自治條例修正條文對照表.pdf基隆市建築管理自治條例修正總說明.pdf"
+      },
+      "attachment_ids": [
+        "33c7a970f17aa73e366b2ebb",
+        "db48e88752591e8ad0639b96"
+      ]
+    },
+    {
+      "number": 2,
+      "family_id": "kl_bm_002",
+      "local_document_id": "kl_bm_002_89ade417e48f",
+      "local_title": "基隆市營建工程剩餘土石方處理及資源堆置處理場設置管理自治條例",
+      "local_dates": [
+        "2003-01-08"
+      ],
+      "official_title": "基隆市營建剩餘土石方資源處理及收容處理場所設置管理自治條例",
+      "official_date": "2014-10-21",
+      "official_announcement": "基府行法壹字第1030242244B號令",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "103年10月21日修正；法規名稱與內容均有變更。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000501&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/df92f484eb33fcb013c94be7.html",
+          "sha256": "95739f7173a9a1f5d560f1c0a6d77d3e1eedd96d126a4905ab9968beae6f18b3"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000501#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/0015270d4391e1bd3317d04c.html",
+          "sha256": "8d3dabf642151aee76bb2cac24cafc2adc8e768e29143a2ac1ffc509ae732e32"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國92年1月8日基府秘法壹字第0920002294B號令公布2.中華民國103年10月21日基府行法壹字第1030242244B號令修正",
+      "official_system_date": "2014-10-21",
+      "official_system_fields": {
+        "法規名稱": "基隆市營建剩餘土石方資源處理及收容處理場所設置管理自治條例",
+        "公發布日": "民國 92 年 01 月 08 日",
+        "修正日期": "民國 103 年 10 月 21 日",
+        "發文字號": "基府行法壹字第1030242244B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市營建剩餘土石方資源處理及收容處理場所設置管理自治條例修正條文對照表.pdf基隆市營建剩餘土石方資源處理及收容處理場所設置管理自治條例修正總說明.pdf",
+        "圖表附件": "附表.pdf"
+      },
+      "attachment_ids": [
+        "b117052b4994890c4a606498",
+        "22674f55f4ecf20729b4e80b",
+        "6d9237e5fc0a4c4863df4c47"
+      ]
+    },
+    {
+      "number": 3,
+      "family_id": "kl_bm_003",
+      "local_document_id": "kl_bm_003_fac601c61df1",
+      "local_title": "基隆市政府營建剩餘土石方及營建廢棄物違規堆置聯合稽查小組執行要點",
+      "local_dates": [
+        "2012-12-17"
+      ],
+      "official_title": "基隆市政府營建剩餘土石方及營建廢棄物違規堆置聯合稽查小組執行要點",
+      "official_date": "2012-12-17",
+      "official_announcement": "基府都建壹字第1010189251號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000351&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/de14f76285a456e50792c880.html",
+          "sha256": "071c89540421791d2941209f72a22945901f26042631cee60ce7a20fbb096435"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000351#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/0c96a7105ff4aa20d6f3d7ac.html",
+          "sha256": "33158a43303c034b6774c0df6d73e059dd912a004713b81358e71b99143caa60"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國101年12月17日基府都建壹字第1010189251號函頒",
+      "official_system_date": "2012-12-17",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府營建剩餘土石方及營建廢棄物違規堆置聯合稽查小組執行要點",
+        "公發布日": "民國 101 年 12 月 17 日",
+        "發文字號": "基府都建壹字第1010189251號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市政府營建剩餘土石方及營建廢棄物違規堆置聯合稽查小組執行要點逐點說明.pdf"
+      },
+      "attachment_ids": [
+        "aaf92c00a540e5cf98504242"
+      ]
+    },
+    {
+      "number": 4,
+      "family_id": "kl_bm_004",
+      "local_document_id": "kl_bm_004_96dfb6c513db",
+      "local_title": "基隆市公共工程營建剩餘土石方交換利用作業要點",
+      "local_dates": [
+        "2013-06-07"
+      ],
+      "official_title": "基隆市公共工程營建剩餘土石方交換利用作業要點",
+      "official_date": "2013-06-07",
+      "official_announcement": "基府都建壹字第1020160764號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000408&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c3f6167c96904fe1d6b7a539.html",
+          "sha256": "d04ab07b59881f778f929fbb30f48f7034e3551520fa1efb818429a527e23240"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000408#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/e9fa6ab6d980e0c68768854b.html",
+          "sha256": "277ed0338d8c58cb99dbe559ece787bf43ac3536e56db54a2067ee77233fa6fc"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國102年6月7日基府都建壹字第1020160764號函頒",
+      "official_system_date": "2013-06-07",
+      "official_system_fields": {
+        "法規名稱": "基隆市公共工程營建剩餘土石方交換利用作業要點",
+        "公發布日": "民國 102 年 06 月 07 日",
+        "發文字號": "基府都建壹字第1020160764號函",
+        "法規體系": "都市發展類",
+        "圖表附件": "附件一基隆市公共工程土方撮合申報表.pdf附件二基隆市公共工程土方交換申報及撮合流程圖.pdf"
+      },
+      "attachment_ids": [
+        "6e981a5fb5e3cd7f0f84eec8",
+        "c9aec24f68f799a04a3c8806"
+      ]
+    },
+    {
+      "number": 5,
+      "family_id": "kl_bm_005",
+      "local_document_id": "kl_bm_005_dc1ba874303f",
+      "local_title": "基隆市拆除合法建築物剩餘部分就地整建自治條例",
+      "local_dates": [
+        "2001-11-29",
+        "2011-07-20"
+      ],
+      "official_title": "基隆市拆除合法建築物剩餘部分就地整建自治條例",
+      "official_date": "2011-07-20",
+      "official_announcement": "基府行法壹字第1000168153B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000078&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/420b684e017e893b9fa7ebc6.html",
+          "sha256": "72f79aca18e34a7b860098da4e5dd5a1382b86dd6477bb008d7d93c70e5cb4fe"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000078#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/d9e865a76fe4add05be50744.html",
+          "sha256": "04af91670e62c1e59e0443ad0914124d70104cc7efd06fa30baa0a125ddb4106"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國100年7月20日基府行法壹字第1000168153B號令公布",
+      "official_system_date": "2011-07-20",
+      "official_system_fields": {
+        "法規名稱": "基隆市拆除合法建築物剩餘部分就地整建自治條例",
+        "公發布日": "民國 100 年 07 月 20 日",
+        "發文字號": "基府行法壹字第1000168153B號令",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 6,
+      "family_id": "kl_bm_006",
+      "local_document_id": "kl_bm_006_970743d02a53",
+      "local_title": "基隆市建築爭議事件處理作業程序",
+      "local_dates": [
+        "1995-10-19",
+        "2011-01-26"
+      ],
+      "official_title": "基隆市建築爭議事件處理作業程序",
+      "official_date": "2011-01-26",
+      "official_announcement": "基府都建壹字第1000142567號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054909&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/4f24f71fbc309859a43b7e44.html",
+          "sha256": "b45fb9db1b6231956507de1c76910292ccd8ed41e419fbe545f376317802dac8"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054909#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/8c54da3cac73cf4d8fe27f20.html",
+          "sha256": "e13f9e5fa665a540c2cf73e1d944cd59071c47fa19e741b810c792233a28a3da"
+        },
+        {
+          "role": "市府都發處法規頁",
+          "url": "https://www.klcg.gov.tw/tw/urban/2580-271728.html",
+          "local_path": "keelung-assets/official/2026-11-09/pages/761ba0b3e2e9fae5fff27271.html",
+          "sha256": "67c5ecada749d5c52cb28b2bc5e3ef55788fb69cf21e0e02963b7c81090ccf77"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國84年10月19日（84）基府祕法字第 087956 號函頒2.中華民國100年01月26日基府都建壹字第1000142567號函修正",
+      "official_system_date": "2011-01-26",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築爭議事件處理作業程序",
+        "公發布日": "民國 84 年 10 月 19 日",
+        "修正日期": "民國 100 年 01 月 26 日",
+        "發文字號": "基府都建壹字第1000142567號函",
+        "法規體系": "都市發展類",
+        "全文檔案": "基隆市建築爭議事件處理作業程序.pdf"
+      },
+      "attachment_ids": [
+        "d06f88222160afc91439f94f",
+        "5f473eb277b9bed544480063"
+      ]
+    },
+    {
+      "number": 7,
+      "family_id": "kl_bm_007",
+      "local_document_id": "kl_bm_007_b4bbc5ae275b",
+      "local_title": "基隆市建造執照申請有關特殊結構委託審查處理原則",
+      "local_dates": [
+        "2000-08-15",
+        "2005-04-15",
+        "2011-06-08"
+      ],
+      "official_title": "基隆市建造執照申請有關特殊結構委託審查處理原則",
+      "official_date": "2011-06-08",
+      "official_announcement": "基府都建壹字第1000161133號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004316&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c1468ea0432f16743275df06.html",
+          "sha256": "14b7061f6f9c2f9ab62123ac497fa727c76a7a8b33854533494024c8354980b6"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004316#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/e5edb6d564406146f80f4c4b.html",
+          "sha256": "3076b4a0a471ec82fcb3360864726fe73762271da25a8c5c598b1843c94829e8"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國89年8月15日（89）基府工管字第 070958 號函頒2.中華民國94年4月15日基府都建參字第 0940039852 號函修正全文 7  點3.中華民國100年6月8日基府都建壹字第1000161133號函修正",
+      "official_system_date": "2011-06-08",
+      "official_system_fields": {
+        "法規名稱": "基隆市建造執照申請有關特殊結構委託審查處理原則",
+        "公發布日": "民國 89 年 08 月 15 日",
+        "修正日期": "民國 100 年 06 月 08 日",
+        "發文字號": "基府都建壹字第1000161133號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 8,
+      "family_id": "kl_bm_008",
+      "local_document_id": "kl_bm_008_2d2234136eb5",
+      "local_title": "基隆市畸零地使用規則",
+      "local_dates": [
+        "2001-02-13",
+        "2004-06-28",
+        "2005-04-15",
+        "2011-10-07"
+      ],
+      "official_title": "基隆市畸零地使用規則",
+      "official_date": "2011-10-07",
+      "official_announcement": "基府都建壹字第1000103547B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL003536&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/0b02a33d72a08774b06918ff.html",
+          "sha256": "6bd04039db0973a6de79b2e3f89c0dca49e0396c22cf065ea6adb57b33258768"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL003536#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/40dec1c0035e244f3fac8ce0.html",
+          "sha256": "be5429dbfbf20a5bc17c9dc1299a8e780763c0373f3c4129dbf94316229681fd"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國90年2月13日（90）基府工管字第 003704 號函訂定  發布全文 17 條；並自發布日起施行2.中華民國93年6月28日基府工管壹字第 0930067802 號令修正3.中華民國94年4月15日基府都建參字第 0940039853 號令修正  全文 17 條；並自發布日施行4.中華民國100年10月7日基府都建壹字第1000103547B號令修正",
+      "official_system_date": "2011-10-07",
+      "official_system_fields": {
+        "法規名稱": "基隆市畸零地使用規則",
+        "公發布日": "民國 90 年 02 月 13 日",
+        "修正日期": "民國 100 年 10 月 07 日",
+        "發文字號": "基府都建壹字第1000103547B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市畸零地使用規則修正總說明.pdf",
+        "圖表附件": "附表一-一般建築用地.pdf附表二-側面應留設騎樓或無簷人行道之建築基地.pdf附表三.pdf附表四.pdf"
+      },
+      "attachment_ids": [
+        "911d7b4e44adcc1b979c29f8",
+        "e165e3dfaae2b0fb843c776a",
+        "f47a58fdac271a32ec9b9e35",
+        "edd8e2fccf2f5b3d90c0dc9e",
+        "b1603079a6d922828f4b18ab"
+      ]
+    },
+    {
+      "number": 9,
+      "family_id": "kl_bm_009",
+      "local_document_id": "kl_bm_009_ca7b3bf7ad10",
+      "local_title": "基隆市公有畸零地合併使用證明書核發基準",
+      "local_dates": [
+        "2001-06-06",
+        "2011-10-05"
+      ],
+      "official_title": "基隆市公有畸零地合併使用證明書核發基準",
+      "official_date": "2011-10-06",
+      "official_announcement": "基府都建壹字第1000180258號函",
+      "status_code": "date_conflict",
+      "status": "日期記載不一致",
+      "note": "同為第1000180258號函：本地記100年10月5日，官方記100年10月6日；屬日期記載差異，未據此推定又有修正。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL003538&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/a7af60b55af3749d19d5e3dd.html",
+          "sha256": "345cab2573e59ec001993c0a92ad87ce48a2cad63a619c0e22ead8337897de06"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL003538#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c1d3be8d9d68802a424513d0.html",
+          "sha256": "7bd7236681de3253d66fcf95b19719be260968ae22d846e1405e281c5bcacec8"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國90年6月6日（90）基府工管字第 048160 號函頒2.中華民國100年10月6日基府都建壹字第1000180258號函修正",
+      "official_system_date": "2011-10-06",
+      "official_system_fields": {
+        "法規名稱": "基隆市公有畸零地合併使用證明書核發基準",
+        "公發布日": "民國 90 年 06 月 06 日",
+        "修正日期": "民國 100 年 10 月 06 日",
+        "發文字號": "基府都建壹字第1000180258號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市公有畸零地合併使用證明書核發基準修正總說明.pdf",
+        "圖表附件": "公有畸零地合併使用證明申請書.pdf公有畸零地合併使用證明書.pdf"
+      },
+      "attachment_ids": [
+        "6a08d5e1d3cfdcf5eb87bfb6",
+        "4a20b5a089393363bb4a3213",
+        "70ce02e2cdfddb86efe59558"
+      ]
+    },
+    {
+      "number": 10,
+      "family_id": "kl_bm_010",
+      "local_document_id": "kl_bm_010_9de552c280d6",
+      "local_title": "基隆市建築工程施工中必需勘驗部份作業要點",
+      "local_dates": [
+        "2001-12-13",
+        "2005-04-15"
+      ],
+      "official_title": "基隆市建築工程施工中必需勘驗部份作業要點",
+      "official_date": "2005-04-15",
+      "official_announcement": "基府都建參字第0940039865號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054908&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/9939e03cc0b07b4902dc31eb.html",
+          "sha256": "9bb526740e0f50c4efadb16e99a3cca2ead6340e980801916054e1065892ea4e"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054908#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/566d9af0ab343699661ca8e8.html",
+          "sha256": "59381f07b6fac4fe60c05d8474161408b1e1673db32cf3a4eb19ff083f5df2ba"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國90年12月13日（90）基府工管字第 112295 號函頒       2.中華民國94年4月15日基府都建參字第 0940039865 號函修正",
+      "official_system_date": "2005-04-15",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築工程施工中必需勘驗部份作業要點",
+        "公發布日": "民國 90 年 12 月 13 日",
+        "修正日期": "民國 94 年 04 月 15 日",
+        "發文字號": "基府都建參字第0940039865號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 11,
+      "family_id": "kl_bm_011",
+      "local_document_id": "kl_bm_011_cb7a6fffa6de",
+      "local_title": "基隆市建築物施工中管制要點",
+      "local_dates": [
+        "2000-07-13"
+      ],
+      "official_title": "基隆市建築物施工場所管制要點",
+      "official_date": "2024-09-11",
+      "official_announcement": "基府都建壹字第1130243770號函",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "113年9月11日修正；現名為建築物施工場所管制要點。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004315&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/307e409fa99f157854925c93.html",
+          "sha256": "af70c476965902e7848407d33bf90dc64ba1f8bec02a34c4115079e7dfb6edf0"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004315#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/bee077f4d5f4066a5b53a953.html",
+          "sha256": "34e8a21410a8f0bb5eda824f7f6fa49dafe18b4539c5216bf3fce209cfd8be05"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國89年7月13日（89）基府工管字第 057125號函頒全文    26 點；並溯自八十八年七月一日起施行2.中華民國103年4月18日基府都建貳字第1030214307號函修正3.中華民國113年9月11日基府都建壹字第1130243770號函修正",
+      "official_system_date": "2024-09-11",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築物施工場所管制要點",
+        "公發布日": "民國 89 年 07 月 13 日",
+        "修正日期": "民國 113 年 09 月 11 日",
+        "發文字號": "基府都建壹字第1130243770號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築物施工場所管制要點-1130911對照表v.1.pdf",
+        "全文檔案": "基隆市建築物施工場所管制要點-1130911條文.pdf",
+        "圖表附件": "基隆市建築物施工場所管制要點-1130911附圖-告示牌.pdf"
+      },
+      "attachment_ids": [
+        "8db4764342f534d2c3fe4fb8",
+        "47a9b09c3cff84051d536df5",
+        "1970c7814e6c27cbc629274f"
+      ]
+    },
+    {
+      "number": 12,
+      "family_id": "kl_bm_012",
+      "local_document_id": "kl_bm_012_8a4969b5fb07",
+      "local_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+      "local_dates": [
+        "2004-10-06",
+        "2010-06-18"
+      ],
+      "official_title": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+      "official_date": "2025-01-20",
+      "official_announcement": "基府都使壹字第1140200932B號令",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "都發處提供114年1月20日修正本（第7、8、10、11、12、14條），較主管法規系統111年10月5日版新；兩官方系統不同步。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054775&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/2b147206e2b1a1aee26fd17d.html",
+          "sha256": "f24ced1c4b2ea08dc561dadf68675964177699a0390fd2aad4aebd1f2a3c52c3"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054775#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/94775d613816c556dd340349.html",
+          "sha256": "e4b283fcb124abf82c83417ec247f0f4ee65a37d458874367b263d71c339b3a9"
+        },
+        {
+          "role": "市府都發處法規頁",
+          "url": "https://www.klcg.gov.tw/tw/urban/2580-297250.html",
+          "local_path": "keelung-assets/official/2026-11-09/pages/9b05a227da30723d427bcf14.html",
+          "sha256": "32b94a0d121026ddd68bbe19d251479707a26a9edd7e9c969c4910e7d99f1618"
+        },
+        {
+          "role": "市府都發處法規頁",
+          "url": "https://www.klcg.gov.tw/tw/urban/2580-262288.html",
+          "local_path": "keelung-assets/official/2026-11-09/pages/243dbd746ab8fdab0f34d208.html",
+          "sha256": "1abfb35ad62882b4383719fc435cfdf18e00d10ecb7b74358d92f6e5c92d8407"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國93年10月6日基隆市政府基府工管壹字第0930105064號令訂   定發布全文5條；並自發布日施行2.中華民國99年6月18日基隆市政府基府都建壹字第 0990159116B號令   修正發布名稱及全文 16 條；並自發布日施行（原名稱：基隆市建  築物免辦理變更使用執照辦法）3.中華民國 101年8月1日基府都建壹字第1010168978B號令修正4.中華民國111年10月5日基府都建壹字第1110236720B號令修正",
+      "official_system_date": "2022-10-05",
+      "official_system_fields": {
+        "法規名稱": "基隆市一定規模以下建築物免辦理變更使用執照辦法",
+        "公發布日": "民國 93 年 10 月 06 日",
+        "修正日期": "民國 111 年 10 月 05 日",
+        "發文字號": "基府都建壹字第1110236720B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市一定規模以下建築物免辦理變更使用執照辦法修正條文對照表.pdf",
+        "圖表附件": "基隆市一定規模以下建築物免辦理變更使用執照辦法附件表格.pdf基隆市一定規模以下建築物免辦理變更使用執照辦法附表.pdf"
+      },
+      "source_conflict": true,
+      "attachment_ids": [
+        "8f3452229d38e282c1abf936",
+        "65fa9c745bcf0b9b4f3358c9",
+        "16ac195003529fedca09b07d",
+        "48ff69b519214ac1958b6183",
+        "ad784d928dcee489bb5f43b1",
+        "9cb49e0d9d90aeaaa3578248",
+        "6055c24d15b2904ecddca733",
+        "38ee21e61495be8d56e48727"
+      ]
+    },
+    {
+      "number": 13,
+      "family_id": "kl_bm_013",
+      "local_document_id": "kl_bm_013_9c417c5fc782",
+      "local_title": "基隆市各項活動搭建臨時建築物管理作業程序",
+      "local_dates": [
+        "2005-04-11"
+      ],
+      "official_title": "基隆市各項活動搭建臨時建築物管理作業程序",
+      "official_date": "2005-04-11",
+      "official_announcement": "基府都建壹字第0940036316號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054907&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/0b7c89240deec0de3a323082.html",
+          "sha256": "e224d211e64b3fba119b66dd2165eb9afdbabd82f3caa2f4183517073fd42589"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054907#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/b4ac663b25949c479a4ce247.html",
+          "sha256": "fe45dc9c9b40080885c0836fdd1da96e503386f47b421f377404658ec931c54c"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國94年4月11日基府都建壹字第 0940036316 號函修正全文 9  點",
+      "official_system_date": "2005-04-11",
+      "official_system_fields": {
+        "法規名稱": "基隆市各項活動搭建臨時建築物管理作業程序",
+        "公發布日": "民國 94 年 04 月 11 日",
+        "發文字號": "基府都建壹字第0940036316號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 14,
+      "family_id": "kl_bm_014",
+      "local_document_id": "kl_bm_014_161ab25ef5f9",
+      "local_title": "基隆市建築物附建防空避難設備或停車空間繳納代金及管理使用辦法",
+      "local_dates": [
+        "2001-08-23",
+        "2012-02-02"
+      ],
+      "official_title": "基隆市建築物附建防空避難設備或停車空間繳納代金及管理使用辦法",
+      "official_date": "2012-02-02",
+      "official_announcement": "基府都建壹字第1010143078B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000249&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/fef2cb3ed2e3893bd1f01194.html",
+          "sha256": "7d1072e7c0d14670f85675e6c1ee9135d6a2e54cf11f9cf1242b89bba1e0c79d"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000249#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/40216aa5e5840e307c69c117.html",
+          "sha256": "0be50c2258c2a5a2c36419b036b26b50888aca7a6e0d0a6ce78cd56c0f5ed074"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國101年2月2日基府都建壹字第1010143078B號令發布",
+      "official_system_date": "2012-02-02",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築物附建防空避難設備或停車空間繳納代金及管理使用辦法",
+        "公發布日": "民國 101 年 02 月 02 日",
+        "發文字號": "基府都建壹字第1010143078B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築物附建防空避難設備或停車空間繳納代金及管理使用辦法總說明.pdf"
+      },
+      "attachment_ids": [
+        "a5ce829055ea2fc4784cdb71"
+      ]
+    },
+    {
+      "number": 15,
+      "family_id": "kl_bm_015",
+      "local_document_id": "kl_bm_015_2c4308ff56dd",
+      "local_title": "基隆市營造業抽查辦法",
+      "local_dates": [
+        "2011-10-12"
+      ],
+      "official_title": "基隆市營造業抽查辦法",
+      "official_date": "2011-10-12",
+      "official_announcement": "基府都建壹字第1000180746B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000227&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/49b7c8fa8b17ae0bbd846d3f.html",
+          "sha256": "e0eaf5aa79fbe451d6721f1139b3cd64669a088acf3339278ac5b7682f829d96"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000227#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/01dbc610421f4ec1192fafd6.html",
+          "sha256": "9cea10057d5a2a105a5cb27e2164935b9e7b1faae1fded9dae0617e2ddef1574"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國100年10月12日基府都建壹字第1000180746B號令發布",
+      "official_system_date": "2011-10-12",
+      "official_system_fields": {
+        "法規名稱": "基隆市營造業抽查辦法",
+        "公發布日": "民國 100 年 10 月 12 日",
+        "發文字號": "基府都建壹字第1000180746B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市營造業抽查辦法總說明.pdf"
+      },
+      "attachment_ids": [
+        "5bec95b4a145ade9f470d907"
+      ]
+    },
+    {
+      "number": 16,
+      "family_id": "kl_bm_016",
+      "local_document_id": "kl_bm_016_6857ba6d65ef",
+      "local_title": "基隆市政府辦理建築師懲戒業務作業程序",
+      "local_dates": [
+        "2003-07-25",
+        "2011-04-19"
+      ],
+      "official_title": "基隆市政府辦理建築師懲戒業務作業程序",
+      "official_date": "2011-04-19",
+      "official_announcement": "基府都建貳字第1000153452號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000076&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/966205b79848ba303f49be9b.html",
+          "sha256": "8b751ea3f71cac2319026390fcc5e3383a425290813150288dbb1f3ab96edf4f"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000076#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/258a4bcb187dfdc7e58366ec.html",
+          "sha256": "d9de23767ae654cbc11d9980379a73e96f1520854f4358dafc4bc54ff1848362"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國92年07月25日基府工管字第0920071815號函頒2.中華民國100年04月19日基府都建貳字第1000153452號函修正  (原名稱：基隆市政府工務局辦理建築師懲戒業務作業程序)",
+      "official_system_date": "2011-04-19",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府辦理建築師懲戒業務作業程序",
+        "公發布日": "民國 92 年 07 月 25 日",
+        "修正日期": "民國 100 年 04 月 19 日",
+        "發文字號": "基府都建貳字第1000153452號函",
+        "法規體系": "都市發展類",
+        "圖表附件": "附表一建築師疑涉違規懲戒通知單.pdf附表二被付懲戒建築師答辯書.pdf"
+      },
+      "attachment_ids": [
+        "181e88a8a1ce638519e85fdf",
+        "bb33829461242624e7354304"
+      ]
+    },
+    {
+      "number": 17,
+      "family_id": "kl_bm_017",
+      "local_document_id": "kl_bm_017_88c7a6991bfe",
+      "local_title": "基隆市建築物免由建築師設計、監造及營造業承造一定金額工程造價標準",
+      "local_dates": [
+        "2003-03-03"
+      ],
+      "official_title": "基隆市建築工程免由建築師設計、監造及營造業承造一定金額工程造價標準",
+      "official_date": "2024-12-20",
+      "official_announcement": "基府都建壹字第 1130263947A號函",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "113年12月20日修正並更名；新條文第3條明定114年1月1日起施行，舊附表刪除。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL055276&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/75ab817dc946a24c4f10c5a0.html",
+          "sha256": "9b3312dcd8a6a9d0ef47575eca1d0a851ebaa4198c60a359abf9e91d1941588b"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL055276#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c5e3f7857006f1c33bc31961.html",
+          "sha256": "8d24b5b044063fd152cafeeca512ea5ca9ac9c1de2e376411ac0d391acb93bcd"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": "2025-01-01",
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國92年3月3日基府工管壹字第 0920018500 號令訂定發布全文 2 條2.中華民國 113 年 12 月 20 日基府都建壹字第 1130263947 號令修正發布第 1、2 條、新增第 3 條條文、刪除附表",
+      "official_system_date": "2024-12-20",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築工程免由建築師設計、監造及營造業承造一定金額工程造價標準",
+        "公發布日": "民國 92 年 03 月 03 日",
+        "修正日期": "民國 113 年 12 月 20 日",
+        "發文字號": "基府都建壹字第 1130263947A號函",
+        "法規體系": "都市發展類",
+        "立法理由": "修正總說明.pdf修正對照表.pdf",
+        "全文檔案": "修正條文.pdf"
+      },
+      "source_field_notes": "主管法規系統的發文字號欄使用帶A尾碼之函格式，沿革／全文附件記為不帶A尾碼的令；兩者原樣保留，正式引用應再核發布原令。",
+      "attachment_ids": [
+        "2eb54dba14e263b33c21eb70",
+        "65e1dbe2db2ef5fee8db32e1",
+        "dc3eaf8270075a14fc2c5eff"
+      ]
+    },
+    {
+      "number": 18,
+      "family_id": "kl_bm_018",
+      "local_document_id": "kl_bm_018_e3a34d211bbd",
+      "local_title": "基隆市建築物造價估算標準",
+      "local_dates": [
+        "2003-03-03",
+        "2009-12-09"
+      ],
+      "official_title": "基隆市建築工程造價估算標準",
+      "official_date": "2024-12-20",
+      "official_announcement": "基府都建壹字第113063969A號函",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "113年12月20日修正並更名，含新造價附表；第3條明定114年1月1日起施行。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL051483&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/b13f4251b6f3a3033192f39a.html",
+          "sha256": "b675429f518f37ea3a3fdadcefef5d4bca881fdeac54f9901da52a16bf7b7c1b"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL051483#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/5f70e188870362c6d2c3c886.html",
+          "sha256": "2527b5a4aab942d80618d2e13949aa216ae9703bfeb29458ff57abe83436fb0f"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": "2025-01-01",
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國92年3月3日基府工管字第0920018500 號函訂定發布   2.中華民國98年12月9日基府都建貳字第0980169568B號令修正發布全文 3  條；並自九十九年一月一日施行3.中華民國108年10月09日基府都建壹字第1080263029B號令修正4.中華民國113年12月20日基府都建壹字第113063969號令修正發布第2條、第3條條文及附表",
+      "official_system_date": "2024-12-20",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築工程造價估算標準",
+        "公發布日": "民國 92 年 03 月 03 日",
+        "修正日期": "民國 113 年 12 月 20 日",
+        "發文字號": "基府都建壹字第113063969A號函",
+        "法規體系": "都市發展類",
+        "立法理由": "修正總說明.pdf修正對照表.pdf附表修正對照.pdf",
+        "全文檔案": "修正全文及附表.pdf"
+      },
+      "source_field_notes": "主管法規系統的發文字號欄使用帶A尾碼之函格式，沿革／全文附件記為不帶A尾碼的令；兩者原樣保留，正式引用應再核發布原令。",
+      "attachment_ids": [
+        "5861584cb8a1ee3927904da0",
+        "f79f81c2b9406c966f90fffb",
+        "15c0bf902eb2832e633cd4f9",
+        "56ba3f3ee8617c19a2e02acc"
+      ]
+    },
+    {
+      "number": 19,
+      "family_id": "kl_bm_019",
+      "local_document_id": "kl_bm_019_cf7390c30b6c",
+      "local_title": "基隆市都市計畫區騎樓設置標準",
+      "local_dates": [
+        "1993-07-14",
+        "2011-05-25"
+      ],
+      "official_title": "基隆市都市計畫區騎樓設置標準",
+      "official_date": "2011-12-19",
+      "official_announcement": "基府都建壹字第1000190373B號令",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "主管法規系統列100年12月19日修正，晚於本地100年5月25日版；須改查新版及官方參考圖。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004306&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/4bc55e464de1a4870c2f8ec8.html",
+          "sha256": "1de5f95ce26be44184b87c1e67a122fff10906f7cb84b14a13e4ed17551dd6c1"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004306#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/a94cffa0af43c970a2e63c6b.html",
+          "sha256": "ce6e5e85f9992ea78e54349909e8f0a828a13e51e3cf16045fa9eb4d110a7cd5"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國82年7月14日基府祕法字第053301號令發布全文 4 條；並自發布日起施行2.中華民國100年12月19日基府都建壹字第1000190373B號令修正",
+      "official_system_date": "2011-12-19",
+      "official_system_fields": {
+        "法規名稱": "基隆市都市計畫區騎樓設置標準",
+        "公發布日": "民國 82 年 07 月 14 日",
+        "修正日期": "民國 100 年 12 月 19 日",
+        "發文字號": "基府都建壹字第1000190373B號令",
+        "法規體系": "都市發展類",
+        "圖表附件": "參考圖1.pdf參考圖1-1.pdf參考圖2.pdf參考圖2-1.pdf參考圖2-2.pdf"
+      },
+      "attachment_ids": [
+        "b851b7127fb34993af814535",
+        "88c6aaf757f5bd863880d6b5",
+        "e7cddc0310487347d41e307c",
+        "2b8f5572d441ab9ec8da575b",
+        "0fdb8a87ab929cca2c75cbe4"
+      ]
+    },
+    {
+      "number": 20,
+      "family_id": "kl_bm_020",
+      "local_document_id": "kl_bm_020_48962d417cbb",
+      "local_title": "基隆市建築物增設停車空間鼓勵要點",
+      "local_dates": [
+        "2000-07-01",
+        "2012-02-02"
+      ],
+      "official_title": "廢/停基隆市建築物增設停車空間鼓勵要點",
+      "official_date": "2019-06-20",
+      "official_announcement": "基府都建壹字第1080246135A號函",
+      "status_code": "repealed",
+      "status": "已停止適用",
+      "note": "官方沿革明載108年6月20日第1080246135A號函停止適用；不得用於新案停車獎勵判斷。原有核准案件是否維持效力須另查核准條件。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000257&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/325a19c6432f54945fb88445.html",
+          "sha256": "354fe60bd92123880a821535396d35c5905f586e67f9c1643833ee611b5a3d8a"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000257#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/85058119f3606cecc398cc8a.html",
+          "sha256": "692085ef1e378630747f023d1fc155758c0d4fb22844b281ff14eba29a3bafee"
+        }
+      ],
+      "repeal_date": "2019-06-20",
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國89年7月1日(89)基府工管字第049928號函頒2.中華民國101年2月21日基府都建壹字第1010013383號函修正3.中華民國108年06月20日基府都建壹字第1080246135A號函停止適用",
+      "official_system_date": "2000-07-01",
+      "official_system_fields": {
+        "法規名稱": "廢/停基隆市建築物增設停車空間鼓勵要點",
+        "公發布日": "民國 89 年 07 月 01 日",
+        "廢止/停止適用日期": "民國 108 年 06 月 20 日",
+        "發文字號": "基府都建壹字第1080246135A號函",
+        "法規體系": "都市發展類",
+        "圖表附件": "附表-道路寬度鼓勵係數表.pdf"
+      },
+      "attachment_ids": [
+        "75722b3d71cbb5bd3f872b24"
+      ]
+    },
+    {
+      "number": 21,
+      "family_id": "kl_bm_021",
+      "local_document_id": "kl_bm_021_7f565207c4a9",
+      "local_title": "基隆市山坡地開發建築基地條件特殊免適用建築技術規則建築設計施工編第二百六十二條第三項規定認定標準",
+      "local_dates": [
+        "2003-05-30"
+      ],
+      "official_title": "基隆市山坡地開發建築基地條件特殊免適用建築技術規則建築設計施工編第二百六十二條第三項規定認定標準",
+      "official_date": "2003-05-30",
+      "official_announcement": "基府工管壹字第0920050746號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL055275&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/36b3535a3ed52e08cc959a70.html",
+          "sha256": "72c3056002a080c2d6796a58a375eb45f383c9394fd5e4e2689e3724cae9a773"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL055275#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/5a79ae08768b5c3bba7ce002.html",
+          "sha256": "4699bc1c120523b045b5ae013b4ad9b00ae4dacad08a4717010cb14f2da197ef"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國92年5月30日基府工管壹字第 0920050746 號令訂定發布全文 6  條；並自發布日施行",
+      "official_system_date": "2003-05-30",
+      "official_system_fields": {
+        "法規名稱": "基隆市山坡地開發建築基地條件特殊免適用建築技術規則建築設計施工編第二百六十二條第三項規定認定標準",
+        "公發布日": "民國 92 年 05 月 30 日",
+        "發文字號": "基府工管壹字第0920050746號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 22,
+      "family_id": "kl_bm_022",
+      "local_document_id": "kl_bm_022_21a2ac52d74b",
+      "local_title": "基隆市山坡地建築退縮設置人行步道認定原則",
+      "local_dates": [
+        "2000-12-02",
+        "2010-08-20"
+      ],
+      "official_title": "基隆市山坡地建築退縮設置人行步道認定原則",
+      "official_date": "2022-09-22",
+      "official_announcement": "基府都建壹字第1110236719號函",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "111年9月22日修正，免退縮設置人行步道條件有變動。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004318&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/6a19cda4aef250d09debf1bf.html",
+          "sha256": "8c59dd815c16a77d3c2991c3290fbf801e4f8783db55e4415a1c2f10b27b99b9"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004318#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/b1c1aa76f49692f90bc7d37a.html",
+          "sha256": "d314bfe55b36b3e937bdc38c7259938fb01fa2204a82824fa18471eb0ccc3a5c"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國89年12月2日（89）基府工管字第 105342號函頒全文   4 點；並自九十年一月一日起施行2.中華民國99年8月20日基府都建壹字第0990170546號函修正3.中華民國111年9月22日基府都建壹字第1110236719號函修正",
+      "official_system_date": "2022-09-22",
+      "official_system_fields": {
+        "法規名稱": "基隆市山坡地建築退縮設置人行步道認定原則",
+        "公發布日": "民國 89 年 12 月 02 日",
+        "修正日期": "民國 111 年 09 月 22 日",
+        "發文字號": "基府都建壹字第1110236719號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市山坡地建築退縮設置人行步道認定原則修正對照表.pdf"
+      },
+      "attachment_ids": [
+        "15dc98b0e820df995bc50bda"
+      ]
+    },
+    {
+      "number": 23,
+      "family_id": "kl_bm_023",
+      "local_document_id": "kl_bm_023_291840168961",
+      "local_title": "基隆市政府委託審查機構辦理建築物室內裝修審查作業事項規範",
+      "local_dates": [
+        "2010-06-29"
+      ],
+      "official_title": "基隆市政府委託審查機構辦理建築物室內裝修審查作業事項規範",
+      "official_date": "2010-06-29",
+      "official_announcement": "基府都建壹字第0990160861號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054912&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/9a136b1695b30f5193f25ab3.html",
+          "sha256": "d8a400a06281684af6be5b762051b4c6866c32b2c7256fb876f85595cbd42d84"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054912#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/ed3355661161f45e0a5e6536.html",
+          "sha256": "34877fdf912e2d59ddd86e40ba332e33ed6294a6bffd7660cad20d7a34e44f34"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國99年6月29日基府都建壹字第 0990160861 號函修正名稱及全文 14 點（原名稱：基隆市政府工務局委託審查機構辦理建築物室內裝修審查作業事項規範）",
+      "official_system_date": "2010-06-29",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府委託審查機構辦理建築物室內裝修審查作業事項規範",
+        "公發布日": "民國 0 年 00 月 00 日",
+        "修正日期": "民國 99 年 06 月 29 日",
+        "發文字號": "基府都建壹字第0990160861號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 24,
+      "family_id": "kl_bm_024",
+      "local_document_id": "kl_bm_024_8297ab5eb710",
+      "local_title": "基隆市政府建造執照預審小組設置要點",
+      "local_dates": [],
+      "official_title": "基隆市政府建造執照預審小組設置要點",
+      "official_date": "2010-05-26",
+      "official_announcement": "基府都建壹字第0990156478號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054773&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/e5fd150eac00edb0cad2474e.html",
+          "sha256": "169b9a772f6e3335a8fa00f14a2a8745ae0603813c7f511d6c247dc57f6fe406"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054773#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/7b5449a92ae53d9595c6a3c0.html",
+          "sha256": "8c19084c9aefe9699b23507a8fe77974a8e82b3a5fdbab4c4e43fd4023bcd74d"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國99年5月26日基府都建壹字第 0990156478 號函頒",
+      "official_system_date": "2010-05-26",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府建造執照預審小組設置要點",
+        "公發布日": "民國 99 年 05 月 26 日",
+        "發文字號": "基府都建壹字第0990156478號函",
+        "法規體系": "都市發展類"
+      },
+      "local_date_note": "原文99年5月26後漏「日」字，但文號0990156478與官方相符。",
+      "attachment_ids": []
+    },
+    {
+      "number": 25,
+      "family_id": "kl_bm_025",
+      "local_document_id": "kl_bm_025_26be326b7f52",
+      "local_title": "基隆市建築物變更使用執照申請案違建部分處理原則",
+      "local_dates": [
+        "2002-01-29",
+        "2004-07-19",
+        "2010-04-27"
+      ],
+      "official_title": "基隆市建築物使用執照變更案違章建築處理原則",
+      "official_date": "2022-12-23",
+      "official_announcement": "基府都建壹字第1110258700號函",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "111年12月23日修正；現名為基隆市建築物使用執照變更案違章建築處理原則。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004323&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/45fd83b3330c46fb02e6d34b.html",
+          "sha256": "ec8ffdc8bee20133f14e608f86b261b676582a2abdae070526eac8bb99aeaf46"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004323#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/24cc183eb418af2010b3f60f.html",
+          "sha256": "dccf745333d69635208eacbd0f6f616d2d970299458a628026f1cc32e9cb2d89"
+        },
+        {
+          "role": "市府都發處法規頁",
+          "url": "https://www.klcg.gov.tw/tw/urban/2580-267151.html",
+          "local_path": "keelung-assets/official/2026-11-09/pages/b76011a6c637227cba42e195.html",
+          "sha256": "0d4a2cd649a35ccb0842dc1eba8012b13d0b47f481213947e12e3858d4484b5f"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國91年1月29日（91）基府工管字第 009343 號函頒2.中華民國93年7月19日（93）基府工管壹字第 0930076428 號函修正        3.中華民國99年4月27日基府都建壹字第 099150975B 號函修正名  稱及全文 5  點（原名稱：基隆市建築物變更使用執照其違建部  分處理原則）4.中華民國111年12月23日基府都建壹字第1110258700號函修正第1點至   第5點，刪除原第5點",
+      "official_system_date": "2022-12-23",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築物使用執照變更案違章建築處理原則",
+        "公發布日": "民國 91 年 01 月 29 日",
+        "修正日期": "民國 111 年 12 月 23 日",
+        "發文字號": "基府都建壹字第1110258700號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築物變更使用執照申請案違章建築部分處理原則修正對照表.pdf"
+      },
+      "attachment_ids": [
+        "0cad85fe602db12fb5fcc069",
+        "1b3a9d672827f80807f0bdbe"
+      ]
+    },
+    {
+      "number": 26,
+      "family_id": "kl_bm_026",
+      "local_document_id": "kl_bm_026_6f1c36cbb192",
+      "local_title": "基隆市政府辦理建築物變更戶數作業要點",
+      "local_dates": [
+        "2004-10-06",
+        "2005-04-15",
+        "2011-10-31"
+      ],
+      "official_title": "基隆市政府辦理建築物變更戶數作業要點",
+      "official_date": "2011-10-31",
+      "official_announcement": "基府都建壹字第1000184114號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000236&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/cb2ea38adcb1a1af2fc59876.html",
+          "sha256": "bc8d4f04a3cfa8e76ba7917261291dfae099994e0464661e982b138bffd75ec3"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000236#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/f4860cd895982e52e70d3c5f.html",
+          "sha256": "ed91336b4698fd949ac51b17070a04ee080483da4b5a9a061dbc4f3905f083bf"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國93年10月6日基府工管字第0930105066號函頒2.中華民國94年4月15日基府都建參字第 0940039878 號函修正3.中華民國100年10月31日基府都建壹字第1000184114號函修正  ( 原名稱：基隆市政府辦理建築物變更戶數及增併門牌作業要點)",
+      "official_system_date": "2011-10-31",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府辦理建築物變更戶數作業要點",
+        "公發布日": "民國 93 年 10 月 06 日",
+        "修正日期": "民國 100 年 10 月 31 日",
+        "發文字號": "基府都建壹字第1000184114號函",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市政府辦理建築物變更戶數作業要點修正對照表.pdf",
+        "圖表附件": "附件-變更戶數申請書.pdf"
+      },
+      "attachment_ids": [
+        "8ffd857b744bfad1ed6e52c9",
+        "ad542a92eadaceba485765bc"
+      ]
+    },
+    {
+      "number": 27,
+      "family_id": "kl_bm_027",
+      "local_document_id": "kl_bm_027_644f06bff572",
+      "local_title": "基隆市建築(含雜項整地執照)工程辦理施工防災計劃說明會作業要點",
+      "local_dates": [
+        "2002-03-14"
+      ],
+      "official_title": "基隆市建築（含雜項整地執照）工程辦理施工防災計劃說明會作業要點",
+      "official_date": "2002-03-14",
+      "official_announcement": "基府工管字第021882號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004325&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/e0f96087ac0704b3b0cef56f.html",
+          "sha256": "63443866547998d22c407b1d6af06ddfe46c26b8fa09ff107fa85d9e266e1d94"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004325#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/95695697814bfbf419a1bb87.html",
+          "sha256": "5f3f6b1c01fb4fa02d9ad508d461499e1f3d99ec0f071c135e3cb2e511dde65a"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國91年3月14日基府工管字第 021882 號函頒",
+      "official_system_date": "2002-03-14",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築（含雜項整地執照）工程辦理施工防災計劃說明會作業要點",
+        "公發布日": "民國 91 年 03 月 14 日",
+        "發文字號": "基府工管字第021882號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 28,
+      "family_id": "kl_bm_028",
+      "local_document_id": "kl_bm_028_d372fd55d798",
+      "local_title": "基隆市建築工程搭建樣品屋及設置臨時廣告物處理辦法",
+      "local_dates": [
+        "2002-03-15",
+        "2005-04-15",
+        "2013-09-27"
+      ],
+      "official_title": "基隆市建築工程搭建樣品屋及設置臨時廣告物處理辦法",
+      "official_date": "2013-09-27",
+      "official_announcement": "基府都建壹字第1020177921B號令",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000425&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/7406c69c38ac0d466aa79afd.html",
+          "sha256": "6f1b96daf16f23a5239d293184f8fe4a6cc87c9bf1b0e066711162bd9351812e"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000425#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/593d85411c7ec7bafc2062cb.html",
+          "sha256": "4486274cf16a2768be4ce7f79eb3f66b931a2022e72b2d728f86947a860dcf79"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1. 中華民國91年3月15日（91）基府工管字第022357號函公布2. 中華民國 94年4月15日基府都建參字第0940039873號令修正 3. 中華民國 102年9月27日基府都建壹字第1020177921B號令修正   (原名稱：基隆市建築工程搭建樣品屋，工寮（工務所）及設置    臨時廣告物處理辦法)",
+      "official_system_date": "2013-09-27",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築工程搭建樣品屋及設置臨時廣告物處理辦法",
+        "公發布日": "民國 91 年 03 月 15 日",
+        "修正日期": "民國 102 年 09 月 27 日",
+        "發文字號": "基府都建壹字第1020177921B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築工程搭建樣品屋及設置臨時廣告物處理辦法修正條文對照表.pdf"
+      },
+      "attachment_ids": [
+        "7bb7b48bea8c437bb76c9e4a"
+      ]
+    },
+    {
+      "number": 29,
+      "family_id": "kl_bm_029",
+      "local_document_id": "kl_bm_029_5467ecaba3eb",
+      "local_title": "基隆市選舉候選人申請興建臨時性競選辦事處處理原則",
+      "local_dates": [
+        "2003-12-30",
+        "2005-04-15"
+      ],
+      "official_title": "基隆市選舉候選人申請興建臨時性競選辦事處處理原則",
+      "official_date": "2005-04-15",
+      "official_announcement": "基府都建參字第0940039875號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054917&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/021e15b8e94d3f34417dc1d2.html",
+          "sha256": "f4dbc6bb24d3e0df88ae948f835d5c2ffb186e0789cd4e70d6da8aeadd741bc2"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054917#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/06cf4779e3276aa05bbd18c2.html",
+          "sha256": "e905e0306d20afcfd2f448053dd9f02500a5b22b4e3514d95fda6b2b4d6b99e5"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國92年12月30日基府工管貳字第 0920131338 號函頒       2.中華民國94年4月15日基府都建參字第 0940039875 號函修正",
+      "official_system_date": "2005-04-15",
+      "official_system_fields": {
+        "法規名稱": "基隆市選舉候選人申請興建臨時性競選辦事處處理原則",
+        "公發布日": "民國 92 年 12 月 30 日",
+        "修正日期": "民國 94 年 04 月 15 日",
+        "發文字號": "基府都建參字第0940039875號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 30,
+      "family_id": "kl_bm_030",
+      "local_document_id": "kl_bm_030_5caff5689111",
+      "local_title": "基隆市山坡地建築之擋土牆作為建築物外牆共構使用審查作業細則",
+      "local_dates": [
+        "2004-03-15"
+      ],
+      "official_title": "基隆市山坡地建築之擋土牆作為建築物外牆共構使用審查作業細則",
+      "official_date": "2004-03-15",
+      "official_announcement": "基府工管貳字第0930026911號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054906&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/3171223a560139b3ad9bfa7b.html",
+          "sha256": "2977e072bc5e2262ea4f313b0ccd97cad745a49ae6df369e8faf210cece1ad57"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054906#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/ef6604240341efa7fd0399f6.html",
+          "sha256": "1c5c3c0e1eab5710efd9505b2b62141cfa1143ee44f35e3001c12551f54ef8dc"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國93年3月15日基府工管貳字第 0930026911 號函頒",
+      "official_system_date": "2004-03-15",
+      "official_system_fields": {
+        "法規名稱": "基隆市山坡地建築之擋土牆作為建築物外牆共構使用審查作業細則",
+        "公發布日": "民國 93 年 03 月 15 日",
+        "發文字號": "基府工管貳字第0930026911號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 31,
+      "family_id": "kl_bm_031",
+      "local_document_id": "kl_bm_031_99d577861b2d",
+      "local_title": "基隆市建築物施工中發生公共安全事件處理原則",
+      "local_dates": [],
+      "official_title": "基隆市建築物施工中發生公共安全事件處理原則",
+      "official_date": null,
+      "official_announcement": null,
+      "status_code": "unresolved",
+      "status": "未取得官方現行本",
+      "note": "已查都發處71筆與主管法規系統都市發展類104筆清單及官方網頁搜尋，未定位同名現行全文或廢止公告；保留舊資料，不能推定仍有效或已廢止。",
+      "checked_on": "2026-11-09",
+      "sources": [],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "attachment_ids": []
+    },
+    {
+      "number": 32,
+      "family_id": "kl_bm_032",
+      "local_document_id": "kl_bm_032_3c15f9b55a38",
+      "local_title": "基隆市違章建築申請補辦執照執行要點",
+      "local_dates": [
+        "2001-12-14",
+        "2002-05-23"
+      ],
+      "official_title": "基隆市違章建築申請補辦執照執行要點",
+      "official_date": "2002-05-23",
+      "official_announcement": "基府工管字第043769號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000036&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c4b6d0964495860146a07bf9.html",
+          "sha256": "14d148b5c64c14a3dad35ad977a33d08b788e779684c912fe07427f08f282b75"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000036#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/c1e1c42c98011374e2dd678c.html",
+          "sha256": "10d95185915f8d7927eae0481430509f093aa7591336b34b6066aaf0f69f6758"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國90年12月14日（九０）基府工管字第113296號函頒 2.中華民國91年5月23日（九一）基府工管字第043769號函修正",
+      "official_system_date": "2002-05-23",
+      "official_system_fields": {
+        "法規名稱": "基隆市違章建築申請補辦執照執行要點",
+        "公發布日": "民國 90 年 12 月 14 日",
+        "修正日期": "民國 91 年 05 月 23 日",
+        "發文字號": "基府工管字第043769號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 33,
+      "family_id": "kl_bm_033",
+      "local_document_id": "kl_bm_033_789fa8058204",
+      "local_title": "基隆市政府辦理建築師簽證發照、考核處理原則",
+      "local_dates": [
+        "2006-06-22"
+      ],
+      "official_title": "基隆市政府辦理建築師簽證發照、考核處理原則",
+      "official_date": "2006-06-22",
+      "official_announcement": "基府都建壹字第0950071208號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL039784&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/4095d69bdcaf6d6f0ab356c2.html",
+          "sha256": "0aff2401047c29f38ff4b2840424710429f311364b75cf54e59f0c55085bcbaf"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL039784#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/4a32f0f2fcd4e9aab4b38718.html",
+          "sha256": "3dedbbb66564d7df4bf71f688d8f13d97b855b77b7fde69321b20932656cab1d"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國95年6月22日基府都建壹字第 0950071208 號函頒",
+      "official_system_date": "2006-06-22",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府辦理建築師簽證發照、考核處理原則",
+        "公發布日": "民國 95 年 06 月 22 日",
+        "發文字號": "基府都建壹字第0950071208號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 34,
+      "family_id": "kl_bm_034",
+      "local_document_id": "kl_bm_034_832a5e302be9",
+      "local_title": "基隆市加強山坡地雜項執照審查及施工查驗作業程序",
+      "local_dates": [
+        "1999-06-20",
+        "2000-02-25",
+        "2002-03-28",
+        "2005-04-15",
+        "2010-06-28"
+      ],
+      "official_title": "基隆市加強山坡地雜項執照審查及施工查驗作業程序",
+      "official_date": "2010-06-30",
+      "official_announcement": "基府都建壹字第0990160785號函",
+      "status_code": "date_conflict",
+      "status": "日期記載不一致",
+      "note": "同為第0990160785號函：本地記99年6月28日，官方記99年6月30日；官方沿革並列99年7月1日生效。早期沿革日期另有差異，須核原函。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL004324&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/5186aaace92f4e7acda672ee.html",
+          "sha256": "dfaa901b8c2f4c56f830940496e82c86f8a11eb0953539a8b3beaf3ac2f59892"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL004324#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/ba6a495f987943f3a76a6e60.html",
+          "sha256": "85037fea6c736a5249213c2099045d47b5f9e0c231ccefa9018911443526852e"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": "2010-07-01",
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國88年6月17日基府工管字第 027773 號函頒2.中華民國89年2月22日基府工管字第 015237 號函修正發布3.中華民國91年3月28日九一基府工管字第 027773號修正發布全文 14 點4.中華民國94年4月15日基府都建參字第 0940039856 號函修正全文 14 點5.中華民國99年6月30日基府都建壹字第 0990160785 號函修正全文 15 點；並自 99 年 7 月 1 日生效",
+      "official_system_date": "2010-06-30",
+      "official_system_fields": {
+        "法規名稱": "基隆市加強山坡地雜項執照審查及施工查驗作業程序",
+        "公發布日": "民國 88 年 06 月 17 日",
+        "修正日期": "民國 99 年 06 月 30 日",
+        "發文字號": "基府都建壹字第0990160785號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 35,
+      "family_id": "kl_bm_035",
+      "local_document_id": "kl_bm_035_befb7d4074ad",
+      "local_title": "基隆市政府建築執照複印閱覽申請須知",
+      "local_dates": [
+        "2000-08-10",
+        "2005-04-15",
+        "2011-03-10"
+      ],
+      "official_title": "基隆市政府建築執照複印閱覽申請須知",
+      "official_date": "2011-03-10",
+      "official_announcement": "基府都建壹字第1000147519號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL054915&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/36c79974de6c4cb21880595a.html",
+          "sha256": "887e810cb46e11a6c888688dd18e13f7c5787b9434bd1cc9f9bdec9db3e4cf0d"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL054915#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/eb69db2e9a60aeb23a795813.html",
+          "sha256": "3a4d36a3b177a4bfc07c1963799c3bcda0a7b2bae1a12e7ebc818fa5cbd7caa7"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國89年8月10日基府工管字第 069863 號函頒2.中華民國94年4月15日基府都建參字第 0940039877號函修正3.中華民國100年3月10日基府都建壹字第1000147519號函修正",
+      "official_system_date": "2011-03-10",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府建築執照複印閱覽申請須知",
+        "公發布日": "民國 89 年 08 月 10 日",
+        "修正日期": "民國 100 年 03 月 10 日",
+        "發文字號": "基府都建壹字第1000147519號函",
+        "法規體系": "都市發展類"
+      },
+      "attachment_ids": []
+    },
+    {
+      "number": 36,
+      "family_id": "kl_bm_036",
+      "local_document_id": "kl_bm_036_ae50593c9e45",
+      "local_title": "基隆市政府建築執照圖說電子檔繳交作業原則",
+      "local_dates": [
+        "2008-01-28",
+        "2010-06-28"
+      ],
+      "official_title": "基隆市政府建築執照圖說電子檔繳交作業原則",
+      "official_date": "2010-06-28",
+      "official_announcement": "基府都建壹字第0990160357號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=FL046423&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/d04300d3408685e31daba048.html",
+          "sha256": "5409761fc6070f32a9eb7e60554b48db2e7959ecc9957d054bccb15ac939a346"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=FL046423#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/2977adbe043bfb1516f1fd0e.html",
+          "sha256": "f8471d13a0f9d874d8652f37da80746d9607a9512b0adf91e8a2d45c8df1e6e1"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "1.中華民國97年1月28日基府都建貳字第0970113270號函訂定發布全文9 點2.中華民國99年6月28日基府都建壹字第0990160357號函修正全文9 點；並自九十九年七月一日起生效",
+      "official_system_date": "2010-06-28",
+      "official_system_fields": {
+        "法規名稱": "基隆市政府建築執照圖說電子檔繳交作業原則",
+        "公發布日": "民國 97 年 01 月 28 日",
+        "修正日期": "民國 99 年 06 月 28 日",
+        "發文字號": "基府都建壹字第0990160357號函",
+        "法規體系": "都市發展類",
+        "圖表附件": "附件一建築圖圖檔命名方式說明.PDF附件二繪圖規定.PDF附件三申請自然人憑證、XCA憑證、工商憑證.PDF光碟片標示方式.pdf"
+      },
+      "attachment_ids": [
+        "4fcd0cc0db7fdc4512597023",
+        "e9d49ec2645ca8f40753b18a",
+        "553c1b4828b3cc50a67083de",
+        "7af37fcd821fe35705bdcf38"
+      ]
+    },
+    {
+      "number": 37,
+      "family_id": "kl_bm_037",
+      "local_document_id": "kl_bm_037_9bb79d6279df",
+      "local_title": "基隆市建築執照選號作業辦法",
+      "local_dates": [
+        "2011-05-02"
+      ],
+      "official_title": "基隆市建築執照選號作業辦法",
+      "official_date": "2011-08-05",
+      "official_announcement": "基府都建壹字第1000170931B號令",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "官方100年8月5日發布版本與本地100年5月2日函頒資料不同，已補入發布全文及附表。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000139&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/1c42f34cde7ce6e5387c196f.html",
+          "sha256": "06cef7d37012093f13a35f00d966d99e6d9409fde89922b9b403b55526b503c5"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000139#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/4f8f2734b4ad5ac44fa7fec6.html",
+          "sha256": "84aac5dc9a49648a9651705cfe4758b025a9bd0f04ef160cd1fa87c458fd6404"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國100年8月5日基府都建壹字第1000170931B號令發布",
+      "official_system_date": "2011-08-05",
+      "official_system_fields": {
+        "法規名稱": "基隆市建築執照選號作業辦法",
+        "公發布日": "民國 100 年 08 月 05 日",
+        "發文字號": "基府都建壹字第1000170931B號令",
+        "法規體系": "都市發展類",
+        "立法理由": "基隆市建築執照選號作業辦法總說明.pdf",
+        "圖表附件": "附表-基隆市建築執照號碼作業特別號碼費用表.pdf"
+      },
+      "attachment_ids": [
+        "7dcb42fbfd1e950952a96697",
+        "dfa45d9fc77ce587a34d491b"
+      ]
+    },
+    {
+      "number": 38,
+      "family_id": "kl_bm_038",
+      "local_document_id": "kl_bm_038_d22393cadc67",
+      "local_title": "基隆市核發使用執照補充作業規定",
+      "local_dates": [
+        "2011-07-20"
+      ],
+      "official_title": "基隆市核發使用執照補充作業規定",
+      "official_date": "2011-07-20",
+      "official_announcement": "基府都建貳字第1000168993號函",
+      "status_code": "same_version",
+      "status": "版次相符",
+      "note": "官方系統列示之最新修正／發布版次，與本地前段記載相符；並非所有文字、圖形與附表已逐字校定。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000069&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/8773e1e4bcb65b6d4c947a04.html",
+          "sha256": "05da45c0090bbcaf3ecc6ce8a8ceadc14e57132b0584ab85261c53cc5b4be3ae"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000069#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/1cfe9a3214d01c5563ca39ac.html",
+          "sha256": "2fcc544e14818a79f81effc7c64770e0f37ba130434ada9d42acc9c1708fbd01"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國100年7月20日基府都建貳字第1000168993號函頒",
+      "official_system_date": "2011-07-20",
+      "official_system_fields": {
+        "法規名稱": "基隆市核發使用執照補充作業規定",
+        "公發布日": "民國 100 年 07 月 20 日",
+        "發文字號": "基府都建貳字第1000168993號函",
+        "法規體系": "都市發展類",
+        "圖表附件": "附表一申請使用執照併案修改竣工圖項目表.pdf附表二申請使用執照得併案申請變更設計事項表.pdf"
+      },
+      "attachment_ids": [
+        "a015f4d881ef4e9f67eeb170",
+        "3eee3d7dfc68ecf04b08f26f"
+      ]
+    },
+    {
+      "number": 39,
+      "family_id": "kl_bm_039",
+      "local_document_id": "kl_bm_039_f99976b619d1",
+      "local_title": "基隆市受災房屋重建復舊簡化手續處理要點",
+      "local_dates": [
+        "2000-11-17"
+      ],
+      "official_title": "基隆市受災房屋重建復舊簡化手續處理要點",
+      "official_date": null,
+      "official_announcement": null,
+      "status_code": "unresolved",
+      "status": "未取得官方現行本",
+      "note": "已查都發處71筆與主管法規系統都市發展類104筆清單及官方網頁搜尋，未定位同名現行全文或廢止公告；保留舊資料，不能推定仍有效或已廢止。",
+      "checked_on": "2026-11-09",
+      "sources": [],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "attachment_ids": []
+    },
+    {
+      "number": 40,
+      "family_id": "kl_bm_040",
+      "local_document_id": "kl_bm_040_b58ee447043a",
+      "local_title": "基隆市建築師公會執行建築物室內裝修審核及查驗作業事項",
+      "local_dates": [],
+      "official_title": "基隆市建築師公會執行建築物室內裝修審核及查驗作業事項",
+      "official_date": "2012-12-26",
+      "official_announcement": null,
+      "status_code": "partial_amendment",
+      "status": "附表已修正／整編本待核",
+      "note": "市府公開101年12月26日作業事項本文可取得；另取得基隆市建築師公會113年12月13日第11301118號函及內附市府113年12月10日第1130256566號核備函影本（第2頁已人工核看），證實審查費附表有修正。尚未取得合併該次修正的完整現行作業本，不將101年本文及新附表拼成已核定整編本。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "市府公開作業事項本文",
+          "url": "https://www.klcg.gov.tw/wSite/public/Attachment/018/f1638786877800.pdf"
+        },
+        {
+          "role": "公會轉知之核備函影本（非市府網站整編本）",
+          "url": "https://www.arch.org.tw/News/news_more?id=793b5cb91a4149bf95dd9dd658280c22"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "latest_supplement_date": "2024-12-13",
+      "confirmed_fee_approval_date": "2024-12-10",
+      "attachment_ids": [
+        "f006b5a0d503ba4b7081917c",
+        "26ffdd1064b6eefb3ae00b05",
+        "f997ef09c1d825f3f468a404"
+      ]
+    },
+    {
+      "number": 41,
+      "family_id": "kl_bm_041",
+      "local_document_id": "kl_bm_041_6c029b6f4672",
+      "local_title": "基隆市合法建築物平屋頂搭蓋防漏設施處理規則",
+      "local_dates": [
+        "2013-11-26"
+      ],
+      "official_title": "基隆市合法建築物平屋頂搭蓋防漏設施處理規則",
+      "official_date": "2023-12-04",
+      "official_announcement": "基府都建壹字第1120255281B號令",
+      "status_code": "amended",
+      "status": "已有新版／修正",
+      "note": "112年12月4日修正，晚於本地102年11月26日版。",
+      "checked_on": "2026-11-09",
+      "sources": [
+        {
+          "role": "主管法規系統全文",
+          "url": "https://exlaw.klcg.gov.tw/LawContent.aspx?id=GL000435&media=print",
+          "local_path": "keelung-assets/official/2026-11-09/pages/bc44af83baf0b90dc5c253e1.html",
+          "sha256": "e72ba7991a3bb49200686a55bf69c012a3ea6770740309be287a913438f14f22"
+        },
+        {
+          "role": "官方法規沿革",
+          "url": "https://exlaw.klcg.gov.tw/LawContentSource.aspx?id=GL000435#lawmenu",
+          "local_path": "keelung-assets/official/2026-11-09/pages/e46382b71b0411830d5ce4b5.html",
+          "sha256": "2a4f7576198ac1f2622d3fceaba62006bd4059b74e90c83d85702ad5ece5cef6"
+        }
+      ],
+      "repeal_date": null,
+      "confirmed_effective_date": null,
+      "scope": "官方版次／沿革及附件核對；非個案適法性判定或逐字法律效力認證",
+      "history": "中華民國102年11月26日基府都建壹字第1020186765B號令發布中華民國112年12月4日基府都建壹字第1120255281B號令發布",
+      "official_system_date": "2023-12-04",
+      "official_system_fields": {
+        "法規名稱": "基隆市合法建築物平屋頂搭蓋防漏設施處理規則",
+        "公發布日": "民國 102 年 11 月 26 日",
+        "修正日期": "民國 112 年 12 月 04 日",
+        "發文字號": "基府都建壹字第1120255281B號令",
+        "法規體系": "都市發展類",
+        "圖表附件": "基隆市合法建築物平屋頂搭建防漏設施處理規則.pdf"
+      },
+      "attachment_ids": [
+        "49f6ddd3040392f26588d8bf"
+      ]
+    }
+  ],
+  "caveat": "版次相符指官方所列日期或文號相符，未必逐字相同；未取得官方現行本不等於廢止。官方網站最後更新時間不是法規修正或生效日。"
+}

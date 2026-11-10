@@ -1,0 +1,649 @@
+{
+  "central": [
+    {
+      "document_id": "central_D0070109_20220511",
+      "title": "建築法",
+      "version": "2022-05-11",
+      "previous_date": "2020-01-15",
+      "counts": {
+        "unchanged": 122,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070109"
+    },
+    {
+      "document_id": "central_D0070114_20201019",
+      "title": "建築技術規則總則編",
+      "version": "2020-10-19",
+      "previous_date": "2019-11-04",
+      "counts": {
+        "unchanged": 11,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070114"
+    },
+    {
+      "document_id": "central_D0070115_20260223",
+      "title": "建築技術規則建築設計施工編",
+      "version": "2026-02-23",
+      "previous_date": "2021-10-07",
+      "counts": {
+        "unchanged": 385,
+        "modified": 4
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070115"
+    },
+    {
+      "document_id": "central_D0070116_20230510",
+      "title": "建築技術規則建築構造編",
+      "version": "2023-05-10",
+      "previous_date": "2021-01-19",
+      "counts": {
+        "unchanged": 582,
+        "modified": 40
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070116"
+    },
+    {
+      "document_id": "central_D0070117_20221229",
+      "title": "建築技術規則建築設備編",
+      "version": "2022-12-29",
+      "previous_date": "2022-01-19",
+      "counts": {
+        "unchanged": 158,
+        "added": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070117"
+    },
+    {
+      "document_id": "central_D0070112_20231206",
+      "title": "建築師法",
+      "version": "2023-12-06",
+      "previous_date": "2014-01-15",
+      "counts": {
+        "unchanged": 62,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070112"
+    },
+    {
+      "document_id": "central_D0070036_20230811",
+      "title": "建築物結構與設備專業工程技師簽證規則",
+      "version": "2023-08-11",
+      "previous_date": "2012-01-19",
+      "counts": {
+        "unchanged": 12,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070036"
+    },
+    {
+      "document_id": "central_D0070135_19850626",
+      "title": "建造執照預審辦法",
+      "version": "1985-06-26",
+      "previous_date": null,
+      "counts": {},
+      "gap": "官方歷史頁未回傳指定版次的完整條文；不假設可比對。",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070135"
+    },
+    {
+      "document_id": "central_D0070001_20210526",
+      "title": "都市計畫法",
+      "version": "2021-05-26",
+      "previous_date": "2020-01-15",
+      "counts": {
+        "unchanged": 56,
+        "modified": 36
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070001"
+    },
+    {
+      "document_id": "central_D0070012_20260812",
+      "title": "都市計畫法臺灣省施行細則",
+      "version": "2026-08-12",
+      "previous_date": "2024-01-17",
+      "counts": {
+        "unchanged": 52,
+        "modified": 3
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070012"
+    },
+    {
+      "document_id": "central_D0060013_20260527",
+      "title": "非都市土地使用管制規則",
+      "version": "2026-05-27",
+      "previous_date": "2024-03-29",
+      "counts": {
+        "unchanged": 88,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060013"
+    },
+    {
+      "document_id": "central_D0070123_19991224",
+      "title": "實施區域計畫地區建築管理辦法",
+      "version": "1999-12-24",
+      "previous_date": null,
+      "counts": {},
+      "gap": "官方歷史頁未回傳指定版次的完整條文；不假設可比對。",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070123"
+    },
+    {
+      "document_id": "central_D0120001_20241129",
+      "title": "消防法",
+      "version": "2024-11-29",
+      "previous_date": "2023-06-21",
+      "counts": {
+        "modified": 13,
+        "unchanged": 56,
+        "added": 11
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120001"
+    },
+    {
+      "document_id": "central_D0120029_20240424",
+      "title": "各類場所消防安全設備設置標準",
+      "version": "2024-04-24",
+      "previous_date": "2021-06-25",
+      "counts": {
+        "unchanged": 223,
+        "modified": 29,
+        "added": 14
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029"
+    },
+    {
+      "document_id": "central_D0070141_20250513",
+      "title": "建築物使用類組及變更使用辦法",
+      "version": "2025-05-13",
+      "previous_date": "2022-03-02",
+      "counts": {
+        "unchanged": 11
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070141"
+    },
+    {
+      "document_id": "central_D0070148_20231211",
+      "title": "建築物室內裝修管理辦法",
+      "version": "2023-12-11",
+      "previous_date": "2022-06-09",
+      "counts": {
+        "unchanged": 42,
+        "added": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070148"
+    },
+    {
+      "document_id": "central_D0070150_20221228",
+      "title": "原有合法建築物公共安全改善辦法",
+      "version": "2022-12-28",
+      "previous_date": "2020-04-08",
+      "counts": {
+        "unchanged": 27,
+        "added": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070150"
+    },
+    {
+      "document_id": "central_D0070118_20220511",
+      "title": "公寓大廈管理條例",
+      "version": "2022-05-11",
+      "previous_date": "2016-11-16",
+      "counts": {
+        "unchanged": 64,
+        "added": 2
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070118"
+    },
+    {
+      "document_id": "central_D0070119_20051116",
+      "title": "公寓大廈管理條例施行細則",
+      "version": "2005-11-16",
+      "previous_date": null,
+      "counts": {},
+      "gap": "官方歷史頁未回傳指定版次的完整條文；不假設可比對。",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070119"
+    },
+    {
+      "document_id": "central_D0070149_20221228",
+      "title": "建築物公共安全檢查簽證及申報辦法",
+      "version": "2022-12-28",
+      "previous_date": "2018-02-21",
+      "counts": {
+        "unchanged": 13,
+        "modified": 3
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070149"
+    },
+    {
+      "document_id": "central_K0040033_20251119",
+      "title": "停車場法",
+      "version": "2025-11-19",
+      "previous_date": "2022-11-30",
+      "counts": {
+        "unchanged": 47,
+        "modified": 3
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040033"
+    },
+    {
+      "document_id": "central_D0050046_20250801",
+      "title": "身心障礙者權益保障法",
+      "version": "2025-08-01",
+      "previous_date": "2021-01-20",
+      "counts": {
+        "unchanged": 120,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050046"
+    },
+    {
+      "document_id": "central_M0110001_20161130",
+      "title": "水土保持法",
+      "version": "2016-11-30",
+      "previous_date": "2003-12-17",
+      "counts": {
+        "unchanged": 35,
+        "modified": 8
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0110001"
+    },
+    {
+      "document_id": "central_M0110012_20250909",
+      "title": "水土保持計畫審核監督辦法",
+      "version": "2025-09-09",
+      "previous_date": "2022-02-10",
+      "counts": {
+        "unchanged": 40,
+        "modified": 2
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0110012"
+    },
+    {
+      "document_id": "central_D0070110_20190619",
+      "title": "營造業法",
+      "version": "2019-06-19",
+      "previous_date": "2015-02-04",
+      "counts": {
+        "unchanged": 63,
+        "modified": 11
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070110"
+    },
+    {
+      "document_id": "central_D0070013_20201223",
+      "title": "都市計畫公共設施用地多目標使用辦法",
+      "version": "2020-12-23",
+      "previous_date": "2017-09-20",
+      "counts": {
+        "unchanged": 14,
+        "modified": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070013"
+    },
+    {
+      "document_id": "central_J0030018_20250509",
+      "title": "用戶用電設備裝置規則",
+      "version": "2025-05-09",
+      "previous_date": "2021-03-17",
+      "counts": {
+        "unchanged": 1,
+        "modified": 494,
+        "added": 519,
+        "deleted": 584
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0030018"
+    },
+    {
+      "document_id": "central_D0070066_20121217",
+      "title": "下水道用戶排水設備標準",
+      "version": "2012-12-17",
+      "previous_date": "2008-04-30",
+      "counts": {
+        "unchanged": 39,
+        "modified": 6
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070066"
+    },
+    {
+      "document_id": "central_D0070147_20231211",
+      "title": "建築物昇降設備設置及檢查管理辦法",
+      "version": "2023-12-11",
+      "previous_date": "2022-06-09",
+      "counts": {
+        "unchanged": 32,
+        "added": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070147"
+    },
+    {
+      "document_id": "central_D0070142_20231211",
+      "title": "建築物機械停車設備設置及檢查管理辦法",
+      "version": "2023-12-11",
+      "previous_date": "2004-11-09",
+      "counts": {
+        "unchanged": 20,
+        "added": 1
+      },
+      "gap": null,
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070142"
+    },
+    {
+      "document_id": "central_review_items_20150605",
+      "title": "直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目",
+      "version": "2015-06-05",
+      "counts": {},
+      "gap": "尚未取得相鄰舊版完整正文，未建立逐字差異。",
+      "url": "https://www.nlma.gov.tw/ch/legislation/regsearch/1622"
+    },
+    {
+      "document_id": "central_spot_check_20220527",
+      "title": "建造執照及雜項執照簽證項目抽查作業要點",
+      "version": "2022-05-27",
+      "counts": {},
+      "gap": "尚未取得相鄰舊版完整正文，未建立逐字差異。",
+      "url": "https://www.nlma.gov.tw/ch/legislation/law%26regusw/188"
+    }
+  ],
+  "local": [
+    {
+      "number": 1,
+      "document_id": "kl_bm_001_official_d787dcc6793d",
+      "compared": 47,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 2,
+      "document_id": "kl_bm_002_official_d9a13176b528",
+      "compared": 72,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 3,
+      "document_id": "kl_bm_003_official_07b58545247b",
+      "compared": 8,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 4,
+      "document_id": "kl_bm_004_official_ec1092cf09c9",
+      "compared": 7,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 5,
+      "document_id": "kl_bm_005_official_eca60f6ff7ab",
+      "compared": 17,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 6,
+      "document_id": "kl_bm_006_official_7d079e5974fa",
+      "compared": 11,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 7,
+      "document_id": "kl_bm_007_official_7187f0ab5721",
+      "compared": 8,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 8,
+      "document_id": "kl_bm_008_official_2e7663fcd28f",
+      "compared": 16,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 9,
+      "document_id": "kl_bm_009_official_298c86cf572c",
+      "compared": 16,
+      "gap": null,
+      "status": "date_conflict"
+    },
+    {
+      "number": 10,
+      "document_id": "kl_bm_010_official_8817ce21a6af",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 11,
+      "document_id": "kl_bm_011_official_6f839e22b296",
+      "compared": 26,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 12,
+      "document_id": "kl_bm_012_official_df5c6dc582d6",
+      "compared": 17,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 13,
+      "document_id": "kl_bm_013_official_b7e287215d46",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 14,
+      "document_id": "kl_bm_014_official_14c728304682",
+      "compared": 9,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 15,
+      "document_id": "kl_bm_015_official_d9c9b52815fb",
+      "compared": 8,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 16,
+      "document_id": "kl_bm_016_official_8e2e1eee364e",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 17,
+      "document_id": "kl_bm_017_official_4f73760f0f62",
+      "compared": 3,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 18,
+      "document_id": "kl_bm_018_official_5459bc3efac2",
+      "compared": 3,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 19,
+      "document_id": "kl_bm_019_official_7a0ff9bd6c8e",
+      "compared": 5,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 20,
+      "document_id": "kl_bm_020_official_6e41f939375b",
+      "compared": 13,
+      "gap": null,
+      "status": "repealed"
+    },
+    {
+      "number": 21,
+      "document_id": "kl_bm_021_official_3fc2278f6386",
+      "compared": 6,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 22,
+      "document_id": "kl_bm_022_official_f5b39d60f119",
+      "compared": 3,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 23,
+      "document_id": "kl_bm_023_official_38805c351951",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 24,
+      "document_id": "kl_bm_024_official_0a52d855865a",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 25,
+      "document_id": "kl_bm_025_official_555adb97b04a",
+      "compared": 5,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 26,
+      "document_id": "kl_bm_026_official_b790b63c220b",
+      "compared": 8,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 27,
+      "document_id": "kl_bm_027_official_6b5fe77d5921",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 28,
+      "document_id": "kl_bm_028_official_b488fd10b7e0",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 29,
+      "document_id": "kl_bm_029_official_df5b670b1157",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 30,
+      "document_id": "kl_bm_030_official_44d6d55b6dcd",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 32,
+      "document_id": "kl_bm_032_official_5a3edc10e6ff",
+      "compared": 7,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 33,
+      "document_id": "kl_bm_033_official_a225f6db9923",
+      "compared": 8,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 34,
+      "document_id": "kl_bm_034_official_37a4ef152157",
+      "compared": 15,
+      "gap": null,
+      "status": "date_conflict"
+    },
+    {
+      "number": 35,
+      "document_id": "kl_bm_035_official_6867365859d8",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "same_version"
+    },
+    {
+      "number": 36,
+      "document_id": "kl_bm_036_official_4a8c4ecfd08b",
+      "compared": 9,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 37,
+      "document_id": "kl_bm_037_official_fea380738d4b",
+      "compared": 7,
+      "gap": null,
+      "status": "amended"
+    },
+    {
+      "number": 38,
+      "document_id": "kl_bm_038_official_a467e74ddbdc",
+      "compared": 6,
+      "gap": null,
+      "status": "same_version"
+    },
+    {
+      "number": 40,
+      "document_id": "kl_bm_040_official_abc6bac55c24",
+      "compared": 0,
+      "gap": "未取得可可靠逐條對齊的原始與新版正文；保留官方修正對照、全文及版本核對說明。",
+      "status": "partial_amendment"
+    },
+    {
+      "number": 41,
+      "document_id": "kl_bm_041_official_1fc80bf545c8",
+      "compared": 10,
+      "gap": null,
+      "status": "amended"
+    }
+  ]
+}

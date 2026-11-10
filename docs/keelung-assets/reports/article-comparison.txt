@@ -1,0 +1,131 @@
+條文版本比較收錄範圍
+查核日：2026-11-09
+文字差異不等於修法理由、圖面差異或個案適用結論。
+
+建築法｜2022-05-11｜前版：2020-01-15
+{"unchanged": 122, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070109
+
+建築技術規則總則編｜2020-10-19｜前版：2019-11-04
+{"unchanged": 11, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070114
+
+建築技術規則建築設計施工編｜2026-02-23｜前版：2021-10-07
+{"unchanged": 385, "modified": 4}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070115
+
+建築技術規則建築構造編｜2023-05-10｜前版：2021-01-19
+{"unchanged": 582, "modified": 40}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070116
+
+建築技術規則建築設備編｜2022-12-29｜前版：2022-01-19
+{"unchanged": 158, "added": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070117
+
+建築師法｜2023-12-06｜前版：2014-01-15
+{"unchanged": 62, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070112
+
+建築物結構與設備專業工程技師簽證規則｜2023-08-11｜前版：2012-01-19
+{"unchanged": 12, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070036
+
+建造執照預審辦法｜1985-06-26｜前版：尚未取得
+官方歷史頁未回傳指定版次的完整條文；不假設可比對。
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070135
+
+都市計畫法｜2021-05-26｜前版：2020-01-15
+{"unchanged": 56, "modified": 36}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070001
+
+都市計畫法臺灣省施行細則｜2026-08-12｜前版：2024-01-17
+{"unchanged": 52, "modified": 3}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070012
+
+非都市土地使用管制規則｜2026-05-27｜前版：2024-03-29
+{"unchanged": 88, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0060013
+
+實施區域計畫地區建築管理辦法｜1999-12-24｜前版：尚未取得
+官方歷史頁未回傳指定版次的完整條文；不假設可比對。
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070123
+
+消防法｜2024-11-29｜前版：2023-06-21
+{"modified": 13, "unchanged": 56, "added": 11}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120001
+
+各類場所消防安全設備設置標準｜2024-04-24｜前版：2021-06-25
+{"unchanged": 223, "modified": 29, "added": 14}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0120029
+
+建築物使用類組及變更使用辦法｜2025-05-13｜前版：2022-03-02
+{"unchanged": 11}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070141
+
+建築物室內裝修管理辦法｜2023-12-11｜前版：2022-06-09
+{"unchanged": 42, "added": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070148
+
+原有合法建築物公共安全改善辦法｜2022-12-28｜前版：2020-04-08
+{"unchanged": 27, "added": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070150
+
+公寓大廈管理條例｜2022-05-11｜前版：2016-11-16
+{"unchanged": 64, "added": 2}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070118
+
+公寓大廈管理條例施行細則｜2005-11-16｜前版：尚未取得
+官方歷史頁未回傳指定版次的完整條文；不假設可比對。
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070119
+
+建築物公共安全檢查簽證及申報辦法｜2022-12-28｜前版：2018-02-21
+{"unchanged": 13, "modified": 3}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070149
+
+停車場法｜2025-11-19｜前版：2022-11-30
+{"unchanged": 47, "modified": 3}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0040033
+
+身心障礙者權益保障法｜2025-08-01｜前版：2021-01-20
+{"unchanged": 120, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050046
+
+水土保持法｜2016-11-30｜前版：2003-12-17
+{"unchanged": 35, "modified": 8}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0110001
+
+水土保持計畫審核監督辦法｜2025-09-09｜前版：2022-02-10
+{"unchanged": 40, "modified": 2}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0110012
+
+營造業法｜2019-06-19｜前版：2015-02-04
+{"unchanged": 63, "modified": 11}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070110
+
+都市計畫公共設施用地多目標使用辦法｜2020-12-23｜前版：2017-09-20
+{"unchanged": 14, "modified": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070013
+
+用戶用電設備裝置規則｜2025-05-09｜前版：2021-03-17
+{"unchanged": 1, "modified": 494, "added": 519, "deleted": 584}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0030018
+
+下水道用戶排水設備標準｜2012-12-17｜前版：2008-04-30
+{"unchanged": 39, "modified": 6}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070066
+
+建築物昇降設備設置及檢查管理辦法｜2023-12-11｜前版：2022-06-09
+{"unchanged": 32, "added": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070147
+
+建築物機械停車設備設置及檢查管理辦法｜2023-12-11｜前版：2004-11-09
+{"unchanged": 20, "added": 1}
+https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0070142
+
+直轄市縣（市）主管建築機關審查或鑑定建築物工程圖樣及說明書之規定項目｜2015-06-05｜前版：尚未取得
+尚未取得相鄰舊版完整正文，未建立逐字差異。
+https://www.nlma.gov.tw/ch/legislation/regsearch/1622
+
+建造執照及雜項執照簽證項目抽查作業要點｜2022-05-27｜前版：尚未取得
+尚未取得相鄰舊版完整正文，未建立逐字差異。
+https://www.nlma.gov.tw/ch/legislation/law%26regusw/188

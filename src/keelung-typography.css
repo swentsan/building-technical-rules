@@ -1,0 +1,20 @@
+/* The local and public curated lookup share the reading scale of the portal. */
+body,button,input,select,textarea,pre{font-family:"Microsoft JhengHei UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif}
+body{font-size:18px;line-height:1.8}
+button,input,select,textarea{font-size:18px!important;line-height:1.65}
+body h1{font-size:clamp(30px,3vw,40px);line-height:1.5}
+body h2{font-size:28px;line-height:1.6}
+body h3{font-size:24px;line-height:1.7}
+body h4{font-size:21px;line-height:1.7}
+body .nav,body .secondary,body .primary,body .actions a,body .actions button{font-size:18px!important;line-height:1.7}
+body .reading,body .difftext,body .parallel pre,body .relatedpreview,body .unit pre,body .comparegrid pre,body .diffbody,body .checkref blockquote{font-size:21px!important;line-height:2!important}
+body .meta,body .small,body .notice,body .tag,body .badge,body .offline,body .snippet,body .sourceinfo,body .asidefoot,body footer{font-size:16px!important;line-height:1.9}
+body summary,body label{font-size:17px;line-height:1.8}
+body .card h3,body .titlebtn{font-size:22px!important;line-height:1.7}
+body .unit h3{font-size:22px;line-height:1.7}
+body .panel p,body .panel li,body .rulecard ul,body .checkrow .checkdetail,body .auditnote p{font-size:18px;line-height:1.9}
+body .searchhelp,body .resultbar span,body .links,body .unitlinks,body .status,body .sourcekind,body .reference-banner,body .diffsummary,body .difflegend,body .technical-gap,body .attachmententry{font-size:16px!important;line-height:1.9}
+body .stat b{font-family:inherit}
+body table,body table th,body table td{font-size:18px!important;line-height:1.8}
+body .dialoghead h2{font-size:23px;line-height:1.7}
+@media(max-width:700px){body .reading,body .difftext,body .parallel pre{font-size:21px!important}body h2{font-size:25px}body .dialoghead h2{font-size:21px}}

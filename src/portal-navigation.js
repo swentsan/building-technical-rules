@@ -18,7 +18,7 @@
       keelung.id = 'keelungPortalNav';
       keelung.href = script.dataset.portalKeelung;
       keelung.className = 'nav';
-      keelung.textContent = '基隆市法規 ↗';
+      keelung.textContent = '基隆市法規';
       sidebar.append(keelung);
     }
   } else if (topbar) {
